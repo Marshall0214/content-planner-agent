@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-11-10T04:35:03.161298+00:00",
+  "python": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "content-planner-agent": "0.1.0",
+    "pydantic": "2.14.3",
+    "openai": "2.54.0",
+    "pytest": "9.2.0"
+  },
+  "dependency_check": {
+    "command": "uv pip check --python .venv/Scripts/python.exe",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "WARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nWARN Retrying to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\nerror: Failed to inspect Python interpreter from provided path at `.venv/Scripts/python.exe`\n  Caused by: Failed to query Python interpreter\n  Caused by: Failed to persist temporary file to C:\\Users\\admin\\AppData\\Local\\Packages\\sandbox.{5dc42fd7-c55e-4e22-b1af-67cec5021f33}\\AC\\uv\\cache\\interpreter-v4\\08cc7f641f8f98d9\\9febde3c69093a74.msgpack: failed to persist temporary file: 拒绝访问。 (os error 5)\n"
+  },
+  "uv_lock_sha256": "7104f8dfdc089039021d1007098ea88ff1dae40e16e3de06e4d67112b85dd370",
+  "real_model_calls_in_this_task": 0
+}

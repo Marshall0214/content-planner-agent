@@ -1,0 +1,144 @@
+{
+  "batch_id": "batch_ab59870dd4bf",
+  "mode": "offline_mock",
+  "real_model_validation": "not_run",
+  "recorded_at_utc": "2026-11-10T04:43:05.834862+00:00",
+  "runs": [
+    {
+      "case_id": "C01",
+      "evidence_dir": "examples/runs/offline_mock/run_1f77a1440bad43d7",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 5,
+      "replayed": false
+    },
+    {
+      "case_id": "C06",
+      "evidence_dir": "examples/runs/offline_mock/run_6a70e46b12004a03",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 0,
+      "replayed": true
+    },
+    {
+      "case_id": "C06-conflict",
+      "evidence_dir": "examples/runs/offline_mock/run_84ede2d1981648e9",
+      "exit_code": 4,
+      "task_status": "FAILED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 0,
+      "replayed": true
+    },
+    {
+      "case_id": "C02",
+      "evidence_dir": "examples/runs/offline_mock/run_f252290c72024ed6",
+      "exit_code": 2,
+      "task_status": "NEEDS_INPUT",
+      "save_state": "NOT_ATTEMPTED",
+      "actual_units": 0,
+      "last_known_units": 0,
+      "model_turns_this_invocation": 0,
+      "replayed": false
+    },
+    {
+      "case_id": "C03",
+      "evidence_dir": "examples/runs/offline_mock/run_7431c5df113749c0",
+      "exit_code": 2,
+      "task_status": "NEEDS_INPUT",
+      "save_state": "NOT_ATTEMPTED",
+      "actual_units": 0,
+      "last_known_units": 0,
+      "model_turns_this_invocation": 0,
+      "replayed": false
+    },
+    {
+      "case_id": "C04",
+      "evidence_dir": "examples/runs/offline_mock/run_d9e2b0b159674fbc",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "NOT_ATTEMPTED",
+      "actual_units": 1,
+      "last_known_units": 1,
+      "model_turns_this_invocation": 3,
+      "replayed": false
+    },
+    {
+      "case_id": "C04-adjust",
+      "evidence_dir": "examples/runs/offline_mock/run_bc63dd8ac9d44ae8",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 6,
+      "replayed": false
+    },
+    {
+      "case_id": "C05",
+      "evidence_dir": "examples/runs/offline_mock/run_595d1d811a7a4de3",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 6,
+      "replayed": false
+    },
+    {
+      "case_id": "C05-permanent",
+      "evidence_dir": "examples/runs/offline_mock/run_4cbb51a91b4f4842",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "FAILED",
+      "actual_units": 7,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 6,
+      "replayed": false
+    },
+    {
+      "case_id": "C10-success",
+      "evidence_dir": "examples/runs/offline_mock/run_1452503cf1f645dd",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 5,
+      "replayed": false
+    },
+    {
+      "case_id": "C10-failed",
+      "evidence_dir": "examples/runs/offline_mock/run_35fc9979ee5c4646",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "FAILED",
+      "actual_units": 7,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 5,
+      "replayed": false
+    },
+    {
+      "case_id": "C10-unknown",
+      "evidence_dir": "examples/runs/offline_mock/run_1faa0502f2ba453f",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "UNKNOWN",
+      "actual_units": null,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 5,
+      "replayed": false
+    }
+  ],
+  "read_export_checks": {
+    "inspect_matches_receipt": true,
+    "export_contains_script": true
+  }
+}

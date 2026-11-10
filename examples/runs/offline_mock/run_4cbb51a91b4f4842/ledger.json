@@ -1,0 +1,29 @@
+{
+  "currency": "SIM_UNIT",
+  "entries": [
+    {
+      "amount_units": 1,
+      "attempt_id": "attempt_8381551263074088",
+      "catalog_version": "cost-v1",
+      "committed_at": "2026-11-10T04:43:10.614025+00:00",
+      "entry_id": "fee_efe791822b5b4397",
+      "operation_key": "c67218ee825189677059dcc55d89ae1eeb3f19f3a66416de1c2654a2700cc638",
+      "request_id": "req_268b5abda54f4530",
+      "tool": "search_materials"
+    },
+    {
+      "amount_units": 6,
+      "attempt_id": "attempt_d5c1e0019133498f",
+      "catalog_version": "cost-v1",
+      "committed_at": "2026-11-10T04:43:10.736847+00:00",
+      "entry_id": "fee_eabec533ae3e484f",
+      "operation_key": "d2094b7252eb1fb10aa062b96f3fd341f251b4cc333285f5582c14ad1adfab12",
+      "request_id": "req_268b5abda54f4530",
+      "tool": "generate_script"
+    }
+  ],
+  "total_actual_units": 7,
+  "last_known_confirmed_units": 7,
+  "current_amount_confirmed": true,
+  "this_invocation_units": 7
+}

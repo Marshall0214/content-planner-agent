@@ -1,0 +1,11 @@
+{
+  "catalog_id": "cost-v1",
+  "currency": "SIM_UNIT",
+  "tools": {
+    "search_materials": {"fee":1,"seconds":60},
+    "estimate_plan": {"fee":0,"seconds":0},
+    "generate_script.basic": {"fee":6,"seconds":240},
+    "generate_script.premium": {"fee":10,"seconds":480},
+    "save_plan": {"fee":1,"seconds":60}
+  }
+}

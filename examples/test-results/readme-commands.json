@@ -1,0 +1,109 @@
+{
+  "actual_commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "content_planner.cli",
+        "make-input",
+        "--out",
+        "var/demo.json",
+        "--request-key",
+        "demo-001"
+      ],
+      "exit_code": 0,
+      "evidence_dir": null,
+      "status": null
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "content_planner.cli",
+        "run",
+        "--mode",
+        "offline_mock",
+        "--input",
+        "var/demo.json",
+        "--db",
+        "var/demo.sqlite3",
+        "--case-id",
+        "C01"
+      ],
+      "exit_code": 0,
+      "evidence_dir": "D:\\硕\\work\\JobHuntBot\\content-planner-agent\\examples\\runs\\offline_mock\\run_6a6797e24cff4878",
+      "status": "COMPLETED"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "content_planner.cli",
+        "inspect",
+        "--request-key",
+        "demo-001",
+        "--db",
+        "var/demo.sqlite3"
+      ],
+      "exit_code": 0,
+      "evidence_dir": null,
+      "status": null
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "content_planner.cli",
+        "export",
+        "--plan-id",
+        "plan_557f864782454c32",
+        "--db",
+        "var/demo.sqlite3",
+        "--out",
+        "var/export"
+      ],
+      "exit_code": 0,
+      "evidence_dir": null,
+      "status": null
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "content_planner.cli",
+        "run",
+        "--mode",
+        "offline_mock",
+        "--input",
+        "var/demo.json",
+        "--db",
+        "var/demo.sqlite3",
+        "--case-id",
+        "C06"
+      ],
+      "exit_code": 0,
+      "evidence_dir": "D:\\硕\\work\\JobHuntBot\\content-planner-agent\\examples\\runs\\offline_mock\\run_61f7176f88f44b92",
+      "status": "COMPLETED"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "content_planner.cli",
+        "run",
+        "--mode",
+        "offline_mock",
+        "--input",
+        "var/demo.json",
+        "--db",
+        "var/failure.sqlite3",
+        "--fixture",
+        "save_fail_once"
+      ],
+      "exit_code": 0,
+      "evidence_dir": "D:\\硕\\work\\JobHuntBot\\content-planner-agent\\examples\\runs\\offline_mock\\run_7fb5a2cdd41b438f",
+      "status": "COMPLETED"
+    }
+  ],
+  "real_model_calls": 0
+}

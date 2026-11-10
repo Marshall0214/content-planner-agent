@@ -1,0 +1,8 @@
+{
+  "no_fault": {},
+  "save_fail_once": {"save_plan":{"1":"SAVE_TEMPORARY"}},
+  "save_denied": {"save_plan":{"1":"SAVE_PERMISSION_DENIED","2":"SAVE_PERMISSION_DENIED"}},
+  "generate_fail_once": {"generate_script":{"1":"GENERATION_TEMPORARY"}},
+  "search_fail_once": {"search_materials":{"1":"SEARCH_TEMPORARY"}},
+  "unknown_result": {"save_plan":{"1":"UNKNOWN"}}
+}

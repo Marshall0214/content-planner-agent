@@ -1,0 +1,34 @@
+......F.F.F...........................................                   [100%]
+================================== FAILURES ===================================
+____________ test_C04_budget_feedback_reaches_next_offline_request ____________
+tests\test_agent_offline.py:14: in test_C04_budget_feedback_reaches_next_offline_request
+    assert s["status"] == "COMPLETED" and s["confirmed_incurred_units"] == 8
+E   AssertionError: assert ('INCOMPLETE' == 'COMPLETED'
+E     
+E     - COMPLETED
+E     ?         -
+E     + INCOMPLETE
+E     ? ++)
+_ test_C10_last_legal_save_three_outcomes_no_extra_calls[no_fault-COMPLETED-CONFIRMED-8-max_model_turns] _
+tests\test_agent_offline.py:46: in test_C10_last_legal_save_three_outcomes_no_extra_calls
+    assert s["status"] == status and s["save_state"] == saved
+E   AssertionError: assert ('INCOMPLETE' == 'COMPLETED'
+E     
+E     - COMPLETED
+E     ?         -
+E     + INCOMPLETE
+E     ? ++)
+_ test_C10_last_legal_save_three_outcomes_no_extra_calls[save_fail_once-INCOMPLETE-FAILED-7-max_model_turns] _
+tests\test_agent_offline.py:46: in test_C10_last_legal_save_three_outcomes_no_extra_calls
+    assert s["status"] == status and s["save_state"] == saved
+E   AssertionError: assert ('INCOMPLETE' == 'INCOMPLETE'
+E     
+E       INCOMPLETE and 'NOT_ATTEMPTED' == 'FAILED'
+E     
+E     - FAILED
+E     + NOT_ATTEMPTED)
+=========================== short test summary info ===========================
+FAILED tests/test_agent_offline.py::test_C04_budget_feedback_reaches_next_offline_request
+FAILED tests/test_agent_offline.py::test_C10_last_legal_save_three_outcomes_no_extra_calls[no_fault-COMPLETED-CONFIRMED-8-max_model_turns]
+FAILED tests/test_agent_offline.py::test_C10_last_legal_save_three_outcomes_no_extra_calls[save_fail_once-INCOMPLETE-FAILED-7-max_model_turns]
+3 failed, 51 passed in 8.13s

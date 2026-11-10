@@ -1,0 +1,20 @@
+{
+  "recorded_at_utc": "2026-11-10T04:39:22.980415+00:00",
+  "python": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "content-planner-agent": "0.1.0",
+    "pydantic": "2.14.3",
+    "openai": "2.54.0",
+    "pytest": "9.2.0"
+  },
+  "dependency_check": {
+    "command": "uv pip check --python .venv/Scripts/python.exe",
+    "workspace_cache": true,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Checked 23 packages in 3ms\nAll installed packages are compatible\n"
+  },
+  "uv_lock_sha256": "7104f8dfdc089039021d1007098ea88ff1dae40e16e3de06e4d67112b85dd370",
+  "real_model_calls_in_this_task": 0
+}

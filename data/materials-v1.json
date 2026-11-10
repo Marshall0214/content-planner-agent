@@ -1,0 +1,8 @@
+{
+  "catalog_id": "materials-v1",
+  "materials": [
+    {"material_id":"mat-001","title":"影记照片演示","facts":["虚构演示工具影记可导入本地照片并添加文字"],"tags":["毕业季","照片","回忆"],"source_ref":"synthetic://materials-v1/mat-001","usage_scope":"demo_only"},
+    {"material_id":"mat-002","title":"合成校园空镜","facts":["校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据"],"tags":["校园","毕业季","回忆"],"source_ref":"synthetic://materials-v1/mat-002","usage_scope":"demo_only"},
+    {"material_id":"mat-003","title":"今昔对照创意","facts":["建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"],"tags":["创意","照片","回忆"],"source_ref":"synthetic://materials-v1/mat-003","usage_scope":"demo_only"}
+  ]
+}
