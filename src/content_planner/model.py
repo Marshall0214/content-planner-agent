@@ -5,8 +5,10 @@ from copy import deepcopy
 from dataclasses import dataclass
 import json
 import os
+from urllib.parse import urlsplit
 
-from .accounting import canonical
+from .accounting import canonical, digest
+from .schema_compat import SchemaReferenceError, ollama_tool_definitions
 from .schemas import tool_definitions
 
 
@@ -123,6 +125,10 @@ INSTRUCTIONS = """你是内容任务规划单Agent。目标是产出可审阅方
 generate_script仅传quote_id；保存前必须post_generation复估。
 成功结果可复用，费用含所有已发生沉没成本；估价不是扣费。不要强制先选贵方案。
 观察预算超限、工具失败或部分成功后，自主选择后续动作。
+检索tags是全部精确匹配，[]才是不作标签过滤；allowed_usage精确匹配，null不限。
+语义词可以放query，不要假定它们就是目录标签。检索空结果有实际过滤/计数/目录标签反馈；
+由你选择核对标签、减少可选过滤、改查询或有依据停止，不能放宽用户明确硬过滤。
+没有实际检索命中时必须补检索或说明缺口，不得用空material_ids估价。
 保存正常确认后程序立即结束，不要另做收尾调用。若决定停止或需补充信息，
 不用工具，返回纯JSON：action为stop或need_input，包含decision_summary、reason_code、
 missing_fields数组、pending_items数组。只提供动作的简短依据，不输出内部思维过程。
@@ -136,34 +142,91 @@ class ModelConfigurationError(ValueError):
 class OpenAIResponsesModel:
     mode = "real"
 
-    def __init__(self, model_name, api_key, call_limit, base_url=None, client=None):
+    def __init__(self, model_name, api_key, call_limit, base_url=None, client=None,
+                 service_type="openai", temperature=None, think=None):
         if not model_name or not api_key or type(call_limit) is not int or call_limit < 1:
-            raise ModelConfigurationError("真实模式需要明确MODEL_NAME、OPENAI_API_KEY和正整数--real-call-limit；不会回退Mock。")
+            raise ModelConfigurationError("真实模式需要明确MODEL_NAME、协议所需凭据和正整数--real-call-limit；不会回退Mock。")
+        original_tools = tool_definitions()
+        try:
+            self.tools = ollama_tool_definitions(original_tools) if service_type == "ollama" else original_tools
+        except (SchemaReferenceError, UnicodeError) as exc:
+            raise ModelConfigurationError(f"Ollama出站工具Schema转换失败：{exc}") from exc
         if client is None:
             from openai import OpenAI
-            client = OpenAI(api_key=api_key, base_url=base_url, max_retries=0)
+            options = {}
+            if service_type == "ollama":
+                import httpx
+                options["http_client"] = httpx.Client(trust_env=False)
+            client = OpenAI(api_key=api_key, base_url=base_url, max_retries=0, **options)
         self.client, self.model_name, self.call_limit = client, model_name, call_limit
+        self.temperature = temperature
+        self.think = think
+        self.configuration = {
+            "service_type": service_type, "protocol": "responses_stateless",
+            "base_url": base_url or "https://api.openai.com/v1",
+            "authentication": "local SDK placeholder; not a cloud key" if service_type == "ollama" else "configured",
+            "inference_parameters": {"temperature": temperature, "max_output_tokens": 4000,
+                                     "parallel_tool_calls": False, "store": False, "think": think},
+            "sdk_max_retries": 0,
+            "outbound_tool_schema": {
+                "strategy": "inline_local_refs" if service_type == "ollama" else "original",
+                "original_digest": digest(original_tools), "outbound_digest": digest(self.tools)},
+        }
         self.calls, self.history = 0, []
+        self._state_message = None
 
     @classmethod
-    def from_env(cls, call_limit):
-        if os.getenv("MODEL_PROVIDER", "openai") != "openai":
-            raise ModelConfigurationError("P0仅实现openai Responses适配器，无其他提供方回退。")
-        return cls(os.getenv("MODEL_NAME"), os.getenv("OPENAI_API_KEY"), call_limit,
-                   os.getenv("OPENAI_BASE_URL") or None)
+    def from_env(cls, call_limit, client=None):
+        provider = os.getenv("MODEL_PROVIDER", "openai")
+        endpoint = os.getenv("OPENAI_BASE_URL") or None
+        if provider not in ("openai", "ollama"):
+            raise ModelConfigurationError("仅支持明确配置的openai或本地ollama Responses；不会回退Mock。")
+        if provider == "ollama":
+            parts = urlsplit(endpoint or "")
+            if (parts.scheme not in ("http", "https") or parts.hostname not in ("localhost", "127.0.0.1", "::1")
+                    or parts.username or parts.password or parts.query or parts.fragment):
+                raise ModelConfigurationError("ollama需要显式本机OPENAI_BASE_URL（含/v1）；不选择远程或云端服务。")
+            if parts.path.rstrip("/") != "/v1":
+                raise ModelConfigurationError("ollama Responses端点必须明确以/v1结尾。")
+        value = os.getenv("MODEL_TEMPERATURE")
+        try:
+            temperature = float(value) if value is not None else None
+            if temperature is not None and not 0 <= temperature <= 2:
+                raise ValueError()
+        except ValueError:
+            raise ModelConfigurationError("MODEL_TEMPERATURE须为0到2的有限数值") from None
+        think_value = os.getenv("MODEL_THINK")
+        if think_value is not None and (provider != "ollama" or think_value not in ("true", "false")):
+            raise ModelConfigurationError("MODEL_THINK仅用于ollama，须为true或false；未设置使用服务默认。")
+        think = None if think_value is None else think_value == "true"
+        return cls(os.getenv("MODEL_NAME"), "ollama-local-unused" if provider == "ollama" else os.getenv("OPENAI_API_KEY"),
+                   call_limit, endpoint, client=client, service_type=provider, temperature=temperature, think=think)
 
     def observe(self, result, call_id):
         self.history.append({"type": "function_call_output", "call_id": call_id, "output": canonical(result)})
+
+    def _set_latest_state(self, context):
+        # Identity is the provenance marker: never classify messages by their text.
+        # Replace only our own prior snapshot; leave provider objects and all tool
+        # observations intact, in their original relative order.
+        if self._state_message is not None:
+            self.history[:] = [item for item in self.history if item is not self._state_message]
+        self._state_message = {"role": "user", "content": canonical(context)}
+        self.history.insert(0, self._state_message)
 
     def choose(self, context, timeout):
         if self.calls >= self.call_limit:
             raise ModelConfigurationError("已耗尽明确提供的真实调用额度")
         self.calls += 1
-        self.history.append({"role": "user", "content": canonical(context)})
+        self._set_latest_state(context)
+        options = {} if self.temperature is None else {"temperature": self.temperature}
+        if self.think is not None:
+            options["extra_body"] = {"think": self.think}
         response = self.client.responses.create(
-            model=self.model_name, instructions=INSTRUCTIONS, tools=tool_definitions(),
+            model=self.model_name, instructions=INSTRUCTIONS, tools=self.tools,
             input=self.history, parallel_tool_calls=False, store=False, timeout=timeout,
             max_output_tokens=4000,
+            **options,
         )
         # Preserve provider-required continuation objects in memory, never export reasoning.
         self.history.extend(response.output)

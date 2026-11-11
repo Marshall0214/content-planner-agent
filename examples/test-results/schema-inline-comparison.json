@@ -1,0 +1,181 @@
+{
+  "recorded_at_utc": "2026-11-10T08:40:24.240257+00:00",
+  "scope": "restricted schema contrast only; no formal business acceptance",
+  "baseline_index": "examples/test-results/qwen_smoke_6c1a2138f50b.json",
+  "comparison_index": "examples/test-results/qwen_smoke_ba6a52fb9947.json",
+  "preflight": "examples/test-results/schema-inline-20261110T083648Z-preflight.json",
+  "source_digest": "12ca690793fca7ba948354ca73c51141be4c78cd2882846dfef1965bfd3d4b4d",
+  "outbound_schema_before_digest": "71e67fbe7543deac679f8ae06c2c10d86fd3ab5d9f0c1b02f89ad1b6ad8eff0c",
+  "outbound_schema_after_digest": "5a1a55e6488208826721abe03b3fddae296f78e0835f771340b505957516509f",
+  "actual_sdk_after_matches_preflight_all_three": true,
+  "fixed_wire_fields_equal": {
+    "model": true,
+    "temperature": true,
+    "store": true,
+    "think": true,
+    "instructions": true,
+    "max_output_tokens": true,
+    "parallel_tool_calls": true
+  },
+  "first_context_changes": [
+    {
+      "path": "/clock_now_utc",
+      "baseline": "2026-11-10T07:50:45.717705+00:00",
+      "comparison": "2026-11-10T08:37:26.571538+00:00"
+    },
+    {
+      "path": "/state/input/deadline_at",
+      "baseline": "2026-11-10T08:20:45.428211Z",
+      "comparison": "2026-11-10T09:07:26.279974Z"
+    },
+    {
+      "path": "/state/input/request_key",
+      "baseline": "qwen_smoke_6c1a2138f50b-smoke",
+      "comparison": "qwen_smoke_ba6a52fb9947-smoke"
+    }
+  ],
+  "limits_unchanged": true,
+  "catalogs_unchanged": true,
+  "model_digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+  "ollama_version": "0.40.9",
+  "model": "qwen3.5:27b",
+  "think": false,
+  "temperature": 0.2,
+  "parameter_types": [
+    {
+      "request_number": 1,
+      "tool": "search_materials",
+      "call_id": "call_s44y3r9r",
+      "parameter_types": {
+        "query": "str",
+        "filters": "object",
+        "limit": "int",
+        "decision_summary": "str"
+      }
+    },
+    {
+      "request_number": 2,
+      "tool": "estimate_plan",
+      "call_id": "call_e3w2jy9w",
+      "parameter_types": {
+        "new_spec": "object",
+        "quote_id": "null",
+        "stage": "str",
+        "script_artifact_id": "null",
+        "decision_summary": "str"
+      }
+    },
+    {
+      "request_number": 3,
+      "tool": "search_materials",
+      "call_id": "call_jcsvi9p0",
+      "parameter_types": {
+        "query": "str",
+        "filters": "object",
+        "limit": "int",
+        "decision_summary": "str"
+      }
+    }
+  ],
+  "results": [
+    {
+      "tool": "search_materials",
+      "outcome": "SUCCESS",
+      "error": null,
+      "charged_units": 1,
+      "match_count": 0
+    },
+    {
+      "tool": "estimate_plan",
+      "outcome": "REJECTED",
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "details": {},
+        "message": "1 validation error for EstimateArgs\nnew_spec.material_ids\n  List should have at least 1 item after validation, not 0 [type=too_short, input_value=[], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/too_short",
+        "retryable": false
+      },
+      "charged_units": 0,
+      "match_count": null
+    },
+    {
+      "tool": "search_materials",
+      "outcome": "SUCCESS",
+      "error": null,
+      "charged_units": 1,
+      "match_count": 0
+    }
+  ],
+  "feedback_links": [
+    {
+      "tool_event_id": "e0003",
+      "tool": "search_materials",
+      "outcome": "SUCCESS",
+      "call_id": "call_s44y3r9r",
+      "next_request_number": 2
+    },
+    {
+      "tool_event_id": "e0003",
+      "tool": "search_materials",
+      "outcome": "SUCCESS",
+      "call_id": "call_s44y3r9r",
+      "next_request_number": 3
+    },
+    {
+      "tool_event_id": "e0006",
+      "tool": "estimate_plan",
+      "outcome": "REJECTED",
+      "call_id": "call_e3w2jy9w",
+      "next_request_number": 3
+    }
+  ],
+  "schema_smoke_conditions": {
+    "nested_object_validated": true,
+    "business_tool_actually_succeeded": true,
+    "successful_observation_sent_next_turn": true
+  },
+  "schema_smoke_passed": true,
+  "new_real_requests": 3,
+  "cumulative_27b_real_requests": 6,
+  "cumulative_project_real_requests": 9,
+  "latencies_ms": [
+    7937.0,
+    3641.0,
+    3016.0
+  ],
+  "usage": {
+    "input_tokens": 11468,
+    "output_tokens": 345,
+    "total_tokens": 11813
+  },
+  "simulated_fee_units": 2,
+  "task_status": "INCOMPLETE",
+  "termination_reason": "REAL_CALL_LIMIT",
+  "save_state": "NOT_ATTEMPTED",
+  "tests": {
+    "schema-inline-targeted-final": {
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "schema-inline-full": {
+      "tests": 105,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "offline_batch_index": "examples/test-results/batch_cfe8407b819c.json",
+  "not_verified": [
+    "successful estimate with valid nonempty materials",
+    "online draft/campaign_tasks validation",
+    "script generation and save",
+    "two formal dynamic business paths",
+    "human content review"
+  ],
+  "conclusion": "Observed improvement consistent with local-ref inlining; not proof of a unique root cause or full Ollama/P0 acceptance.",
+  "formal_acceptance": "not_run",
+  "p0_status": "not_met",
+  "cash_cost": "unknown_not_measured_local_inference",
+  "fixed_wire_fields_and_timeouts_equal_all_three": true
+}

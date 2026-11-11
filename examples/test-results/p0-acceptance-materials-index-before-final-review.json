@@ -1,0 +1,273 @@
+{
+  "kind": "acceptance_point_to_actual_materials_index",
+  "recorded_at_utc": "2026-11-10T13:57:33.312034+00:00",
+  "specialties_index": "examples/test-results/qwen_specialties_9333a7268207.json",
+  "normal_reference": {
+    "index": "D:\\硕\\work\\JobHuntBot\\content-planner-agent\\examples\\test-results\\qwen_normal_5f38146a433d.json",
+    "sha256": "3d01274bdebfe8f84798a9e58f1c353379230fef14cd5a2e91735b72d92572ec",
+    "normal_evidence": "examples/runs/real/run_b307abb73de84313",
+    "replay_evidence": "examples/runs/real/run_a76068d0afbb4ff9",
+    "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+    "plan_id": "plan_a9e605003b944a3d",
+    "new_inference_for_reference": 0
+  },
+  "rows": [
+    {
+      "acceptance_point": "normal",
+      "source": "reused_without_rerunning",
+      "input": "examples/runs/real/run_b307abb73de84313/input.json",
+      "output": "examples/runs/real/run_b307abb73de84313/output.json",
+      "trace": "examples/runs/real/run_b307abb73de84313/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_b307abb73de84313/assertions.json",
+      "additional_checks": "examples/test-results/normal-latest-evaluation.json",
+      "ai_technical_conclusion": "Confirmed nonempty plan/receipt; same-input replay has zero incremental inference/execution/units.",
+      "user_human_conclusion": "pending",
+      "content_review": "docs/06-content-review.md"
+    },
+    {
+      "acceptance_point": "duplicate",
+      "source": "reused_without_rerunning",
+      "input": "examples/runs/real/run_a76068d0afbb4ff9/input.json",
+      "output": "examples/runs/real/run_a76068d0afbb4ff9/output.json",
+      "trace": "examples/runs/real/run_a76068d0afbb4ff9/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_a76068d0afbb4ff9/assertions.json",
+      "additional_checks": "examples/test-results/normal-latest-evaluation.json",
+      "ai_technical_conclusion": "Confirmed nonempty plan/receipt; same-input replay has zero incremental inference/execution/units.",
+      "user_human_conclusion": "pending",
+      "content_review": "docs/06-content-review.md"
+    },
+    {
+      "acceptance_point": "missing_budget_units",
+      "source": "new_actual_real_mode_entry",
+      "input": "examples/runs/real/run_ab6832e25f7a4a89/input.json",
+      "output": "examples/runs/real/run_ab6832e25f7a4a89/output.json",
+      "trace": "examples/runs/real/run_ab6832e25f7a4a89/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_ab6832e25f7a4a89/assertions.json",
+      "additional_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true,
+        "zero_inference_and_model_turns": true,
+        "zero_business_calls": true,
+        "zero_units": true,
+        "needs_input": true
+      },
+      "feedback_pairs": [],
+      "ai_technical_conclusion": "NEEDS_INPUT; real-mode entry; model not initialized; zero inference, tools and fees.",
+      "user_human_conclusion": "pending"
+    },
+    {
+      "acceptance_point": "missing_deadline_at",
+      "source": "new_actual_real_mode_entry",
+      "input": "examples/runs/real/run_facdd4af0d134366/input.json",
+      "output": "examples/runs/real/run_facdd4af0d134366/output.json",
+      "trace": "examples/runs/real/run_facdd4af0d134366/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_facdd4af0d134366/assertions.json",
+      "additional_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true,
+        "zero_inference_and_model_turns": true,
+        "zero_business_calls": true,
+        "zero_units": true,
+        "needs_input": true
+      },
+      "feedback_pairs": [],
+      "ai_technical_conclusion": "NEEDS_INPUT; real-mode entry; model not initialized; zero inference, tools and fees.",
+      "user_human_conclusion": "pending"
+    },
+    {
+      "acceptance_point": "budget",
+      "source": "new_actual_real_mode_entry",
+      "input": "examples/runs/real/run_3458d3f4953f486e/input.json",
+      "output": "examples/runs/real/run_3458d3f4953f486e/output.json",
+      "trace": "examples/runs/real/run_3458d3f4953f486e/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_3458d3f4953f486e/assertions.json",
+      "additional_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true
+      },
+      "feedback_pairs": [
+        {
+          "event_id": "e0003",
+          "tool": "search_materials",
+          "outcome": "SUCCESS",
+          "error_code": null,
+          "call_id": "call_d79wprdt",
+          "originating_request": 1,
+          "next_request": 2,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0006",
+          "tool": "estimate_plan",
+          "outcome": "SUCCESS",
+          "error_code": null,
+          "call_id": "call_09s4kili",
+          "originating_request": 2,
+          "next_request": 3,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0009",
+          "tool": "generate_script",
+          "outcome": "REJECTED",
+          "error_code": "DEPENDENCY_UNSATISFIED",
+          "call_id": "call_5t8t4oml",
+          "originating_request": 3,
+          "next_request": 4,
+          "exact_observation_forwarded": true
+        }
+      ],
+      "ai_technical_conclusion": "Observed OVER_BUDGET, exact observation forwarded, then final grounded stop. Immediate next action incorrectly attempted generation and was rejected; not a successful alternative plan or an immediate correct adjustment. Stop suggestions to reduce materials/use a simpler mode are unsupported by the fixed fee table.",
+      "user_human_conclusion": "pending"
+    },
+    {
+      "acceptance_point": "save_failure",
+      "source": "new_actual_real_mode_entry",
+      "input": "examples/runs/real/run_933e837c1c2d4b57/input.json",
+      "output": "examples/runs/real/run_933e837c1c2d4b57/output.json",
+      "trace": "examples/runs/real/run_933e837c1c2d4b57/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_933e837c1c2d4b57/assertions.json",
+      "additional_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true
+      },
+      "feedback_pairs": [
+        {
+          "event_id": "e0003",
+          "tool": "search_materials",
+          "outcome": "REJECTED",
+          "error_code": "INVALID_ARGUMENT",
+          "call_id": "call_d30eb8j5",
+          "originating_request": 5,
+          "next_request": 6,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0006",
+          "tool": "search_materials",
+          "outcome": "SUCCESS",
+          "error_code": null,
+          "call_id": "call_9z2fluu5",
+          "originating_request": 6,
+          "next_request": 7,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0009",
+          "tool": "estimate_plan",
+          "outcome": "SUCCESS",
+          "error_code": null,
+          "call_id": "call_06g0cp2x",
+          "originating_request": 7,
+          "next_request": 8,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0012",
+          "tool": "generate_script",
+          "outcome": "SUCCESS",
+          "error_code": null,
+          "call_id": "call_cozegmlo",
+          "originating_request": 8,
+          "next_request": 9,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0015",
+          "tool": "estimate_plan",
+          "outcome": "SUCCESS",
+          "error_code": null,
+          "call_id": "call_z0j2vxqf",
+          "originating_request": 9,
+          "next_request": 10,
+          "exact_observation_forwarded": true
+        },
+        {
+          "event_id": "e0018",
+          "tool": "save_plan",
+          "outcome": "REJECTED",
+          "error_code": "INVALID_ARGUMENT",
+          "call_id": "call_8scuj7c4",
+          "originating_request": 10,
+          "next_request": 11,
+          "exact_observation_forwarded": true
+        }
+      ],
+      "ai_technical_conclusion": "NOT QUALIFIED: script retained, but draft argument rejected before execution; SAVE_TEMPORARY never triggered, no save retry after actual business failure. Model voluntarily stopped; this is not the requested injected-failure evidence.",
+      "user_human_conclusion": "pending"
+    },
+    {
+      "acceptance_point": "generation_failure",
+      "source": "new_independent_actual_real_request",
+      "input": "examples/runs/real/run_fc04a04a8ca54959/input.json",
+      "output": "examples/runs/real/run_fc04a04a8ca54959/output.json",
+      "trace": "examples/runs/real/run_fc04a04a8ca54959/trace.jsonl",
+      "automatic_assertions": "examples/runs/real/run_fc04a04a8ca54959/assertions.json",
+      "additional_checks": "examples/test-results/generation-failure-evaluation.json",
+      "mechanical_checks": {
+        "actual_retrieval_success_and_cost": true,
+        "first_actual_generation_failed": true,
+        "original_call_id_error_in_next_real_request": true,
+        "model_selected_same_quote_retry": true,
+        "search_artifact_preserved": true,
+        "no_duplicate_search_charge": true,
+        "failure_attempt_not_rewritten": true,
+        "same_operation_two_actual_generation_attempts": true,
+        "generation_charged_once_on_success": true,
+        "failed_simulated_duration_preserved": true,
+        "latest_estimate_feasible_and_current": true,
+        "truthful_bounded_terminal": true
+      },
+      "ai_technical_conclusion": "Observed real generation failure -> exact feedback -> reasonable retry success, prior search/charges/failure time preserved. NOT QUALIFIED because model-visible request key gave a pre-fault category hint; corrected entry not live-tested.",
+      "user_human_conclusion": "pending",
+      "qualified": false
+    }
+  ],
+  "material_count": {
+    "reused_normal_and_replay": 2,
+    "new_inputs": 5,
+    "required_categories_with_actual_materials": true,
+    "all_required_specialty_feedback_covered": false,
+    "generation_failure_mechanical_feedback_observed": true,
+    "generation_failure_blinding_requirement_satisfied": false
+  },
+  "unmet": [
+    "Blind-compliant second dynamic tool-failure path: actual retry recorded but this attempt leaked the fault category in request_key",
+    "user content review/decision confirmation"
+  ],
+  "all_user_human_conclusions": "pending_not_signed_by_AI",
+  "overall_p0": "not_achieved",
+  "previous_version": "examples\\test-results\\p0-acceptance-materials-index-before-generation.json",
+  "generation_failure_index": "examples/test-results/qwen_generate_failure_40024f7694f5.json",
+  "generation_failure_evaluation": "examples/test-results/generation-failure-evaluation.json",
+  "save_failure_original_status": "draft校验拒绝后停止，SAVE_TEMPORARY未触发，该场景未通过。",
+  "save_failure_recovery": "not_verified_not_relabelled_by_generation_retry"
+}

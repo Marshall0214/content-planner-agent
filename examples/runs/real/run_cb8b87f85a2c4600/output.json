@@ -1,0 +1,235 @@
+{
+  "request_id": "req_b3ddd9fe34534617",
+  "request_key": "qwen_smoke_7a495877ab1f-smoke",
+  "mode": "real",
+  "real_model_decision_evidence": false,
+  "task_status": "INCOMPLETE",
+  "termination_reason": "REAL_CALL_LIMIT",
+  "preparation_status": "INCOMPLETE",
+  "campaign_execution_status": "NOT_STARTED",
+  "save_state": "NOT_ATTEMPTED",
+  "receipt": null,
+  "saved_plan": null,
+  "partial_scripts": [],
+  "material_results": [],
+  "execution_steps": [
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "search_materials",
+      "result_ref": null,
+      "status": "FAILED",
+      "step_id": "step_2b33713724d72c20"
+    },
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "estimate_plan",
+      "result_ref": null,
+      "status": "FAILED",
+      "step_id": "step_5f27b12b4e32dd17"
+    }
+  ],
+  "attempts": [
+    {
+      "arguments": {
+        "filters": {
+          "allowed_usage": "any",
+          "tags": [
+            "毕业季",
+            "旧照片",
+            "回忆短片"
+          ]
+        },
+        "limit": 5,
+        "query": "毕业季 旧照片 回忆短片"
+      },
+      "attempt_id": "attempt_f49ccab8e95c4159",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:34:08.469602+00:00",
+      "execution_started": false,
+      "observation": {
+        "attempt_id": "attempt_f49ccab8e95c4159",
+        "charged_units": 0,
+        "data": null,
+        "error": {
+          "code": "INVALID_ARGUMENT",
+          "details": {},
+          "message": "1 validation error for SearchArgs\ndecision_summary\n  Field required [type=missing, input_value={'query': '毕业季 旧...短片']}, 'limit': 5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+          "retryable": false
+        },
+        "ledger_revision": 0,
+        "observed_at": "2026-11-10T07:34:08.469602+00:00",
+        "operation_key": "2b33713724d72c20306da03eb5e5a593e8c28bc07d81acee40c0cf1dd507f47b",
+        "outcome": "REJECTED",
+        "request_id": "req_b3ddd9fe34534617",
+        "result_ref": null,
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_2b33713724d72c20",
+        "tool": "search_materials"
+      },
+      "operation_key": "2b33713724d72c20306da03eb5e5a593e8c28bc07d81acee40c0cf1dd507f47b",
+      "provider_call_id": "call_v8zda8n5",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T07:34:08.469602+00:00",
+      "status": "REJECTED",
+      "step_id": "step_2b33713724d72c20",
+      "tool": "search_materials"
+    },
+    {
+      "arguments": {
+        "decision_summary": null,
+        "new_spec": {
+          "creative_brief": "制作一部关于毕业季的回忆短片，使用旧照片作为主要素材。",
+          "material_ids": [
+            "mat_12345",
+            "mat_67890",
+            "mat_54321"
+          ],
+          "mode": "premium"
+        },
+        "script_artifact_id": null,
+        "stage": "pre_generation"
+      },
+      "attempt_id": "attempt_f4d02f4978174b46",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:34:09.283605+00:00",
+      "execution_started": false,
+      "observation": {
+        "attempt_id": "attempt_f4d02f4978174b46",
+        "charged_units": 0,
+        "data": null,
+        "error": {
+          "code": "INVALID_ARGUMENT",
+          "details": {},
+          "message": "2 validation errors for EstimateArgs\nquote_id\n  Field required [type=missing, input_value={'new_spec': {'creative_b...decision_summary': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\ndecision_summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_type",
+          "retryable": false
+        },
+        "ledger_revision": 0,
+        "observed_at": "2026-11-10T07:34:09.283605+00:00",
+        "operation_key": "5f27b12b4e32dd17f2534d592d797ac3766a662856609a512c04e75e8e5eb12f",
+        "outcome": "REJECTED",
+        "request_id": "req_b3ddd9fe34534617",
+        "result_ref": null,
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_5f27b12b4e32dd17",
+        "tool": "estimate_plan"
+      },
+      "operation_key": "5f27b12b4e32dd17f2534d592d797ac3766a662856609a512c04e75e8e5eb12f",
+      "provider_call_id": "call_9pcvj67n",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T07:34:09.283605+00:00",
+      "status": "REJECTED",
+      "step_id": "step_5f27b12b4e32dd17",
+      "tool": "estimate_plan"
+    }
+  ],
+  "task_plan": [
+    {
+      "step": "retrieve",
+      "depends_on": [],
+      "status": "FAILED"
+    },
+    {
+      "step": "estimate_pre",
+      "depends_on": [
+        "retrieve"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "step": "generate",
+      "depends_on": [
+        "estimate_pre"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "step": "estimate_post",
+      "depends_on": [
+        "generate"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "step": "save",
+      "depends_on": [
+        "estimate_post"
+      ],
+      "status": "PENDING"
+    }
+  ],
+  "tool_results": [
+    {
+      "attempt_id": "attempt_f49ccab8e95c4159",
+      "charged_units": 0,
+      "data": null,
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "details": {},
+        "message": "1 validation error for SearchArgs\ndecision_summary\n  Field required [type=missing, input_value={'query': '毕业季 旧...短片']}, 'limit': 5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+        "retryable": false
+      },
+      "ledger_revision": 0,
+      "observed_at": "2026-11-10T07:34:08.469602+00:00",
+      "operation_key": "2b33713724d72c20306da03eb5e5a593e8c28bc07d81acee40c0cf1dd507f47b",
+      "outcome": "REJECTED",
+      "request_id": "req_b3ddd9fe34534617",
+      "result_ref": null,
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_2b33713724d72c20",
+      "tool": "search_materials"
+    },
+    {
+      "attempt_id": "attempt_f4d02f4978174b46",
+      "charged_units": 0,
+      "data": null,
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "details": {},
+        "message": "2 validation errors for EstimateArgs\nquote_id\n  Field required [type=missing, input_value={'new_spec': {'creative_b...decision_summary': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\ndecision_summary\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_type",
+        "retryable": false
+      },
+      "ledger_revision": 0,
+      "observed_at": "2026-11-10T07:34:09.283605+00:00",
+      "operation_key": "5f27b12b4e32dd17f2534d592d797ac3766a662856609a512c04e75e8e5eb12f",
+      "outcome": "REJECTED",
+      "request_id": "req_b3ddd9fe34534617",
+      "result_ref": null,
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_5f27b12b4e32dd17",
+      "tool": "estimate_plan"
+    }
+  ],
+  "latest_projection": null,
+  "current_cost_projection": null,
+  "actual_costs": {
+    "currency": "SIM_UNIT",
+    "entries": [],
+    "total_actual_units": 0,
+    "last_known_confirmed_units": 0,
+    "current_amount_confirmed": true,
+    "this_invocation_units": 0
+  },
+  "cumulative_sim_elapsed_s": 0,
+  "time_basis": "wall_plus_simulated_tools",
+  "model_turns": 3,
+  "tool_requests": 2,
+  "this_invocation_model_turns": 3,
+  "this_invocation_tool_requests": 2,
+  "replayed": false,
+  "pending_items": [],
+  "missing_fields": [],
+  "input_conflict": false,
+  "existing_task_status": null,
+  "termination_persisted": true,
+  "pending_liability": null,
+  "pending_liabilities": [],
+  "unconfirmed_operations": [],
+  "read_projection": null,
+  "notice": "真实模式记录需人工检查反馈与动作关联；当前不自动判定合格动态路径。"
+}

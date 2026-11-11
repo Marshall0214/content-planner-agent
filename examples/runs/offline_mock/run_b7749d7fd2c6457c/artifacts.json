@@ -1,0 +1,61 @@
+{
+  "script_e5051fc58f194bc5": {
+    "artifact_id": "script_e5051fc58f194bc5",
+    "effective_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+    "kind": "script",
+    "material_refs": [
+      "mat-001",
+      "mat-003"
+    ],
+    "mode": "basic",
+    "operation_key": "6578e0a8631548ff6ab1a907ef3b7686d5b3b5a80f5bbcf38a934a0925c47300",
+    "script": {
+      "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：用旧照片的细节串联毕业回忆。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+      "title": "毕业季：用旧照片做一支回忆短片"
+    },
+    "step_id": "step_6578e0a8631548ff",
+    "warnings": [
+      "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+    ]
+  },
+  "search_780c0c97579740e1": {
+    "artifact_id": "search_780c0c97579740e1",
+    "catalog_version": "materials-v1",
+    "kind": "search",
+    "matches": [
+      {
+        "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+        "facts": [
+          "虚构演示工具影记可导入本地照片并添加文字"
+        ],
+        "material_id": "mat-001",
+        "source_ref": "synthetic://materials-v1/mat-001",
+        "tags": [
+          "毕业季",
+          "照片",
+          "回忆"
+        ],
+        "title": "影记照片演示",
+        "usage_scope": "demo_only"
+      },
+      {
+        "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+        "facts": [
+          "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+        ],
+        "material_id": "mat-003",
+        "source_ref": "synthetic://materials-v1/mat-003",
+        "tags": [
+          "创意",
+          "照片",
+          "回忆"
+        ],
+        "title": "今昔对照创意",
+        "usage_scope": "demo_only"
+      }
+    ],
+    "query": "照片",
+    "result_id": "search_780c0c97579740e1",
+    "step_id": "step_351364e6eceb2d60"
+  }
+}

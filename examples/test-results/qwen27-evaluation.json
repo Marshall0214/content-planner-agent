@@ -1,0 +1,92 @@
+{
+  "recorded_at_utc": "2026-11-10T07:54:20.293257+00:00",
+  "mode": "real",
+  "model": "qwen3.5:27b",
+  "smoke_index": "examples/test-results/qwen_smoke_6c1a2138f50b.json",
+  "service_evidence": "examples/test-results/qwen27-service-20261110T074748Z.json",
+  "source_digest": "66193f9187da7a5e6007a412abb40d96848ebe71514f26815e612fd909ad18c8",
+  "offline_batch_index": "examples/test-results/batch_2f102050cb72.json",
+  "tests": {
+    "qwen27-protocol": {
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "qwen27-full": {
+      "tests": 91,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "real_inference_requests_this_attempt": 3,
+  "total_project_real_inference_requests": 6,
+  "smoke_passed": false,
+  "configuration": {
+    "protocol": "responses_stateless_native_tools",
+    "temperature": 0.2,
+    "think": false,
+    "max_output_tokens": 4000,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180,
+    "sdk_max_retries": 0
+  },
+  "observed_checks": {
+    "three_native_calls": true,
+    "decision_summary_present_all": true,
+    "filters_string_all": true,
+    "think_false_sent": true
+  },
+  "latencies_ms": [
+    13688.0,
+    3000.0,
+    3188.0
+  ],
+  "usage": {
+    "input_tokens": 12133,
+    "output_tokens": 318,
+    "total_tokens": 12451
+  },
+  "executed_business_tool_attempts": 0,
+  "charged_simulated_units": 0,
+  "save_state": "NOT_ATTEMPTED",
+  "feedback_links": [
+    {
+      "tool_event_id": "e0003",
+      "tool": "search_materials",
+      "outcome": "REJECTED",
+      "call_id": "call_2y4fubva",
+      "next_request_number": 2
+    },
+    {
+      "tool_event_id": "e0003",
+      "tool": "search_materials",
+      "outcome": "REJECTED",
+      "call_id": "call_2y4fubva",
+      "next_request_number": 3
+    },
+    {
+      "tool_event_id": "e0006",
+      "tool": "search_materials",
+      "outcome": "REJECTED",
+      "call_id": "call_shlxyn45",
+      "next_request_number": 3
+    }
+  ],
+  "reason": "REAL_CALL_LIMIT",
+  "acceptance": "not_run_smoke_failed",
+  "human_content_review": "not_run_no_campaign_or_script",
+  "p0_status": "not_met",
+  "diagnosis": {
+    "observed": "filters is a JSON string in all three parsed native calls, not an object; schema sends $ref without inline type.",
+    "source_supported_risk": "Ollama v0.40.9 Qwen35 uses Qwen3CoderParser; ToolProperty has no $ref field; parser falls back to string for missing type.",
+    "inference": "Schema $ref handling is a strong compatibility suspect; not proven against raw pre-parser generation and no repaired online run.",
+    "next_minimal_validation": "Inline local schema refs without weakening Pydantic validation; offline protocol tests then a new bounded smoke. Not implemented or run here.",
+    "official_sources": [
+      "https://github.com/ollama/ollama/blob/v0.40.9/model/parsers/qwen35.go",
+      "https://github.com/ollama/ollama/blob/v0.40.9/model/parsers/qwen3coder.go",
+      "https://github.com/ollama/ollama/blob/v0.40.9/api/types.go"
+    ]
+  }
+}

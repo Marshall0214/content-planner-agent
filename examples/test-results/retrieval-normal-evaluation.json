@@ -1,0 +1,134 @@
+{
+  "recorded_at_utc": "2026-11-10T09:11:26.626005+00:00",
+  "scope": "one bounded normal chain only; no formal dynamic business acceptance",
+  "source_digest": "e768965656ef8b1ec2ebfb5ab2bea6f6608509f293b2fbff6ab5b8aba290a39b",
+  "service_preflight": "examples/test-results/retrieval-normal-preflight.json",
+  "deterministic_search_audit": "examples/test-results/retrieval-filter-audit.json",
+  "normal_index": "examples/test-results/qwen_normal_0f1745fd4b32.json",
+  "offline_batch_index": "examples/test-results/batch_c03aafe8d9f8.json",
+  "tests": {
+    "retrieval-contract-targeted": {
+      "tests": 46,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "retrieval-contract-full": {
+      "tests": 119,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "contract": {
+    "query": "whitespace token OR substring, casefold",
+    "tags": "all exact (AND); [] unrestricted",
+    "allowed_usage": "exact; only null unrestricted",
+    "available_tags_source": "actual Catalog.materials",
+    "backend_auto_relaxation": false,
+    "hard_filters": "never relax; unsupported explicit requirements retain text and NEEDS_INPUT"
+  },
+  "normal_passed": false,
+  "reached": [
+    "retrieval_3_actual_materials",
+    "valid_pre_generation_estimate",
+    "script_generation",
+    "latest_post_generation_estimate"
+  ],
+  "first_rejection": "limit=10 exceeds existing maximum 5; no execution and no charge; model corrected to 5",
+  "new_real_requests": 6,
+  "request_cap": 10,
+  "unused_allowance": 4,
+  "cumulative_project_real_requests": 15,
+  "known_usage": {
+    "input_tokens": 55168,
+    "output_tokens": 665,
+    "total_tokens": 55833
+  },
+  "unknown_usage_requests": [
+    6
+  ],
+  "total_usage": null,
+  "request_latencies_ms": [
+    7922.0,
+    2844.0,
+    6703.0,
+    4578.0,
+    6688.0,
+    20000.0
+  ],
+  "http_request_duration_sum_ms": 48735.0,
+  "final_request_error": {
+    "type": "ReadTimeout",
+    "detail": "timed out"
+  },
+  "task_status": "INCOMPLETE",
+  "termination_reason": "MODEL_UNAVAILABLE",
+  "save_state": "NOT_ATTEMPTED",
+  "online_draft": "not_received_not_validated",
+  "online_save": "not_attempted",
+  "completed_request_replay": "not_run_no_confirmed_completion",
+  "actual_simulated_units": 7,
+  "cost_breakdown": [
+    {
+      "tool": "search_materials",
+      "outcome": "REJECTED",
+      "charged_units": 0
+    },
+    {
+      "tool": "search_materials",
+      "outcome": "SUCCESS",
+      "charged_units": 1
+    },
+    {
+      "tool": "estimate_plan",
+      "outcome": "SUCCESS",
+      "charged_units": 0
+    },
+    {
+      "tool": "generate_script",
+      "outcome": "SUCCESS",
+      "charged_units": 6
+    },
+    {
+      "tool": "estimate_plan",
+      "outcome": "SUCCESS",
+      "charged_units": 0
+    }
+  ],
+  "last_quote": {
+    "stage": "post_generation",
+    "incurred_units": 7,
+    "remaining_units": 1,
+    "projected_total_units": 8,
+    "feasibility": "FEASIBLE"
+  },
+  "partial_script_count": 1,
+  "human_content_review": "not_run",
+  "p0_status": "not_met",
+  "formal_acceptance": "not_run",
+  "diagnosis": "Actual final read timeout at 20s. Previous response reported input_tokens=25330; failed request usage unknown. Context growth vs draft generation latency not isolated.",
+  "cash_cost": "unknown_local_inference_not_measured",
+  "notes": "No extra retry/new normal request/resume, no automatic 30-call batch, no remote push.",
+  "server_log_diagnostics": "examples/test-results/retrieval-normal-server-diagnostics.json",
+  "diagnosis_limits": "Startup context 32768 observed in logs; boot waiting status is not final-request error evidence; no proof of truncation or unique timeout cause.",
+  "readonly_storage_check": {
+    "ledger": [
+      {
+        "tool": "search_materials",
+        "amount_units": 1
+      },
+      {
+        "tool": "generate_script",
+        "amount_units": 6
+      }
+    ],
+    "total_units": 7,
+    "unconfirmed_operations": 0,
+    "save_operations": 0,
+    "persisted_task_status": "INCOMPLETE",
+    "persisted_save_state": "NOT_ATTEMPTED",
+    "unknown": false,
+    "audit_initial_error": "Auxiliary readonly query used nonexistent charged_units column; inspected schema and corrected to amount_units. No database writes."
+  }
+}

@@ -11,6 +11,81 @@ from .accounting import digest
 from .store import new_id
 
 
+def _pending_liability(snapshot, operation):
+    """Use frozen persisted facts only, never a live/default price or a receipt."""
+    key, tool = operation["operation_key"], operation["tool"]
+    liability = {"operation_key": key, "tool": tool, "max_charge_units": None,
+                 "max_sim_seconds": None, "source": "unavailable"}
+    previous = snapshot.get("pending_liability") or {}
+    attempt = next((a for a in reversed(snapshot["attempts"])
+                    if a["operation_key"] == key), {})
+    admitted = attempt.get("admitted_liability") or {}
+    for source, value in (("previous_observation", previous), ("admitted_attempt", admitted)):
+        if value.get("operation_key") == key:
+            for field in ("max_charge_units", "max_sim_seconds"):
+                if type(value.get(field)) is int and value[field] >= 0:
+                    liability[field] = value[field]
+            if any(liability[f] is not None for f in ("max_charge_units", "max_sim_seconds")):
+                liability["source"] = source
+                return liability
+    # Compatibility with already-created STARTED records lacking admission data.
+    args = attempt.get("arguments")
+    quote_id = args.get("quote_id") if isinstance(args, dict) else None
+    quote = snapshot["estimates"].get(quote_id, {})
+    items = [item for item in quote.get("remaining_items", []) if item["tool"] == tool]
+    if len(items) == 1:
+        for field, quoted in (("max_charge_units", "fee_units"), ("max_sim_seconds", "duration_s")):
+            if type(items[0].get(quoted)) is int and items[0][quoted] >= 0:
+                liability[field] = items[0][quoted]
+        liability["source"] = "persisted_quote"
+    return liability
+
+
+def project_read_snapshot(snapshot, unconfirmed_operations, interrupted=True):
+    """Pure conservative view: no model, tool, writes, receipt reconciliation or resume."""
+    s = deepcopy(snapshot)
+    operations = deepcopy(unconfirmed_operations)
+    if operations or s.get("unknown") or s["save_state"] == "UNKNOWN":
+        save_pending = s["save_state"] == "UNKNOWN" or any(op["tool"] == "save_plan" for op in operations)
+        terminal_already_stored = (
+            s["status"] == "INCOMPLETE" and s["termination_reason"] == "RESULT_UNKNOWN"
+            and s.get("unknown", False) and (not save_pending or s["save_state"] == "UNKNOWN"))
+        liabilities = [_pending_liability(s, op) for op in operations]
+        if not operations:
+            liabilities = deepcopy(s.get("pending_liabilities") or (
+                [s["pending_liability"]] if s.get("pending_liability") else []))
+        s["read_projection"] = {"basis": "unconfirmed_operations", "persisted": False,
+                                "persisted_task_status": snapshot["status"],
+                                "persisted_save_state": snapshot["save_state"]}
+        s.update(status="INCOMPLETE", termination_reason="RESULT_UNKNOWN", unknown=True,
+                 unconfirmed_operations=operations, pending_liabilities=liabilities,
+                 termination_persisted=bool(terminal_already_stored and s.get("termination_persisted", True)))
+        s["pending_liability"] = liabilities[0] if liabilities else None
+        if save_pending:
+            s["save_state"] = "UNKNOWN"
+        keys = {op["operation_key"] for op in operations}
+        for attempt in s["attempts"]:
+            if attempt["operation_key"] in keys and attempt["status"] in ("STARTED", "UNKNOWN"):
+                attempt["status"] = "UNKNOWN"
+                step = s["steps"].get(attempt["step_id"])
+                if step and step["status"] != "SUCCEEDED":
+                    step["status"] = "UNKNOWN"
+    elif interrupted and s["status"] in ("CREATED", "RUNNING"):
+        s.update(status="INCOMPLETE", termination_reason="IN_PROGRESS_OR_INTERRUPTED",
+                 termination_persisted=False)
+        s["read_projection"] = {"basis": "unfinished_request", "persisted": False,
+                                "persisted_task_status": snapshot["status"],
+                                "persisted_save_state": snapshot["save_state"]}
+    return s
+
+
+def read_report_snapshot(store, request_id):
+    record = store.read_record(request_id)
+    if record is None:
+        raise ValueError("request not found")
+    return project_read_snapshot(record["snapshot"], record["unconfirmed_operations"])
+
+
 def preparation_plan(snapshot):
     """Required work, including unexecuted milestones, separate from actual attempts."""
     quotes = sorted(snapshot["estimates"].values(), key=lambda q: q["sequence"])
@@ -37,7 +112,8 @@ def preparation_plan(snapshot):
 
 def build_report(snapshot, replayed=False):
     s = deepcopy(snapshot)
-    unknown = s.get("unknown", False)
+    unknown = bool(s.get("unknown", False) or s["save_state"] == "UNKNOWN"
+                   or s.get("unconfirmed_operations"))
     latest = max(s["estimates"].values(), key=lambda q: q["sequence"]) if s["estimates"] else None
     current_projection = None
     if s["status"] == "COMPLETED" and not unknown:
@@ -69,10 +145,14 @@ def build_report(snapshot, replayed=False):
         "time_basis": "wall_plus_simulated_tools",
         "model_turns": s["model_turns"], "tool_requests": s["tool_requests"],
         "this_invocation_model_turns": 0 if replayed else s["model_turns"],
+        "this_invocation_tool_requests": 0 if replayed else s["tool_requests"],
         "replayed": replayed, "pending_items": s["pending_items"], "missing_fields": s["missing_fields"],
         "input_conflict": s.get("input_conflict", False), "existing_task_status": s.get("existing_task_status"),
         "termination_persisted": s.get("termination_persisted", True),
         "pending_liability": s.get("pending_liability"),
+        "pending_liabilities": s.get("pending_liabilities", [s["pending_liability"]] if s.get("pending_liability") else []),
+        "unconfirmed_operations": s.get("unconfirmed_operations", []),
+        "read_projection": s.get("read_projection"),
         "notice": "offline_mock为脚本化流程验证，不是真实模型决策证据。" if s["mode"] == "offline_mock"
                   else "真实模式记录需人工检查反馈与动作关联；当前不自动判定合格动态路径。",
     }
@@ -119,8 +199,15 @@ def render_markdown(report):
         lines.append(f"保存回执：{report['receipt']['plan_id']}；有效完成时间：{report['receipt']['effective_completed_at']}。")
     elif report["save_state"] == "UNKNOWN":
         lines.append("保存结果未确认：P0不自动查证，不假定免费、失败或未提交，不盲目重跑。")
+    for liability in report["pending_liabilities"]:
+        fee = liability["max_charge_units"] if liability["max_charge_units"] is not None else "未知"
+        seconds = liability["max_sim_seconds"] if liability["max_sim_seconds"] is not None else "未知"
+        lines.append(f"待确认责任：{liability['tool']}；最高可能费用{fee}；模拟耗时上界{seconds}秒；不是已收费结论。")
     if not report["termination_persisted"]:
-        lines.append("本次终止观察未能安全持久化；未用旧快照覆盖可能已提交的事实。")
+        if report["read_projection"]:
+            lines.append("本次终态是只读内存投影，未回写数据库；未用旧快照覆盖可能已提交的事实。")
+        else:
+            lines.append("本次终止观察未能安全持久化；未用旧快照覆盖可能已提交的事实。")
     return "\n".join(lines) + "\n"
 
 
@@ -133,6 +220,10 @@ def assertions_for(report):
             report["receipt"] and report["saved_plan"] and report["save_state"] == "CONFIRMED"),
         "offline_mode_visible": report["mode"] != "offline_mock" or "offline_mock" in report["notice"],
         "activity_not_executed": report["campaign_execution_status"] == "NOT_STARTED",
+        "unknown_amount_stays_unknown": not (
+            report["save_state"] == "UNKNOWN" or report["unconfirmed_operations"]) or (
+                report["actual_costs"]["total_actual_units"] is None
+                and not report["actual_costs"]["current_amount_confirmed"]),
     }
     return {"scope": "automatic invariants only; not a dynamic-decision or marketing-quality verdict",
             "checks": {k: {"status": "passed" if v else "failed"} for k, v in checks.items()},
@@ -153,10 +244,12 @@ def write_evidence(snapshot, report, out_root, case_id=None, settings=None, subm
         "run_id": run_id, "case_id": case_id, "request_id": report["request_id"],
         "request_key": report["request_key"], "mode": report["mode"], "replayed": report["replayed"],
         "model_name": snapshot.get("model_name"), "fixture": snapshot["fixture"],
+        "model_configuration": snapshot.get("model_configuration"),
         "catalog_digests": snapshot["catalog_digests"], "python": platform.python_version(),
         "dependencies": deps, "recorded_at_utc": iso(datetime.now(timezone.utc)),
         "limits": settings or snapshot.get("limits"),
         "online_validation": "not_run" if report["mode"] == "offline_mock" or not report["model_turns"] else "requires_review",
+        "read_projection": report["read_projection"],
     }
     project = Path(__file__).resolve().parents[2]
     paths = [*sorted((project / "src" / "content_planner").glob("*.py")),

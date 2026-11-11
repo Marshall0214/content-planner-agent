@@ -1,0 +1,39 @@
+{
+  "kind": "actual_local_schema_preflight_not_inference",
+  "recorded_at_utc": "2026-11-10T08:36:48.773243+00:00",
+  "baseline_index": "examples/test-results/qwen_smoke_6c1a2138f50b.json",
+  "service_version": "0.40.9",
+  "model_id": "qwen3.5:27b",
+  "model_digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+  "thinking_metadata": {
+    "values": [
+      false,
+      true
+    ],
+    "default": true
+  },
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "before_file": "examples/test-results/schema-inline-20261110T083648Z-before.json",
+  "after_file": "examples/test-results/schema-inline-20261110T083648Z-after.json",
+  "diff_file": "examples/test-results/schema-inline-20261110T083648Z.diff",
+  "before_digest": "71e67fbe7543deac679f8ae06c2c10d86fd3ab5d9f0c1b02f89ad1b6ad8eff0c",
+  "after_digest": "5a1a55e6488208826721abe03b3fddae296f78e0835f771340b505957516509f",
+  "original_definitions_unchanged": true,
+  "instructions_unchanged": true,
+  "catalogs_unchanged": true,
+  "fixed_parameters": {
+    "model": "qwen3.5:27b",
+    "think": false,
+    "temperature": 0.2,
+    "max_output_tokens": 4000,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180,
+    "sdk_max_retries": 0
+  },
+  "new_inference_requests": 0
+}

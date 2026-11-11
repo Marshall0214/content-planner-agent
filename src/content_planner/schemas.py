@@ -79,13 +79,14 @@ class CandidateSpec(Contract):
 
 
 class SearchFilters(Contract):
-    tags: list[str]
-    allowed_usage: str | None
+    tags: list[str] = Field(description="所有标签必须同时精确匹配目录标签（AND）；[]表示不作标签过滤。语义关键词不一定是目录标签。")
+    allowed_usage: str | None = Field(description="精确匹配素材usage_scope；null表示不限，不按语义或近义词匹配。")
 
 
 class SearchArgs(Contract):
-    query: str = Field(min_length=1, max_length=300)
-    filters: SearchFilters
+    query: str = Field(min_length=1, max_length=300,
+                       description="语义关键词放在这里；按空白分词，任一词不区分大小写地作子串匹配。不能假定query中的词就是目录标签。")
+    filters: SearchFilters = Field(description="精确过滤条件，后台原样执行，不自动清空或将AND改为OR。")
     limit: StrictInt = Field(ge=1, le=5)
     decision_summary: str = Field(min_length=1, max_length=500)
 
@@ -173,7 +174,7 @@ TOOL_MODELS = {
     "save_plan": SaveArgs,
 }
 DESCRIPTIONS = {
-    "search_materials": "Search synthetic materials; new successful search costs 1 unit/60 simulated seconds.",
+    "search_materials": "Search synthetic materials. Query uses whitespace-separated keyword OR substring matching; tags require ALL exact catalog labels (AND), [] means no tag filter; allowed_usage is exact, null is unrestricted. Returns applied filters, keyword/filtered/returned counts and actual catalog labels. Empty retrieval still costs 1 unit/60 simulated seconds. After empty results, choose another query, relax only optional filters or stop; never relax user hard requirements or estimate with empty material_ids.",
     "estimate_plan": "Register a new immutable candidate OR quote an existing quote's candidate using fresh ledger/clock. Free. Over-budget is valid feedback.",
     "generate_script": "Generate by quote reference. Reuse identical successful spec for zero new cost/time. basic=6/240s; premium=10/480s.",
     "save_plan": "Save full campaign and script using post-generation quote. 1 unit/60s. Confirmed success immediately terminates the agent.",

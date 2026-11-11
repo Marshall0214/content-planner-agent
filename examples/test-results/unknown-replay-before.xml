@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="6" time="1.902" timestamp="2026-11-10T14:35:04.373684+08:00" hostname="DESKTOP-4RMF6AG"><testcase classname="tests.test_unknown_replay" name="test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[False-STARTED]" time="0.294"><failure message="AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'&#10;  &#10;  - RESULT_UNKNOWN&#10;  + IN_PROGRESS_OR_INTERRUPTED">tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED</failure></testcase><testcase classname="tests.test_unknown_replay" name="test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[False-UNKNOWN]" time="0.284"><failure message="AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'&#10;  &#10;  - RESULT_UNKNOWN&#10;  + IN_PROGRESS_OR_INTERRUPTED">tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED</failure></testcase><testcase classname="tests.test_unknown_replay" name="test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[True-STARTED]" time="0.278"><failure message="AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'&#10;  &#10;  - RESULT_UNKNOWN&#10;  + IN_PROGRESS_OR_INTERRUPTED">tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED</failure></testcase><testcase classname="tests.test_unknown_replay" name="test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[True-UNKNOWN]" time="0.290"><failure message="AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'&#10;  &#10;  - RESULT_UNKNOWN&#10;  + IN_PROGRESS_OR_INTERRUPTED">tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED</failure></testcase><testcase classname="tests.test_unknown_replay" name="test_C11_inspect_and_run_replay_have_same_unknown_projection" time="0.319"><failure message="AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'&#10;  &#10;  - RESULT_UNKNOWN&#10;  + IN_PROGRESS_OR_INTERRUPTED">tests\test_unknown_replay.py:110: in test_C11_inspect_and_run_replay_have_same_unknown_projection
+    assert_unknown_read(replay["output"])
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED</failure></testcase><testcase classname="tests.test_unknown_replay" name="test_C11_missing_liability_metadata_remains_unknown_instead_of_guessing" time="0.278"><failure message="AssertionError: assert 'NOT_ATTEMPTED' == 'UNKNOWN'&#10;  &#10;  - UNKNOWN&#10;  + NOT_ATTEMPTED">tests\test_unknown_replay.py:134: in test_C11_missing_liability_metadata_remains_unknown_instead_of_guessing
+    assert report["save_state"] == "UNKNOWN"
+E   AssertionError: assert 'NOT_ATTEMPTED' == 'UNKNOWN'
+E     
+E     - UNKNOWN
+E     + NOT_ATTEMPTED</failure></testcase></testsuite></testsuites>

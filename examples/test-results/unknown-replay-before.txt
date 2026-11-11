@@ -1,0 +1,62 @@
+FFFFFF                                                                   [100%]
+================================== FAILURES ===================================
+_ test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[False-STARTED] _
+tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED
+_ test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[False-UNKNOWN] _
+tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED
+_ test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[True-STARTED] _
+tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED
+_ test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[True-UNKNOWN] _
+tests\test_unknown_replay.py:87: in test_C11_memory_unknown_then_replay_reads_unconfirmed_operation
+    assert_unknown_read(report)
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED
+________ test_C11_inspect_and_run_replay_have_same_unknown_projection _________
+tests\test_unknown_replay.py:110: in test_C11_inspect_and_run_replay_have_same_unknown_projection
+    assert_unknown_read(replay["output"])
+tests\test_unknown_replay.py:45: in assert_unknown_read
+    assert report["termination_reason"] == "RESULT_UNKNOWN"
+E   AssertionError: assert 'IN_PROGRESS_OR_INTERRUPTED' == 'RESULT_UNKNOWN'
+E     
+E     - RESULT_UNKNOWN
+E     + IN_PROGRESS_OR_INTERRUPTED
+___ test_C11_missing_liability_metadata_remains_unknown_instead_of_guessing ___
+tests\test_unknown_replay.py:134: in test_C11_missing_liability_metadata_remains_unknown_instead_of_guessing
+    assert report["save_state"] == "UNKNOWN"
+E   AssertionError: assert 'NOT_ATTEMPTED' == 'UNKNOWN'
+E     
+E     - UNKNOWN
+E     + NOT_ATTEMPTED
+=========================== short test summary info ===========================
+FAILED tests/test_unknown_replay.py::test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[False-STARTED]
+FAILED tests/test_unknown_replay.py::test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[False-UNKNOWN]
+FAILED tests/test_unknown_replay.py::test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[True-STARTED]
+FAILED tests/test_unknown_replay.py::test_C11_memory_unknown_then_replay_reads_unconfirmed_operation[True-UNKNOWN]
+FAILED tests/test_unknown_replay.py::test_C11_inspect_and_run_replay_have_same_unknown_projection
+FAILED tests/test_unknown_replay.py::test_C11_missing_liability_metadata_remains_unknown_instead_of_guessing
+6 failed in 2.16s

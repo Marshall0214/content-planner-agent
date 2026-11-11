@@ -1,0 +1,105 @@
+{
+  "script_5eea7a0f59ba4479": {
+    "artifact_id": "script_5eea7a0f59ba4479",
+    "effective_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+    "kind": "script",
+    "material_refs": [
+      "mat-001",
+      "mat-002",
+      "mat-003"
+    ],
+    "mode": "basic",
+    "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+    "script": {
+      "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：创作一支毕业季主题回忆短片，以旧照片为核心元素。开场采用今昔对照手法，展示校园空镜（教学楼、操场）与毕业合照占位图；中段演示影记工具导入本地照片并添加文字的功能；结尾邀请观众选择一张自己的旧照片参与互动。所有素材均为demo_only用途，仅用于演示效果，不承诺真实产品功能或增长结论。。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据（mat-002）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+      "title": "毕业季：用旧照片做一支回忆短片"
+    },
+    "step_id": "step_1878908e4c889e88",
+    "warnings": [
+      "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+    ]
+  },
+  "search_941e1013405d4d0a": {
+    "artifact_id": "search_941e1013405d4d0a",
+    "catalog_version": "materials-v1",
+    "feedback": {
+      "applied_filters": {
+        "allowed_usage": null,
+        "tags": []
+      },
+      "catalog_available_tags": [
+        "创意",
+        "回忆",
+        "校园",
+        "毕业季",
+        "照片"
+      ],
+      "catalog_available_usage_scopes": [
+        "demo_only"
+      ],
+      "empty_reason": null,
+      "filter_semantics": {
+        "allowed_usage": "EXACT_OR_UNRESTRICTED_IF_NULL",
+        "empty_tags": "UNRESTRICTED",
+        "tags": "ALL_EXACT"
+      },
+      "filtered_match_count": 3,
+      "keyword_match_count": 3,
+      "next_action_hint": null,
+      "returned_count": 3,
+      "unrecognized_allowed_usage": null,
+      "unrecognized_tags": []
+    },
+    "kind": "search",
+    "matches": [
+      {
+        "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+        "facts": [
+          "虚构演示工具影记可导入本地照片并添加文字"
+        ],
+        "material_id": "mat-001",
+        "source_ref": "synthetic://materials-v1/mat-001",
+        "tags": [
+          "毕业季",
+          "照片",
+          "回忆"
+        ],
+        "title": "影记照片演示",
+        "usage_scope": "demo_only"
+      },
+      {
+        "content_digest": "e14f17a768dbc66ca1bc6d9c1a2c1a4c5d45f45c5570570d404a7ab8d7865baf",
+        "facts": [
+          "校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据"
+        ],
+        "material_id": "mat-002",
+        "source_ref": "synthetic://materials-v1/mat-002",
+        "tags": [
+          "校园",
+          "毕业季",
+          "回忆"
+        ],
+        "title": "合成校园空镜",
+        "usage_scope": "demo_only"
+      },
+      {
+        "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+        "facts": [
+          "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+        ],
+        "material_id": "mat-003",
+        "source_ref": "synthetic://materials-v1/mat-003",
+        "tags": [
+          "创意",
+          "照片",
+          "回忆"
+        ],
+        "title": "今昔对照创意",
+        "usage_scope": "demo_only"
+      }
+    ],
+    "query": "毕业 照片 回忆 短片",
+    "result_id": "search_941e1013405d4d0a",
+    "step_id": "step_293554ff80e4c7f2"
+  }
+}

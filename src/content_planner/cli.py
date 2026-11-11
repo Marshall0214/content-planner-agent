@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from .agent import Limits, Planner
 from .model import OfflineModel, OpenAIResponsesModel
-from .reporting import build_report, render_markdown, write_evidence
+from .reporting import build_report, read_report_snapshot, render_markdown, write_evidence
 from .store import Store
 from .tools import Catalog
 
@@ -101,10 +101,13 @@ def main(argv=None):
             record = store.by_key(args.request_key)
             if record is None:
                 raise ValueError("request not found")
-            print(json.dumps(build_report(record["snapshot"], True), ensure_ascii=False))
+            snapshot = read_report_snapshot(store, record["snapshot"]["request_id"])
+            print(json.dumps(build_report(snapshot, True), ensure_ascii=False))
             return 0
         snapshot = store.find_plan(args.plan_id)
-        if not snapshot or snapshot["save_state"] != "CONFIRMED":
+        if snapshot:
+            snapshot = read_report_snapshot(store, snapshot["request_id"])
+        if not snapshot or snapshot["save_state"] != "CONFIRMED" or snapshot.get("unknown"):
             raise ValueError("confirmed plan not found; no UNKNOWN reconciliation attempted")
         out = Path(args.out)
         out.mkdir(parents=True, exist_ok=True)

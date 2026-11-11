@@ -1,0 +1,80 @@
+{
+  "recorded_at_utc": "2026-11-10T07:40:54.560320+00:00",
+  "source_digest": "98a340a94e8a168ae5c72b765f8be920416fc2ca1dee6e334e5a37043904a1bb",
+  "source_digest_verified_evidence_runs": 15,
+  "tests": {
+    "qwen-protocol": {
+      "tests": 44,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "qwen-full": {
+      "tests": 85,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "qwen-protocol-final": {
+      "tests": 46,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "qwen-full-retry": {
+      "tests": 87,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "qwen-full-final": {
+      "tests": 87,
+      "errors": 0,
+      "failures": 1,
+      "skipped": 0
+    },
+    "qwen-cli-diagnostic": {
+      "tests": 4,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    }
+  },
+  "service_check": "examples/test-results/qwen-service-check.json",
+  "startup_error_index": "examples/test-results/qwen_smoke_36af94f620be.json",
+  "smoke_index": "examples/test-results/qwen_smoke_7a495877ab1f.json",
+  "offline_batch_index": "examples/test-results/batch_6241ed003019.json",
+  "real_inference_requests": 3,
+  "smoke_passed": false,
+  "native_tool_calls_observed": 2,
+  "actual_tool_result_forwarded": true,
+  "executed_business_tool_attempts": 0,
+  "simulated_charged_units": 0,
+  "confirmed_saved_plan": false,
+  "usage": {
+    "input_tokens": 6972,
+    "output_tokens": 244,
+    "total_tokens": 7216
+  },
+  "timeout_adjusted": false,
+  "acceptance_status": "not_run_smoke_failed",
+  "acceptance_call_cap": 30,
+  "acceptance_calls_used": 0,
+  "qualified_dynamic_paths": {
+    "budget_feedback": false,
+    "tool_failure_or_partial_success": false
+  },
+  "human_content_review": "not_run_no_campaign_or_script_generated",
+  "p0_status": "not_met",
+  "provider_cash_cost": "unknown_not_measured_local_inference",
+  "cloud_requests": 0,
+  "limits_of_diagnosis": [
+    "No evidence of transport/auth failure or timeout in three requests.",
+    "Loaded context 32768, maximum reported input tokens 3505; overflow not supported by this observation.",
+    "Model compliance vs service schema interpretation not isolated; requires a new bounded experiment."
+  ],
+  "current_full_test_result": "examples/test-results/qwen-full-retry.xml",
+  "current_targeted_result": "examples/test-results/qwen-protocol-final.xml",
+  "unresolved_test_observation": "One empty-stdout CLI subprocess failure; exit/stderr diagnostic added, targeted 4 and complete 87 passed afterward, original cause not isolated.",
+  "first_response_observation": "Empty assistant output_text and no function_call; confirmed in second actual request replay history."
+}

@@ -1,0 +1,70 @@
+{
+  "search_937599a66bf94131": {
+    "artifact_id": "search_937599a66bf94131",
+    "catalog_version": "materials-v1",
+    "feedback": {
+      "applied_filters": {
+        "allowed_usage": null,
+        "tags": []
+      },
+      "catalog_available_tags": [
+        "创意",
+        "回忆",
+        "校园",
+        "毕业季",
+        "照片"
+      ],
+      "catalog_available_usage_scopes": [
+        "demo_only"
+      ],
+      "empty_reason": null,
+      "filter_semantics": {
+        "allowed_usage": "EXACT_OR_UNRESTRICTED_IF_NULL",
+        "empty_tags": "UNRESTRICTED",
+        "tags": "ALL_EXACT"
+      },
+      "filtered_match_count": 2,
+      "keyword_match_count": 2,
+      "next_action_hint": null,
+      "returned_count": 2,
+      "unrecognized_allowed_usage": null,
+      "unrecognized_tags": []
+    },
+    "kind": "search",
+    "matches": [
+      {
+        "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+        "facts": [
+          "虚构演示工具影记可导入本地照片并添加文字"
+        ],
+        "material_id": "mat-001",
+        "source_ref": "synthetic://materials-v1/mat-001",
+        "tags": [
+          "毕业季",
+          "照片",
+          "回忆"
+        ],
+        "title": "影记照片演示",
+        "usage_scope": "demo_only"
+      },
+      {
+        "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+        "facts": [
+          "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+        ],
+        "material_id": "mat-003",
+        "source_ref": "synthetic://materials-v1/mat-003",
+        "tags": [
+          "创意",
+          "照片",
+          "回忆"
+        ],
+        "title": "今昔对照创意",
+        "usage_scope": "demo_only"
+      }
+    ],
+    "query": "照片",
+    "result_id": "search_937599a66bf94131",
+    "step_id": "step_67497dc8b6268921"
+  }
+}

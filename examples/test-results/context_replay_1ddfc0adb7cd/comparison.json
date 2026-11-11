@@ -1,0 +1,186 @@
+{
+  "kind": "actual_offline_recorded_sdk_replay_not_live_inference",
+  "recorded_at_utc": "2026-11-10T10:04:38.103520+00:00",
+  "recording": "examples\\test-results\\qwen_normal_0f1745fd4b32.json",
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+  "script_sha256": "79cbee533b3af41beffaf9c09c7120e4f2eae230229c7675187d7342f3c4616f",
+  "new_real_model_requests": 0,
+  "new_business_tool_executions": 0,
+  "new_simulated_units": 0,
+  "sdk_mock_requests": 6,
+  "replayed_error": "APITimeoutError from recorded offline timeout fixture",
+  "measurement": "Both bodies reserialized using canonical(): sorted keys, compact JSON, ensure_ascii=False, UTF-8. Baseline raw network bytes unavailable. Character/byte counts are not tokens or performance.",
+  "latest_state": {
+    "original_requirements": {
+      "budget_units": 10,
+      "cost_catalog": "cost-v1",
+      "deadline_at": "2026-11-10T09:34:20.054025Z",
+      "hard_requirements": [],
+      "materials_catalog": "materials-v1",
+      "parent_request_key": null,
+      "preferences": [
+        "预算允许时优先丰富叙事"
+      ],
+      "request_key": "qwen_normal_0f1745fd4b32-normal",
+      "theme": "毕业季：用旧照片做一支回忆短片"
+    },
+    "confirmed_incurred_units": 7,
+    "ledger_revision": 2,
+    "latest_quote_id": "quote_6257273922c64c56",
+    "latest_quote_stage": "post_generation",
+    "latest_quote_total_units": 8,
+    "candidate_count": 1,
+    "artifact_ids": [
+      "script_94914cc549b14202",
+      "search_d34976bd58f94f49"
+    ],
+    "remaining_model_turns": 7,
+    "remaining_tool_requests": 5
+  },
+  "recorded_observations": [
+    {
+      "call_id": "call_xlakg2wg",
+      "outcome": "REJECTED",
+      "output_digest": "872bb8ab4c69c79fdc226c86ecfcd44af0a96736839cdbbcb17c38415bb16e0a"
+    },
+    {
+      "call_id": "call_ara1o8yv",
+      "outcome": "SUCCESS",
+      "output_digest": "0a5e5368cf5047c32c35867932271579172491b542ce6571aca8ccc453d335f4"
+    },
+    {
+      "call_id": "call_2c9i2szl",
+      "outcome": "SUCCESS",
+      "output_digest": "6bbcbde1f3d5a670e92e33d3c2c34242dc4c8dd87c523c9cd19570f3d2bf6433"
+    },
+    {
+      "call_id": "call_4e9yol7m",
+      "outcome": "SUCCESS",
+      "output_digest": "13520215b3b68360f0bfd44a19c1af5f72d52c1ebd61583d0f1df85f13533124"
+    },
+    {
+      "call_id": "call_xk4b04gs",
+      "outcome": "SUCCESS",
+      "output_digest": "6b9ed2856ba57cd1719a78ba2c482d96fe759c072bc736dc607ff0e516aaaefc"
+    }
+  ],
+  "original_recording_and_trace_unchanged": true,
+  "metrics": [
+    {
+      "request_number": 1,
+      "before": {
+        "characters": 7243,
+        "utf8_bytes": 8447,
+        "messages": 1
+      },
+      "after": {
+        "characters": 7243,
+        "utf8_bytes": 8447,
+        "messages": 1
+      },
+      "adapter_snapshots_before": 1,
+      "adapter_snapshots_after": 1,
+      "non_state_items_equal": true,
+      "latest_context_equal": true,
+      "inference_parameters_schema_and_timeout_equal": true,
+      "actual_after_sdk_payload_bytes": 8447
+    },
+    {
+      "request_number": 2,
+      "before": {
+        "characters": 11803,
+        "utf8_bytes": 13319,
+        "messages": 4
+      },
+      "after": {
+        "characters": 10714,
+        "utf8_bytes": 12178,
+        "messages": 3
+      },
+      "adapter_snapshots_before": 2,
+      "adapter_snapshots_after": 1,
+      "non_state_items_equal": true,
+      "latest_context_equal": true,
+      "inference_parameters_schema_and_timeout_equal": true,
+      "actual_after_sdk_payload_bytes": 12178
+    },
+    {
+      "request_number": 3,
+      "before": {
+        "characters": 24230,
+        "utf8_bytes": 27264,
+        "messages": 7
+      },
+      "after": {
+        "characters": 19717,
+        "utf8_bytes": 22517,
+        "messages": 5
+      },
+      "adapter_snapshots_before": 3,
+      "adapter_snapshots_after": 1,
+      "non_state_items_equal": true,
+      "latest_context_equal": true,
+      "inference_parameters_schema_and_timeout_equal": true,
+      "actual_after_sdk_payload_bytes": 22517
+    },
+    {
+      "request_number": 4,
+      "before": {
+        "characters": 42443,
+        "utf8_bytes": 47477,
+        "messages": 10
+      },
+      "after": {
+        "characters": 27856,
+        "utf8_bytes": 31524,
+        "messages": 7
+      },
+      "adapter_snapshots_before": 4,
+      "adapter_snapshots_after": 1,
+      "non_state_items_equal": true,
+      "latest_context_equal": true,
+      "inference_parameters_schema_and_timeout_equal": true,
+      "actual_after_sdk_payload_bytes": 31524
+    },
+    {
+      "request_number": 5,
+      "before": {
+        "characters": 64224,
+        "utf8_bytes": 73862,
+        "messages": 13
+      },
+      "after": {
+        "characters": 33510,
+        "utf8_bytes": 40114,
+        "messages": 9
+      },
+      "adapter_snapshots_before": 5,
+      "adapter_snapshots_after": 1,
+      "non_state_items_equal": true,
+      "latest_context_equal": true,
+      "inference_parameters_schema_and_timeout_equal": true,
+      "actual_after_sdk_payload_bytes": 40114
+    },
+    {
+      "request_number": 6,
+      "before": {
+        "characters": 90927,
+        "utf8_bytes": 104487,
+        "messages": 16
+      },
+      "after": {
+        "characters": 39889,
+        "utf8_bytes": 46581,
+        "messages": 11
+      },
+      "adapter_snapshots_before": 6,
+      "adapter_snapshots_after": 1,
+      "non_state_items_equal": true,
+      "latest_context_equal": true,
+      "inference_parameters_schema_and_timeout_equal": true,
+      "actual_after_sdk_payload_bytes": 46581
+    }
+  ],
+  "online_context_compatibility": "not_run",
+  "normal_chain_completion": "not_run"
+}

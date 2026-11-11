@@ -1,0 +1,26 @@
+{
+  "scope": "automatic invariants only; not a dynamic-decision or marketing-quality verdict",
+  "checks": {
+    "ledger_operation_unique": {
+      "status": "passed"
+    },
+    "known_fee_sum": {
+      "status": "passed"
+    },
+    "no_false_saved_success": {
+      "status": "passed"
+    },
+    "offline_mode_visible": {
+      "status": "passed"
+    },
+    "activity_not_executed": {
+      "status": "passed"
+    },
+    "unknown_amount_stays_unknown": {
+      "status": "passed"
+    }
+  },
+  "real_dynamic_path": {
+    "status": "not_run"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "offline_context_fix_evaluation",
+  "recorded_at_utc": "2026-11-10T10:17:41.442066+00:00",
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+  "comparison": "examples/test-results/context_replay_1ddfc0adb7cd/comparison.json",
+  "preservation_audit": "examples/test-results/context-history-preservation-after.json",
+  "tests": {
+    "context-latest-targeted-final": {
+      "tests": 64,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "context-latest-full": {
+      "tests": 122,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "offline_batch_index": "examples/test-results/batch_cff97e13a98e.json",
+  "new_real_model_requests": 0,
+  "project_real_model_requests_unchanged": 15,
+  "new_task_resumption": false,
+  "old_task_status": "INCOMPLETE",
+  "old_actual_units": 7,
+  "old_script_artifacts_unchanged": true,
+  "strategy": "Exactly one latest adapter-owned state message at input[0], then unchanged native history in original relative order. Ownership tracked by object identity, never text matching.",
+  "last_recorded_request_metrics": {
+    "request_number": 6,
+    "before": {
+      "characters": 90927,
+      "utf8_bytes": 104487,
+      "messages": 16
+    },
+    "after": {
+      "characters": 39889,
+      "utf8_bytes": 46581,
+      "messages": 11
+    },
+    "adapter_snapshots_before": 6,
+    "adapter_snapshots_after": 1,
+    "non_state_items_equal": true,
+    "latest_context_equal": true,
+    "inference_parameters_schema_and_timeout_equal": true,
+    "actual_after_sdk_payload_bytes": 46581
+  },
+  "measurement_scope": "Both bodies reserialized using canonical(): sorted keys, compact JSON, ensure_ascii=False, UTF-8. Baseline raw network bytes unavailable. Character/byte counts are not tokens or performance.",
+  "token_counts": "not_measured",
+  "online_latency_or_timeout_improvement": "not_verified",
+  "online_compatibility": "not_run",
+  "online_draft_and_save": "not_run",
+  "p0_status": "not_met",
+  "next_command": ".\\.venv\\Scripts\\python.exe scripts/validate_qwen.py normal --endpoint http://127.0.0.1:11434/v1 --model qwen3.5:27b --no-think",
+  "next_command_status": "not_run; requires a new request and newly authorized quota (script creates a fresh key/deadline and caps at 10)",
+  "timeout_note": "validate_qwen.py constructs Limits() itself: current defaults 20s model / 180s run; do not assume environment-only changes alter its effective limits. Verify request.timeout and metadata in the next live batch."
+}

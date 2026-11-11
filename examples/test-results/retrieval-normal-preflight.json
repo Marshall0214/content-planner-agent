@@ -1,0 +1,53 @@
+{
+  "kind": "actual_preflight_no_inference",
+  "recorded_at_utc": "2026-11-10T09:03:08.205376+00:00",
+  "service_version": "0.40.9",
+  "model_id": "qwen3.5:27b",
+  "model_digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+  ],
+  "thinking": {
+    "values": [
+      false,
+      true
+    ],
+    "default": true
+  },
+  "parameters": {
+    "service_type": "ollama",
+    "protocol": "responses_stateless",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "authentication": "local SDK placeholder; not a cloud key",
+    "inference_parameters": {
+      "temperature": 0.2,
+      "max_output_tokens": 4000,
+      "parallel_tool_calls": false,
+      "store": false,
+      "think": false
+    },
+    "sdk_max_retries": 0,
+    "outbound_tool_schema": {
+      "strategy": "inline_local_refs",
+      "original_digest": "32381e290ab6daa91639121997c6a7d282382bb18a689e37610f57ca2cc1da76",
+      "outbound_digest": "49a3c9aaa7c9027a93b577db816a04a7b63f6fb311d6bcc10320a8e47ab56a7a"
+    }
+  },
+  "call_cap": 10,
+  "model_timeout_s": 20,
+  "run_timeout_s": 180,
+  "catalog_digests": {
+    "materials": "1ae52aca6bfcf66b32d6252ccfdef89b1424b16dea4dce0ed40e1691c30ad0d3",
+    "costs": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741"
+  },
+  "raw_tools_digest": "32381e290ab6daa91639121997c6a7d282382bb18a689e37610f57ca2cc1da76",
+  "outbound_tools_digest": "49a3c9aaa7c9027a93b577db816a04a7b63f6fb311d6bcc10320a8e47ab56a7a",
+  "new_inference_requests": 0,
+  "after_attempt_loaded_models": {
+    "models": []
+  }
+}

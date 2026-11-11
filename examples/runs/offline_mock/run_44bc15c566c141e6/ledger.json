@@ -1,0 +1,19 @@
+{
+  "currency": "SIM_UNIT",
+  "entries": [
+    {
+      "amount_units": 1,
+      "attempt_id": "attempt_cb7ee2e3ce374134",
+      "catalog_version": "cost-v1",
+      "committed_at": "2026-11-10T07:36:24.535247+00:00",
+      "entry_id": "fee_be33a90c43ac4963",
+      "operation_key": "9e6480effa32746812dc8ad15c1fb1ce0212b830c778c0e950104c5391d7c28f",
+      "request_id": "req_d55f5f5f29164832",
+      "tool": "search_materials"
+    }
+  ],
+  "total_actual_units": 1,
+  "last_known_confirmed_units": 1,
+  "current_amount_confirmed": true,
+  "this_invocation_units": 1
+}

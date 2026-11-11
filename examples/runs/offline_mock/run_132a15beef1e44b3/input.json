@@ -1,0 +1,13 @@
+{
+  "request_key": "batch_cff97e13a98e-normal",
+  "theme": "毕业季：用旧照片做一支回忆短片",
+  "budget_units": 10,
+  "deadline_at": "2026-11-10T10:44:28.114406Z",
+  "materials_catalog": "materials-v1",
+  "cost_catalog": "cost-v1",
+  "hard_requirements": [],
+  "preferences": [
+    "预算允许时优先丰富叙事"
+  ],
+  "parent_request_key": null
+}

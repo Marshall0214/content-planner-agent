@@ -1,0 +1,41 @@
+{
+  "kind": "actual_final_documentation_and_freeze_audit_no_inference",
+  "recorded_at_utc": "2026-11-10T11:04:51.678616+00:00",
+  "checks": {
+    "links_and_materials_resolve": true,
+    "runtime_data_dependency_files_frozen": true,
+    "historical_files_and_databases_unchanged": true,
+    "actual_script_matches_recorded_digest": true,
+    "gate_tests_match_preflight_digest": true,
+    "project_total_33_no_extra_inference": true,
+    "full_suite_140_passed": true,
+    "outbound_configuration_equal_normal": true,
+    "all_user_conclusions_pending": true,
+    "official_research_unchanged": true,
+    "diff_format": true
+  },
+  "local_links_checked": 195,
+  "broken": [],
+  "historical_files_preserved": 66,
+  "junit_counts": {
+    "tests": 140,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cumulative_real_requests": 33,
+  "script_sha256": "c80b823ee967cedab8e601f09ada89cd82313d130c0fe3f1ea943d48628ffe47",
+  "diff_output": "",
+  "remaining_acceptance_gap": "SAVE_TEMPORARY execution/feedback path and user review; no overall P0 pass",
+  "documents": [
+    "README.md",
+    "docs/02-solution.md",
+    "docs/03-evaluation.md",
+    "docs/04-ai-usage.md",
+    "docs/05-retrospective.md",
+    "docs/06-content-review.md",
+    "plan.md"
+  ],
+  "prior_check": "examples/test-results/specialties-documentation-check-initial.json",
+  "prior_failure_note": "Initial link check ran before creating its own result target; artifact creation completed, links rechecked. No runtime or evidence source changed."
+}

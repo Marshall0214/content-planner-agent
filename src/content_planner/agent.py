@@ -10,6 +10,7 @@ from pydantic import ValidationError
 from .accounting import Clock, Rejection, digest, iso
 from .model import ModelConfigurationError
 from .schemas import Request, StopDecision
+from .reporting import project_read_snapshot, read_report_snapshot
 from .store import event
 from .tools import Catalog, Toolbox, initial_snapshot, requirement_rules
 
@@ -73,17 +74,16 @@ class Planner:
         rid = record["snapshot"]["request_id"]
         if not created:
             self.replayed = True
+            s = read_report_snapshot(self.store, rid)
             if record["input_hash"] != fingerprint:
                 # Ephemeral conflict report. Existing persistent request remains unchanged.
-                s = deepcopy(record["snapshot"])
+                existing_status = s["status"]
                 s.update(status="FAILED", termination_reason="REQUEST_KEY_CONFLICT",
-                         existing_task_status=record["snapshot"]["status"], input_conflict=True)
+                         existing_task_status=existing_status, input_conflict=True,
+                         termination_persisted=False)
                 self.last_snapshot = s
                 return s
-            self.last_snapshot = record["snapshot"]
-            if self.last_snapshot["status"] in ("CREATED", "RUNNING"):
-                self.last_snapshot = deepcopy(self.last_snapshot)
-                self.last_snapshot.update(status="INCOMPLETE", termination_reason="IN_PROGRESS_OR_INTERRUPTED")
+            self.last_snapshot = s
             return self.last_snapshot
         missing = [name for name in ("budget_units", "deadline_at") if request[name] is None]
         if missing:
@@ -103,20 +103,19 @@ class Planner:
         started = self.clock.monotonic()
         def start(s):
             s.update(status="RUNNING", started_at=iso(self.clock.now()), model_name=model.model_name,
-                     limits=asdict(self.limits))
+                     model_configuration=deepcopy(getattr(model, "configuration", None)), limits=asdict(self.limits))
         self.store.update(rid, start)
         tb = Toolbox(self.store, rid, self.catalog, self.clock, fixture,
                      self.limits.max_operation_attempts, started + self.limits.run_timeout_s,
                      self.limits.tool_timeout_s)
         while True:
-            s = self.store.get(rid)
+            record = self.store.read_record(rid)
+            s = record["snapshot"]
             self.last_snapshot = s
-            if s["unknown"] or self.store.unresolved(rid):
+            if s["unknown"] or record["unconfirmed_operations"]:
                 # Read-only guard; no receipt lookups, no resumption.
-                s = deepcopy(s)
-                s.update(status="INCOMPLETE", unknown=True, termination_reason="RESULT_UNKNOWN")
-                self.last_snapshot = s
-                return s
+                self.last_snapshot = project_read_snapshot(s, record["unconfirmed_operations"], interrupted=False)
+                return self.last_snapshot
             reason = self._limit_reason(s, started)
             if reason:
                 return self._finish(rid, "INCOMPLETE", reason)

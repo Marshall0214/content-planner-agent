@@ -1,0 +1,100 @@
+{
+  "kind": "final_delivery_artifact_review_not_new_experiment",
+  "review_date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "recorded_at_utc": "2026-11-11T01:28:46.755623+00:00",
+  "scope": "Original question minimum requirements; not a reclassification of the historical blind experiment as passed.",
+  "submission_recommendation": "ready_for_submission_with_explicit_limitations_after_local_changes_are_committed_or_packaged",
+  "original_minimum_requirements_supported": true,
+  "minimum_checks": {
+    "four_business_tools_executed": true,
+    "reviewable_campaign_and_script_and_sources": true,
+    "normal_confirmed_saved": true,
+    "missing_budget_zero_model_tools_units": true,
+    "missing_deadline_zero_model_tools_units": true,
+    "budget_feedback_then_grounded_stop": true,
+    "actual_tool_failure_then_model_retry": true,
+    "successful_preconditions_and_failed_attempt_preserved": true,
+    "duplicate_same_nonempty_plan_receipt_zero_increment": true,
+    "bounded_truthful_incomplete": true,
+    "two_distinct_real_feedback_paths": true,
+    "at_least_three_actual_input_output_trace_sets": true,
+    "content_review_C1_C4_accepted": true
+  },
+  "all_project_extra_evaluations_passed": false,
+  "generation_failure_assessment": {
+    "observed": "Actual FAILED/GENERATION_TEMPORARY, exact call_id feedback, model-selected same-quote retry SUCCESS, preserved prior search/failed attempt, fee 7 and simulation 540.",
+    "usable_for_original_tool_failure_and_second_dynamic_path": true,
+    "qualification": "Limited evidence in this local synthetic environment; not blind-independent robustness or exclusive causal attribution.",
+    "fault_category_hint_in_request_key": true,
+    "historical_blind_result": "not_qualified; preserved unchanged in generation-failure-evaluation.json",
+    "clean_repaired_entry_live_validation": "not_run"
+  },
+  "budget_quality_defects": [
+    "Attempted generation despite OVER_BUDGET; executor rejected without a charge before the model stopped.",
+    "Suggestions to reduce material count/use a simpler mode were not supported by current flat basic fee; no feasible alternative was demonstrated."
+  ],
+  "unverified_or_extra_conditions": [
+    "Blind-isolated real retry after repaired opaque request key",
+    "SAVE_TEMPORARY recovery: draft validation rejected before fault injection; original scene not passed",
+    "New machine/clean-clone replay, external provider compatibility, operational reliability or marketing effectiveness",
+    "Cross-process resume/reconciliation/concurrent takeover and other P1 capabilities not implemented"
+  ],
+  "content_review": {
+    "status": "accepted_C1_C4",
+    "confirmation_record": "docs/06-content-review.md",
+    "confirmation_date": "2026-11-10",
+    "scope": "Normal saved campaign and separate editorial appendix only; not user signature on every technical experiment."
+  },
+  "editorial_appendix_is_original_model_output": false,
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+  "evidence": {
+    "normal": "examples/test-results/qwen_normal_5f38146a433d.json",
+    "budget_and_missing": "examples/test-results/qwen_specialties_9333a7268207.json",
+    "generation_failure": "examples/test-results/qwen_generate_failure_40024f7694f5.json",
+    "original_historical_blind_assessment": "examples/test-results/generation-failure-evaluation.json",
+    "materials_index": "examples/test-results/p0-acceptance-materials-index.json",
+    "executed_generation_script_archive": "docs/evidence/validate_qwen-generation-failure-f1f30f019db7.py.txt"
+  },
+  "this_review": {
+    "new_model_calls": 0,
+    "new_business_runs": 0,
+    "tests_rerun": false,
+    "runtime_modified": false,
+    "git_commit_created": false,
+    "remote_pushed": false
+  },
+  "historical_tests": {
+    "counts": {
+      "tests": 150,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "junit": "examples/test-results/generation-failure-blind-sdk-full.xml",
+    "recorded_test_seconds": 18.391,
+    "recorded_timestamp": "2026-11-10T22:02:12.642346+08:00"
+  },
+  "timing": {
+    "total_development_or_human_work_hours": null,
+    "reason": "No independent cumulative labor timer; timestamps and model HTTP waits are not development effort.",
+    "historical_inference_requests": 39,
+    "recorded_http_sum_seconds": 277.502,
+    "missing_http_timings": 0,
+    "cumulative_complete_usage": null,
+    "usage_missing": [
+      {
+        "index": "qwen_normal_0f1745fd4b32.json",
+        "number": 6
+      }
+    ]
+  },
+  "git": {
+    "repository": "D:/硕/work/JobHuntBot/content-planner-agent",
+    "origin": "https://github.com/Marshall0214/content-planner-agent.git",
+    "branch": "codex/initial-p0",
+    "HEAD": "3129570031d01ea41892f00b82a10c6c7409df63",
+    "remote_head_live_checked": false,
+    "status_note": "Final tracked/untracked snapshot is recorded by final-delivery-check.json after documentation edits."
+  }
+}

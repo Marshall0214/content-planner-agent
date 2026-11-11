@@ -1,0 +1,20 @@
+{
+  "search_d29a045ea4554e71": {
+    "artifact_id": "search_d29a045ea4554e71",
+    "catalog_version": "materials-v1",
+    "kind": "search",
+    "matches": [],
+    "query": "毕业季 旧照片 回忆短片",
+    "result_id": "search_d29a045ea4554e71",
+    "step_id": "step_c7436deb14544cdd"
+  },
+  "search_e7d3e6dfbd7c49df": {
+    "artifact_id": "search_e7d3e6dfbd7c49df",
+    "catalog_version": "materials-v1",
+    "kind": "search",
+    "matches": [],
+    "query": "青春 校园 毕业 照片 回忆",
+    "result_id": "search_e7d3e6dfbd7c49df",
+    "step_id": "step_eb5b1804ed4148ac"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "save_state": "CONFIRMED",
+  "receipt": {
+    "plan_id": "plan_ea05b2490b0344ba",
+    "request_id": "req_c6468f5844e54887",
+    "content_hash": "7ad9ce02efa47c29078ddbd65afdbe97719d56a39325d4080fcf51d49e810eb2",
+    "save_operation_key": "070e48c56e749601934cc2bce295df05643f139d7cab50d5b2a1eea4a3fd2ce7",
+    "saved_at_utc": "2026-11-10T08:38:06.781499+00:00",
+    "effective_completed_at": "2026-11-10T08:44:06.781499+00:00",
+    "ledger_revision_after": 3,
+    "total_actual_units": 8
+  }
+}

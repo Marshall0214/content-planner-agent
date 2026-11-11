@@ -1,0 +1,362 @@
+{
+  "request_id": "req_efa924be6e9c442c",
+  "request_key": "qwen_smoke_ba6a52fb9947-smoke",
+  "mode": "real",
+  "real_model_decision_evidence": false,
+  "task_status": "INCOMPLETE",
+  "termination_reason": "REAL_CALL_LIMIT",
+  "preparation_status": "INCOMPLETE",
+  "campaign_execution_status": "NOT_STARTED",
+  "save_state": "NOT_ATTEMPTED",
+  "receipt": null,
+  "saved_plan": null,
+  "partial_scripts": [],
+  "material_results": [
+    {
+      "artifact_id": "search_d29a045ea4554e71",
+      "catalog_version": "materials-v1",
+      "kind": "search",
+      "matches": [],
+      "query": "毕业季 旧照片 回忆短片",
+      "result_id": "search_d29a045ea4554e71",
+      "step_id": "step_c7436deb14544cdd"
+    },
+    {
+      "artifact_id": "search_e7d3e6dfbd7c49df",
+      "catalog_version": "materials-v1",
+      "kind": "search",
+      "matches": [],
+      "query": "青春 校园 毕业 照片 回忆",
+      "result_id": "search_e7d3e6dfbd7c49df",
+      "step_id": "step_eb5b1804ed4148ac"
+    }
+  ],
+  "execution_steps": [
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "estimate_plan",
+      "result_ref": null,
+      "status": "FAILED",
+      "step_id": "step_8a48ad90a88a6a7b"
+    },
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "search_materials",
+      "result_ref": "search_d29a045ea4554e71",
+      "status": "SUCCEEDED",
+      "step_id": "step_c7436deb14544cdd"
+    },
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "search_materials",
+      "result_ref": "search_e7d3e6dfbd7c49df",
+      "status": "SUCCEEDED",
+      "step_id": "step_eb5b1804ed4148ac"
+    }
+  ],
+  "attempts": [
+    {
+      "admitted_liability": {
+        "max_charge_units": 1,
+        "max_sim_seconds": 60,
+        "operation_key": "c7436deb14544cdd04c4b694c263e3ed5a47518a5fa15928d455aa114cd21b6f",
+        "tool": "search_materials"
+      },
+      "arguments": {
+        "decision_summary": "搜索与毕业季、旧照片和回忆短片相关的合成素材，用于后续方案制定。",
+        "filters": {
+          "allowed_usage": null,
+          "tags": [
+            "毕业",
+            "回忆",
+            "照片",
+            "短片"
+          ]
+        },
+        "limit": 5,
+        "query": "毕业季 旧照片 回忆短片"
+      },
+      "attempt_id": "attempt_ec423e46a2194449",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T08:37:35.149547+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_ec423e46a2194449",
+        "charged_units": 1,
+        "data": {
+          "catalog_version": "materials-v1",
+          "matches": [],
+          "query": "毕业季 旧照片 回忆短片",
+          "result_id": "search_d29a045ea4554e71"
+        },
+        "error": null,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T08:37:35.149547+00:00",
+        "operation_key": "c7436deb14544cdd04c4b694c263e3ed5a47518a5fa15928d455aa114cd21b6f",
+        "outcome": "SUCCESS",
+        "request_id": "req_efa924be6e9c442c",
+        "result_ref": "search_d29a045ea4554e71",
+        "reused": false,
+        "sim_elapsed_s": 60,
+        "step_id": "step_c7436deb14544cdd",
+        "tool": "search_materials"
+      },
+      "operation_key": "c7436deb14544cdd04c4b694c263e3ed5a47518a5fa15928d455aa114cd21b6f",
+      "provider_call_id": "call_s44y3r9r",
+      "sim_elapsed_s": 60,
+      "started_at": "2026-11-10T08:37:35.142548+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_c7436deb14544cdd",
+      "tool": "search_materials"
+    },
+    {
+      "arguments": {
+        "decision_summary": "由于素材搜索未找到匹配项，先基于主题创建基础方案进行估价，后续可根据需要补充素材或调整。",
+        "new_spec": {
+          "creative_brief": "毕业季主题短片，以旧照片为线索串联回忆，展现青春时光与离别情感。",
+          "material_ids": [],
+          "mode": "basic"
+        },
+        "quote_id": null,
+        "script_artifact_id": null,
+        "stage": "pre_generation"
+      },
+      "attempt_id": "attempt_d3968c88503a4fb2",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T08:37:38.819581+00:00",
+      "execution_started": false,
+      "observation": {
+        "attempt_id": "attempt_d3968c88503a4fb2",
+        "charged_units": 0,
+        "data": null,
+        "error": {
+          "code": "INVALID_ARGUMENT",
+          "details": {},
+          "message": "1 validation error for EstimateArgs\nnew_spec.material_ids\n  List should have at least 1 item after validation, not 0 [type=too_short, input_value=[], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/too_short",
+          "retryable": false
+        },
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T08:37:38.819581+00:00",
+        "operation_key": "8a48ad90a88a6a7b52537383342f2c542da57d0986ec3a228602265188ece4c3",
+        "outcome": "REJECTED",
+        "request_id": "req_efa924be6e9c442c",
+        "result_ref": null,
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_8a48ad90a88a6a7b",
+        "tool": "estimate_plan"
+      },
+      "operation_key": "8a48ad90a88a6a7b52537383342f2c542da57d0986ec3a228602265188ece4c3",
+      "provider_call_id": "call_e3w2jy9w",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T08:37:38.819581+00:00",
+      "status": "REJECTED",
+      "step_id": "step_8a48ad90a88a6a7b",
+      "tool": "estimate_plan"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 1,
+        "max_sim_seconds": 60,
+        "operation_key": "eb5b1804ed4148ace24271027f964b48a41eef6fb0a9f5dd63097d2fb940964e",
+        "tool": "search_materials"
+      },
+      "arguments": {
+        "decision_summary": "扩大搜索范围，尝试更通用的关键词寻找可用素材。",
+        "filters": {
+          "allowed_usage": null,
+          "tags": [
+            "青春",
+            "校园",
+            "毕业"
+          ]
+        },
+        "limit": 5,
+        "query": "青春 校园 毕业 照片 回忆"
+      },
+      "attempt_id": "attempt_2b48f847d48c4648",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T08:37:41.884866+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_2b48f847d48c4648",
+        "charged_units": 1,
+        "data": {
+          "catalog_version": "materials-v1",
+          "matches": [],
+          "query": "青春 校园 毕业 照片 回忆",
+          "result_id": "search_e7d3e6dfbd7c49df"
+        },
+        "error": null,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T08:37:41.884866+00:00",
+        "operation_key": "eb5b1804ed4148ace24271027f964b48a41eef6fb0a9f5dd63097d2fb940964e",
+        "outcome": "SUCCESS",
+        "request_id": "req_efa924be6e9c442c",
+        "result_ref": "search_e7d3e6dfbd7c49df",
+        "reused": false,
+        "sim_elapsed_s": 60,
+        "step_id": "step_eb5b1804ed4148ac",
+        "tool": "search_materials"
+      },
+      "operation_key": "eb5b1804ed4148ace24271027f964b48a41eef6fb0a9f5dd63097d2fb940964e",
+      "provider_call_id": "call_jcsvi9p0",
+      "sim_elapsed_s": 60,
+      "started_at": "2026-11-10T08:37:41.876868+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_eb5b1804ed4148ac",
+      "tool": "search_materials"
+    }
+  ],
+  "task_plan": [
+    {
+      "step": "retrieve",
+      "depends_on": [],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "estimate_pre",
+      "depends_on": [
+        "retrieve"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "step": "generate",
+      "depends_on": [
+        "estimate_pre"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "step": "estimate_post",
+      "depends_on": [
+        "generate"
+      ],
+      "status": "PENDING"
+    },
+    {
+      "step": "save",
+      "depends_on": [
+        "estimate_post"
+      ],
+      "status": "PENDING"
+    }
+  ],
+  "tool_results": [
+    {
+      "attempt_id": "attempt_ec423e46a2194449",
+      "charged_units": 1,
+      "data": {
+        "catalog_version": "materials-v1",
+        "matches": [],
+        "query": "毕业季 旧照片 回忆短片",
+        "result_id": "search_d29a045ea4554e71"
+      },
+      "error": null,
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T08:37:35.149547+00:00",
+      "operation_key": "c7436deb14544cdd04c4b694c263e3ed5a47518a5fa15928d455aa114cd21b6f",
+      "outcome": "SUCCESS",
+      "request_id": "req_efa924be6e9c442c",
+      "result_ref": "search_d29a045ea4554e71",
+      "reused": false,
+      "sim_elapsed_s": 60,
+      "step_id": "step_c7436deb14544cdd",
+      "tool": "search_materials"
+    },
+    {
+      "attempt_id": "attempt_d3968c88503a4fb2",
+      "charged_units": 0,
+      "data": null,
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "details": {},
+        "message": "1 validation error for EstimateArgs\nnew_spec.material_ids\n  List should have at least 1 item after validation, not 0 [type=too_short, input_value=[], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/too_short",
+        "retryable": false
+      },
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T08:37:38.819581+00:00",
+      "operation_key": "8a48ad90a88a6a7b52537383342f2c542da57d0986ec3a228602265188ece4c3",
+      "outcome": "REJECTED",
+      "request_id": "req_efa924be6e9c442c",
+      "result_ref": null,
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_8a48ad90a88a6a7b",
+      "tool": "estimate_plan"
+    },
+    {
+      "attempt_id": "attempt_2b48f847d48c4648",
+      "charged_units": 1,
+      "data": {
+        "catalog_version": "materials-v1",
+        "matches": [],
+        "query": "青春 校园 毕业 照片 回忆",
+        "result_id": "search_e7d3e6dfbd7c49df"
+      },
+      "error": null,
+      "ledger_revision": 2,
+      "observed_at": "2026-11-10T08:37:41.884866+00:00",
+      "operation_key": "eb5b1804ed4148ace24271027f964b48a41eef6fb0a9f5dd63097d2fb940964e",
+      "outcome": "SUCCESS",
+      "request_id": "req_efa924be6e9c442c",
+      "result_ref": "search_e7d3e6dfbd7c49df",
+      "reused": false,
+      "sim_elapsed_s": 60,
+      "step_id": "step_eb5b1804ed4148ac",
+      "tool": "search_materials"
+    }
+  ],
+  "latest_projection": null,
+  "current_cost_projection": null,
+  "actual_costs": {
+    "currency": "SIM_UNIT",
+    "entries": [
+      {
+        "amount_units": 1,
+        "attempt_id": "attempt_ec423e46a2194449",
+        "catalog_version": "cost-v1",
+        "committed_at": "2026-11-10T08:37:35.149547+00:00",
+        "entry_id": "fee_2dafc027d0c84ece",
+        "operation_key": "c7436deb14544cdd04c4b694c263e3ed5a47518a5fa15928d455aa114cd21b6f",
+        "request_id": "req_efa924be6e9c442c",
+        "tool": "search_materials"
+      },
+      {
+        "amount_units": 1,
+        "attempt_id": "attempt_2b48f847d48c4648",
+        "catalog_version": "cost-v1",
+        "committed_at": "2026-11-10T08:37:41.883866+00:00",
+        "entry_id": "fee_3f2dc40e80b4470c",
+        "operation_key": "eb5b1804ed4148ace24271027f964b48a41eef6fb0a9f5dd63097d2fb940964e",
+        "request_id": "req_efa924be6e9c442c",
+        "tool": "search_materials"
+      }
+    ],
+    "total_actual_units": 2,
+    "last_known_confirmed_units": 2,
+    "current_amount_confirmed": true,
+    "this_invocation_units": 2
+  },
+  "cumulative_sim_elapsed_s": 120,
+  "time_basis": "wall_plus_simulated_tools",
+  "model_turns": 3,
+  "tool_requests": 3,
+  "this_invocation_model_turns": 3,
+  "this_invocation_tool_requests": 3,
+  "replayed": false,
+  "pending_items": [],
+  "missing_fields": [],
+  "input_conflict": false,
+  "existing_task_status": null,
+  "termination_persisted": true,
+  "pending_liability": null,
+  "pending_liabilities": [],
+  "unconfirmed_operations": [],
+  "read_projection": null,
+  "notice": "真实模式记录需人工检查反馈与动作关联；当前不自动判定合格动态路径。"
+}

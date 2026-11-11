@@ -1,0 +1,963 @@
+{
+  "request_id": "req_411957d97d6e4b7a",
+  "request_key": "qwen_generate_failure_40024f7694f5-generation_failure",
+  "mode": "real",
+  "real_model_decision_evidence": false,
+  "task_status": "INCOMPLETE",
+  "termination_reason": "REAL_CALL_LIMIT",
+  "preparation_status": "INCOMPLETE",
+  "campaign_execution_status": "NOT_STARTED",
+  "save_state": "NOT_ATTEMPTED",
+  "receipt": null,
+  "saved_plan": null,
+  "partial_scripts": [
+    {
+      "artifact_id": "script_5eea7a0f59ba4479",
+      "effective_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+      "kind": "script",
+      "material_refs": [
+        "mat-001",
+        "mat-002",
+        "mat-003"
+      ],
+      "mode": "basic",
+      "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+      "script": {
+        "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：创作一支毕业季主题回忆短片，以旧照片为核心元素。开场采用今昔对照手法，展示校园空镜（教学楼、操场）与毕业合照占位图；中段演示影记工具导入本地照片并添加文字的功能；结尾邀请观众选择一张自己的旧照片参与互动。所有素材均为demo_only用途，仅用于演示效果，不承诺真实产品功能或增长结论。。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据（mat-002）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+        "title": "毕业季：用旧照片做一支回忆短片"
+      },
+      "step_id": "step_1878908e4c889e88",
+      "warnings": [
+        "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+      ]
+    }
+  ],
+  "material_results": [
+    {
+      "artifact_id": "search_941e1013405d4d0a",
+      "catalog_version": "materials-v1",
+      "feedback": {
+        "applied_filters": {
+          "allowed_usage": null,
+          "tags": []
+        },
+        "catalog_available_tags": [
+          "创意",
+          "回忆",
+          "校园",
+          "毕业季",
+          "照片"
+        ],
+        "catalog_available_usage_scopes": [
+          "demo_only"
+        ],
+        "empty_reason": null,
+        "filter_semantics": {
+          "allowed_usage": "EXACT_OR_UNRESTRICTED_IF_NULL",
+          "empty_tags": "UNRESTRICTED",
+          "tags": "ALL_EXACT"
+        },
+        "filtered_match_count": 3,
+        "keyword_match_count": 3,
+        "next_action_hint": null,
+        "returned_count": 3,
+        "unrecognized_allowed_usage": null,
+        "unrecognized_tags": []
+      },
+      "kind": "search",
+      "matches": [
+        {
+          "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+          "facts": [
+            "虚构演示工具影记可导入本地照片并添加文字"
+          ],
+          "material_id": "mat-001",
+          "source_ref": "synthetic://materials-v1/mat-001",
+          "tags": [
+            "毕业季",
+            "照片",
+            "回忆"
+          ],
+          "title": "影记照片演示",
+          "usage_scope": "demo_only"
+        },
+        {
+          "content_digest": "e14f17a768dbc66ca1bc6d9c1a2c1a4c5d45f45c5570570d404a7ab8d7865baf",
+          "facts": [
+            "校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据"
+          ],
+          "material_id": "mat-002",
+          "source_ref": "synthetic://materials-v1/mat-002",
+          "tags": [
+            "校园",
+            "毕业季",
+            "回忆"
+          ],
+          "title": "合成校园空镜",
+          "usage_scope": "demo_only"
+        },
+        {
+          "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+          "facts": [
+            "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+          ],
+          "material_id": "mat-003",
+          "source_ref": "synthetic://materials-v1/mat-003",
+          "tags": [
+            "创意",
+            "照片",
+            "回忆"
+          ],
+          "title": "今昔对照创意",
+          "usage_scope": "demo_only"
+        }
+      ],
+      "query": "毕业 照片 回忆 短片",
+      "result_id": "search_941e1013405d4d0a",
+      "step_id": "step_293554ff80e4c7f2"
+    }
+  ],
+  "execution_steps": [
+    {
+      "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+      "depends_on": [
+        "step_562948e6cd67cf10"
+      ],
+      "kind": "generate_script",
+      "result_ref": "script_5eea7a0f59ba4479",
+      "status": "SUCCEEDED",
+      "step_id": "step_1878908e4c889e88"
+    },
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "search_materials",
+      "result_ref": "search_941e1013405d4d0a",
+      "status": "SUCCEEDED",
+      "step_id": "step_293554ff80e4c7f2"
+    },
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "search_materials",
+      "result_ref": null,
+      "status": "FAILED",
+      "step_id": "step_344ce84941442b26"
+    },
+    {
+      "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+      "depends_on": [
+        "step_293554ff80e4c7f2"
+      ],
+      "kind": "estimate_plan",
+      "result_ref": "quote_fe9b3b7009e740a0",
+      "status": "SUCCEEDED",
+      "step_id": "step_562948e6cd67cf10"
+    },
+    {
+      "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+      "depends_on": [
+        "step_1878908e4c889e88",
+        "step_293554ff80e4c7f2"
+      ],
+      "kind": "estimate_plan",
+      "result_ref": "quote_f6011e9499ab4e79",
+      "status": "SUCCEEDED",
+      "step_id": "step_d2ac716a77f5570c"
+    }
+  ],
+  "attempts": [
+    {
+      "arguments": {
+        "decision_summary": "首次检索，寻找与“毕业季”、“旧照片”、“回忆短片”相关的合成素材。使用宽泛查询和空标签过滤以获取尽可能多的候选素材。",
+        "filters": {
+          "allowed_usage": null,
+          "tags": []
+        },
+        "limit": 10,
+        "query": "毕业 照片 回忆 短片"
+      },
+      "attempt_id": "attempt_4d78ac0ef24847e5",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T13:52:52.466640+00:00",
+      "execution_started": false,
+      "observation": {
+        "attempt_id": "attempt_4d78ac0ef24847e5",
+        "charged_units": 0,
+        "data": null,
+        "error": {
+          "code": "INVALID_ARGUMENT",
+          "details": {},
+          "message": "1 validation error for SearchArgs\nlimit\n  Input should be less than or equal to 5 [type=less_than_equal, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal",
+          "retryable": false
+        },
+        "ledger_revision": 0,
+        "observed_at": "2026-11-10T13:52:52.466640+00:00",
+        "operation_key": "344ce84941442b2659a094b514c33822f99718fcdfd8defa00a4f68d336288f8",
+        "outcome": "REJECTED",
+        "request_id": "req_411957d97d6e4b7a",
+        "result_ref": null,
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_344ce84941442b26",
+        "tool": "search_materials"
+      },
+      "operation_key": "344ce84941442b2659a094b514c33822f99718fcdfd8defa00a4f68d336288f8",
+      "provider_call_id": "call_jx9l3y2q",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T13:52:52.466640+00:00",
+      "status": "REJECTED",
+      "step_id": "step_344ce84941442b26",
+      "tool": "search_materials"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 1,
+        "max_sim_seconds": 60,
+        "operation_key": "293554ff80e4c7f25b96d48978a2e2757f8fe5bf1ab872cc730a0b6d031d0fef",
+        "tool": "search_materials"
+      },
+      "arguments": {
+        "decision_summary": "修正limit参数为5（不超过上限），重新检索与“毕业季”、“旧照片”、“回忆短片”相关的合成素材。",
+        "filters": {
+          "allowed_usage": null,
+          "tags": []
+        },
+        "limit": 5,
+        "query": "毕业 照片 回忆 短片"
+      },
+      "attempt_id": "attempt_6238225736cc429e",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T13:52:55.419973+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_6238225736cc429e",
+        "charged_units": 1,
+        "data": {
+          "catalog_version": "materials-v1",
+          "feedback": {
+            "applied_filters": {
+              "allowed_usage": null,
+              "tags": []
+            },
+            "catalog_available_tags": [
+              "创意",
+              "回忆",
+              "校园",
+              "毕业季",
+              "照片"
+            ],
+            "catalog_available_usage_scopes": [
+              "demo_only"
+            ],
+            "empty_reason": null,
+            "filter_semantics": {
+              "allowed_usage": "EXACT_OR_UNRESTRICTED_IF_NULL",
+              "empty_tags": "UNRESTRICTED",
+              "tags": "ALL_EXACT"
+            },
+            "filtered_match_count": 3,
+            "keyword_match_count": 3,
+            "next_action_hint": null,
+            "returned_count": 3,
+            "unrecognized_allowed_usage": null,
+            "unrecognized_tags": []
+          },
+          "matches": [
+            {
+              "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+              "facts": [
+                "虚构演示工具影记可导入本地照片并添加文字"
+              ],
+              "material_id": "mat-001",
+              "source_ref": "synthetic://materials-v1/mat-001",
+              "tags": [
+                "毕业季",
+                "照片",
+                "回忆"
+              ],
+              "title": "影记照片演示",
+              "usage_scope": "demo_only"
+            },
+            {
+              "content_digest": "e14f17a768dbc66ca1bc6d9c1a2c1a4c5d45f45c5570570d404a7ab8d7865baf",
+              "facts": [
+                "校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据"
+              ],
+              "material_id": "mat-002",
+              "source_ref": "synthetic://materials-v1/mat-002",
+              "tags": [
+                "校园",
+                "毕业季",
+                "回忆"
+              ],
+              "title": "合成校园空镜",
+              "usage_scope": "demo_only"
+            },
+            {
+              "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+              "facts": [
+                "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+              ],
+              "material_id": "mat-003",
+              "source_ref": "synthetic://materials-v1/mat-003",
+              "tags": [
+                "创意",
+                "照片",
+                "回忆"
+              ],
+              "title": "今昔对照创意",
+              "usage_scope": "demo_only"
+            }
+          ],
+          "query": "毕业 照片 回忆 短片",
+          "result_id": "search_941e1013405d4d0a"
+        },
+        "error": null,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T13:52:55.419973+00:00",
+        "operation_key": "293554ff80e4c7f25b96d48978a2e2757f8fe5bf1ab872cc730a0b6d031d0fef",
+        "outcome": "SUCCESS",
+        "request_id": "req_411957d97d6e4b7a",
+        "result_ref": "search_941e1013405d4d0a",
+        "reused": false,
+        "sim_elapsed_s": 60,
+        "step_id": "step_293554ff80e4c7f2",
+        "tool": "search_materials"
+      },
+      "operation_key": "293554ff80e4c7f25b96d48978a2e2757f8fe5bf1ab872cc730a0b6d031d0fef",
+      "provider_call_id": "call_npp76we7",
+      "sim_elapsed_s": 60,
+      "started_at": "2026-11-10T13:52:55.412966+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_293554ff80e4c7f2",
+      "tool": "search_materials"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 0,
+        "max_sim_seconds": 0,
+        "operation_key": "562948e6cd67cf10c5e2463087a31191e59776fffefbb44c18b915972ed8a940",
+        "tool": "estimate_plan"
+      },
+      "arguments": {
+        "decision_summary": "基于检索到的3个合成素材（mat-001影记照片演示、mat-002合成校园空镜、mat-003今昔对照创意），构建毕业季回忆短片方案。采用basic模式以控制成本，明确所有素材仅用于演示目的。",
+        "new_spec": {
+          "creative_brief": "创作一支毕业季主题回忆短片，以旧照片为核心元素。开场采用今昔对照手法，展示校园空镜（教学楼、操场）与毕业合照占位图；中段演示影记工具导入本地照片并添加文字的功能；结尾邀请观众选择一张自己的旧照片参与互动。所有素材均为demo_only用途，仅用于演示效果，不承诺真实产品功能或增长结论。",
+          "material_ids": [
+            "mat-001",
+            "mat-002",
+            "mat-003"
+          ],
+          "mode": "basic"
+        },
+        "quote_id": null,
+        "script_artifact_id": null,
+        "stage": "pre_generation"
+      },
+      "attempt_id": "attempt_44f5572b80a94fd7",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T13:53:02.933309+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_44f5572b80a94fd7",
+        "charged_units": 0,
+        "data": {
+          "budget_gap_units": 0,
+          "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+          "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+          "deadline_gap_s": 0.0,
+          "effective_now": "2026-11-10T13:54:02.933309+00:00",
+          "feasibility": "FEASIBLE",
+          "incurred_units": 1,
+          "ledger_revision": 1,
+          "observed_at": "2026-11-10T13:53:02.933309+00:00",
+          "projected_finish_at": "2026-11-10T13:59:02.933309+00:00",
+          "projected_total_units": 8,
+          "quote_id": "quote_fe9b3b7009e740a0",
+          "remaining_items": [
+            {
+              "disposition": "REMAINING",
+              "duration_s": 240,
+              "fee_units": 6,
+              "operation_fingerprint": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+              "tool": "generate_script"
+            },
+            {
+              "disposition": "REMAINING",
+              "duration_s": 60,
+              "fee_units": 1,
+              "operation_fingerprint": null,
+              "tool": "save_plan"
+            }
+          ],
+          "remaining_sim_s": 300,
+          "reused_script_artifact_id": null,
+          "sequence": 1,
+          "stage": "pre_generation",
+          "step_id": "step_562948e6cd67cf10"
+        },
+        "error": null,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T13:53:02.933309+00:00",
+        "operation_key": "562948e6cd67cf10c5e2463087a31191e59776fffefbb44c18b915972ed8a940",
+        "outcome": "SUCCESS",
+        "request_id": "req_411957d97d6e4b7a",
+        "result_ref": "quote_fe9b3b7009e740a0",
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_562948e6cd67cf10",
+        "tool": "estimate_plan"
+      },
+      "operation_key": "562948e6cd67cf10c5e2463087a31191e59776fffefbb44c18b915972ed8a940",
+      "provider_call_id": "call_7x68a16n",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T13:53:02.925090+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_562948e6cd67cf10",
+      "tool": "estimate_plan"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 6,
+        "max_sim_seconds": 240,
+        "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+        "tool": "generate_script"
+      },
+      "arguments": {
+        "decision_summary": "基于已确认的候选方案（quote_fe9b3b7009e740a0）生成脚本正文。该方案包含3个demo_only合成素材，采用basic模式，预算和时间均可行。",
+        "quote_id": "quote_fe9b3b7009e740a0"
+      },
+      "attempt_id": "attempt_a892e72639b24a71",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T13:53:08.525322+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_a892e72639b24a71",
+        "charged_units": 0,
+        "data": null,
+        "error": {
+          "code": "GENERATION_TEMPORARY",
+          "details": {},
+          "message": "注入的明确工具故障",
+          "retryable": true
+        },
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T13:53:08.525322+00:00",
+        "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+        "outcome": "FAILED",
+        "request_id": "req_411957d97d6e4b7a",
+        "result_ref": null,
+        "reused": false,
+        "sim_elapsed_s": 240,
+        "step_id": "step_1878908e4c889e88",
+        "tool": "generate_script"
+      },
+      "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+      "provider_call_id": "call_z84r6x63",
+      "sim_elapsed_s": 240,
+      "started_at": "2026-11-10T13:53:08.517323+00:00",
+      "status": "FAILED",
+      "step_id": "step_1878908e4c889e88",
+      "tool": "generate_script"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 6,
+        "max_sim_seconds": 240,
+        "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+        "tool": "generate_script"
+      },
+      "arguments": {
+        "decision_summary": "重试生成脚本，因上次遇到临时工具故障（GENERATION_TEMPORARY），使用相同quote_id重新尝试。",
+        "quote_id": "quote_fe9b3b7009e740a0"
+      },
+      "attempt_id": "attempt_d7a984a67748468f",
+      "attempt_no": 2,
+      "ended_at": "2026-11-10T13:53:14.172898+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_d7a984a67748468f",
+        "charged_units": 6,
+        "data": {
+          "artifact_id": "script_5eea7a0f59ba4479",
+          "effective_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+          "material_refs": [
+            "mat-001",
+            "mat-002",
+            "mat-003"
+          ],
+          "mode": "basic",
+          "script": {
+            "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：创作一支毕业季主题回忆短片，以旧照片为核心元素。开场采用今昔对照手法，展示校园空镜（教学楼、操场）与毕业合照占位图；中段演示影记工具导入本地照片并添加文字的功能；结尾邀请观众选择一张自己的旧照片参与互动。所有素材均为demo_only用途，仅用于演示效果，不承诺真实产品功能或增长结论。。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据（mat-002）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+            "title": "毕业季：用旧照片做一支回忆短片"
+          },
+          "warnings": [
+            "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+          ]
+        },
+        "error": null,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T13:53:14.171898+00:00",
+        "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+        "outcome": "SUCCESS",
+        "request_id": "req_411957d97d6e4b7a",
+        "result_ref": "script_5eea7a0f59ba4479",
+        "reused": false,
+        "sim_elapsed_s": 240,
+        "step_id": "step_1878908e4c889e88",
+        "tool": "generate_script"
+      },
+      "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+      "provider_call_id": "call_xg9gcy50",
+      "sim_elapsed_s": 240,
+      "started_at": "2026-11-10T13:53:14.163895+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_1878908e4c889e88",
+      "tool": "generate_script"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 0,
+        "max_sim_seconds": 0,
+        "operation_key": "d2ac716a77f5570cdf77e8eef9477b28b3431eb65dec6ae9a8f9214b399f121a",
+        "tool": "estimate_plan"
+      },
+      "arguments": {
+        "decision_summary": "脚本生成成功（script_5eea7a0f59ba4479），进行post_generation复估以确认最终预算和时间可行性，准备保存方案。",
+        "new_spec": null,
+        "quote_id": "quote_fe9b3b7009e740a0",
+        "script_artifact_id": "script_5eea7a0f59ba4479",
+        "stage": "post_generation"
+      },
+      "attempt_id": "attempt_fcd0d5dd04bb4c4f",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T13:53:22.292248+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_fcd0d5dd04bb4c4f",
+        "charged_units": 0,
+        "data": {
+          "budget_gap_units": 0,
+          "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+          "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+          "deadline_gap_s": 0.0,
+          "effective_now": "2026-11-10T14:02:22.291596+00:00",
+          "feasibility": "FEASIBLE",
+          "incurred_units": 7,
+          "ledger_revision": 2,
+          "observed_at": "2026-11-10T13:53:22.291596+00:00",
+          "projected_finish_at": "2026-11-10T14:03:22.291596+00:00",
+          "projected_total_units": 8,
+          "quote_id": "quote_f6011e9499ab4e79",
+          "remaining_items": [
+            {
+              "disposition": "REMAINING",
+              "duration_s": 60,
+              "fee_units": 1,
+              "operation_fingerprint": null,
+              "tool": "save_plan"
+            }
+          ],
+          "remaining_sim_s": 60,
+          "reused_script_artifact_id": "script_5eea7a0f59ba4479",
+          "sequence": 2,
+          "stage": "post_generation",
+          "step_id": "step_d2ac716a77f5570c"
+        },
+        "error": null,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T13:53:22.291596+00:00",
+        "operation_key": "d2ac716a77f5570cdf77e8eef9477b28b3431eb65dec6ae9a8f9214b399f121a",
+        "outcome": "SUCCESS",
+        "request_id": "req_411957d97d6e4b7a",
+        "result_ref": "quote_f6011e9499ab4e79",
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_d2ac716a77f5570c",
+        "tool": "estimate_plan"
+      },
+      "operation_key": "d2ac716a77f5570cdf77e8eef9477b28b3431eb65dec6ae9a8f9214b399f121a",
+      "provider_call_id": "call_2amzik68",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T13:53:22.282599+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_d2ac716a77f5570c",
+      "tool": "estimate_plan"
+    }
+  ],
+  "task_plan": [
+    {
+      "step": "retrieve",
+      "depends_on": [],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "estimate_pre",
+      "depends_on": [
+        "retrieve"
+      ],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "generate",
+      "depends_on": [
+        "estimate_pre"
+      ],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "estimate_post",
+      "depends_on": [
+        "generate"
+      ],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "save",
+      "depends_on": [
+        "estimate_post"
+      ],
+      "status": "PENDING"
+    }
+  ],
+  "tool_results": [
+    {
+      "attempt_id": "attempt_4d78ac0ef24847e5",
+      "charged_units": 0,
+      "data": null,
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "details": {},
+        "message": "1 validation error for SearchArgs\nlimit\n  Input should be less than or equal to 5 [type=less_than_equal, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal",
+        "retryable": false
+      },
+      "ledger_revision": 0,
+      "observed_at": "2026-11-10T13:52:52.466640+00:00",
+      "operation_key": "344ce84941442b2659a094b514c33822f99718fcdfd8defa00a4f68d336288f8",
+      "outcome": "REJECTED",
+      "request_id": "req_411957d97d6e4b7a",
+      "result_ref": null,
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_344ce84941442b26",
+      "tool": "search_materials"
+    },
+    {
+      "attempt_id": "attempt_6238225736cc429e",
+      "charged_units": 1,
+      "data": {
+        "catalog_version": "materials-v1",
+        "feedback": {
+          "applied_filters": {
+            "allowed_usage": null,
+            "tags": []
+          },
+          "catalog_available_tags": [
+            "创意",
+            "回忆",
+            "校园",
+            "毕业季",
+            "照片"
+          ],
+          "catalog_available_usage_scopes": [
+            "demo_only"
+          ],
+          "empty_reason": null,
+          "filter_semantics": {
+            "allowed_usage": "EXACT_OR_UNRESTRICTED_IF_NULL",
+            "empty_tags": "UNRESTRICTED",
+            "tags": "ALL_EXACT"
+          },
+          "filtered_match_count": 3,
+          "keyword_match_count": 3,
+          "next_action_hint": null,
+          "returned_count": 3,
+          "unrecognized_allowed_usage": null,
+          "unrecognized_tags": []
+        },
+        "matches": [
+          {
+            "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+            "facts": [
+              "虚构演示工具影记可导入本地照片并添加文字"
+            ],
+            "material_id": "mat-001",
+            "source_ref": "synthetic://materials-v1/mat-001",
+            "tags": [
+              "毕业季",
+              "照片",
+              "回忆"
+            ],
+            "title": "影记照片演示",
+            "usage_scope": "demo_only"
+          },
+          {
+            "content_digest": "e14f17a768dbc66ca1bc6d9c1a2c1a4c5d45f45c5570570d404a7ab8d7865baf",
+            "facts": [
+              "校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据"
+            ],
+            "material_id": "mat-002",
+            "source_ref": "synthetic://materials-v1/mat-002",
+            "tags": [
+              "校园",
+              "毕业季",
+              "回忆"
+            ],
+            "title": "合成校园空镜",
+            "usage_scope": "demo_only"
+          },
+          {
+            "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+            "facts": [
+              "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+            ],
+            "material_id": "mat-003",
+            "source_ref": "synthetic://materials-v1/mat-003",
+            "tags": [
+              "创意",
+              "照片",
+              "回忆"
+            ],
+            "title": "今昔对照创意",
+            "usage_scope": "demo_only"
+          }
+        ],
+        "query": "毕业 照片 回忆 短片",
+        "result_id": "search_941e1013405d4d0a"
+      },
+      "error": null,
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T13:52:55.419973+00:00",
+      "operation_key": "293554ff80e4c7f25b96d48978a2e2757f8fe5bf1ab872cc730a0b6d031d0fef",
+      "outcome": "SUCCESS",
+      "request_id": "req_411957d97d6e4b7a",
+      "result_ref": "search_941e1013405d4d0a",
+      "reused": false,
+      "sim_elapsed_s": 60,
+      "step_id": "step_293554ff80e4c7f2",
+      "tool": "search_materials"
+    },
+    {
+      "attempt_id": "attempt_44f5572b80a94fd7",
+      "charged_units": 0,
+      "data": {
+        "budget_gap_units": 0,
+        "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+        "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+        "deadline_gap_s": 0.0,
+        "effective_now": "2026-11-10T13:54:02.933309+00:00",
+        "feasibility": "FEASIBLE",
+        "incurred_units": 1,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T13:53:02.933309+00:00",
+        "projected_finish_at": "2026-11-10T13:59:02.933309+00:00",
+        "projected_total_units": 8,
+        "quote_id": "quote_fe9b3b7009e740a0",
+        "remaining_items": [
+          {
+            "disposition": "REMAINING",
+            "duration_s": 240,
+            "fee_units": 6,
+            "operation_fingerprint": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+            "tool": "generate_script"
+          },
+          {
+            "disposition": "REMAINING",
+            "duration_s": 60,
+            "fee_units": 1,
+            "operation_fingerprint": null,
+            "tool": "save_plan"
+          }
+        ],
+        "remaining_sim_s": 300,
+        "reused_script_artifact_id": null,
+        "sequence": 1,
+        "stage": "pre_generation",
+        "step_id": "step_562948e6cd67cf10"
+      },
+      "error": null,
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T13:53:02.933309+00:00",
+      "operation_key": "562948e6cd67cf10c5e2463087a31191e59776fffefbb44c18b915972ed8a940",
+      "outcome": "SUCCESS",
+      "request_id": "req_411957d97d6e4b7a",
+      "result_ref": "quote_fe9b3b7009e740a0",
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_562948e6cd67cf10",
+      "tool": "estimate_plan"
+    },
+    {
+      "attempt_id": "attempt_a892e72639b24a71",
+      "charged_units": 0,
+      "data": null,
+      "error": {
+        "code": "GENERATION_TEMPORARY",
+        "details": {},
+        "message": "注入的明确工具故障",
+        "retryable": true
+      },
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T13:53:08.525322+00:00",
+      "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+      "outcome": "FAILED",
+      "request_id": "req_411957d97d6e4b7a",
+      "result_ref": null,
+      "reused": false,
+      "sim_elapsed_s": 240,
+      "step_id": "step_1878908e4c889e88",
+      "tool": "generate_script"
+    },
+    {
+      "attempt_id": "attempt_d7a984a67748468f",
+      "charged_units": 6,
+      "data": {
+        "artifact_id": "script_5eea7a0f59ba4479",
+        "effective_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+        "material_refs": [
+          "mat-001",
+          "mat-002",
+          "mat-003"
+        ],
+        "mode": "basic",
+        "script": {
+          "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：创作一支毕业季主题回忆短片，以旧照片为核心元素。开场采用今昔对照手法，展示校园空镜（教学楼、操场）与毕业合照占位图；中段演示影记工具导入本地照片并添加文字的功能；结尾邀请观众选择一张自己的旧照片参与互动。所有素材均为demo_only用途，仅用于演示效果，不承诺真实产品功能或增长结论。。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 校园空镜清单含教学楼、操场和毕业合照占位图，不含真实个人数据（mat-002）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+          "title": "毕业季：用旧照片做一支回忆短片"
+        },
+        "warnings": [
+          "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+        ]
+      },
+      "error": null,
+      "ledger_revision": 2,
+      "observed_at": "2026-11-10T13:53:14.171898+00:00",
+      "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+      "outcome": "SUCCESS",
+      "request_id": "req_411957d97d6e4b7a",
+      "result_ref": "script_5eea7a0f59ba4479",
+      "reused": false,
+      "sim_elapsed_s": 240,
+      "step_id": "step_1878908e4c889e88",
+      "tool": "generate_script"
+    },
+    {
+      "attempt_id": "attempt_fcd0d5dd04bb4c4f",
+      "charged_units": 0,
+      "data": {
+        "budget_gap_units": 0,
+        "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+        "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+        "deadline_gap_s": 0.0,
+        "effective_now": "2026-11-10T14:02:22.291596+00:00",
+        "feasibility": "FEASIBLE",
+        "incurred_units": 7,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T13:53:22.291596+00:00",
+        "projected_finish_at": "2026-11-10T14:03:22.291596+00:00",
+        "projected_total_units": 8,
+        "quote_id": "quote_f6011e9499ab4e79",
+        "remaining_items": [
+          {
+            "disposition": "REMAINING",
+            "duration_s": 60,
+            "fee_units": 1,
+            "operation_fingerprint": null,
+            "tool": "save_plan"
+          }
+        ],
+        "remaining_sim_s": 60,
+        "reused_script_artifact_id": "script_5eea7a0f59ba4479",
+        "sequence": 2,
+        "stage": "post_generation",
+        "step_id": "step_d2ac716a77f5570c"
+      },
+      "error": null,
+      "ledger_revision": 2,
+      "observed_at": "2026-11-10T13:53:22.291596+00:00",
+      "operation_key": "d2ac716a77f5570cdf77e8eef9477b28b3431eb65dec6ae9a8f9214b399f121a",
+      "outcome": "SUCCESS",
+      "request_id": "req_411957d97d6e4b7a",
+      "result_ref": "quote_f6011e9499ab4e79",
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_d2ac716a77f5570c",
+      "tool": "estimate_plan"
+    }
+  ],
+  "latest_projection": {
+    "budget_gap_units": 0,
+    "candidate_spec_hash": "ab30344e6de26c659c33a0ff42f368556789011db4db7f778d36ed6796313bd5",
+    "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+    "deadline_gap_s": 0.0,
+    "effective_now": "2026-11-10T14:02:22.291596+00:00",
+    "feasibility": "FEASIBLE",
+    "incurred_units": 7,
+    "ledger_revision": 2,
+    "observed_at": "2026-11-10T13:53:22.291596+00:00",
+    "projected_finish_at": "2026-11-10T14:03:22.291596+00:00",
+    "projected_total_units": 8,
+    "quote_id": "quote_f6011e9499ab4e79",
+    "remaining_items": [
+      {
+        "disposition": "REMAINING",
+        "duration_s": 60,
+        "fee_units": 1,
+        "operation_fingerprint": null,
+        "tool": "save_plan"
+      }
+    ],
+    "remaining_sim_s": 60,
+    "reused_script_artifact_id": "script_5eea7a0f59ba4479",
+    "sequence": 2,
+    "stage": "post_generation",
+    "step_id": "step_d2ac716a77f5570c"
+  },
+  "current_cost_projection": null,
+  "actual_costs": {
+    "currency": "SIM_UNIT",
+    "entries": [
+      {
+        "amount_units": 1,
+        "attempt_id": "attempt_6238225736cc429e",
+        "catalog_version": "cost-v1",
+        "committed_at": "2026-11-10T13:52:55.419973+00:00",
+        "entry_id": "fee_46a6ec9459f94f28",
+        "operation_key": "293554ff80e4c7f25b96d48978a2e2757f8fe5bf1ab872cc730a0b6d031d0fef",
+        "request_id": "req_411957d97d6e4b7a",
+        "tool": "search_materials"
+      },
+      {
+        "amount_units": 6,
+        "attempt_id": "attempt_d7a984a67748468f",
+        "catalog_version": "cost-v1",
+        "committed_at": "2026-11-10T13:53:14.171898+00:00",
+        "entry_id": "fee_49cddefbf0a14614",
+        "operation_key": "1878908e4c889e88de5dd47fdcc6b22cf9b078e13834a3994bebf2550cb3f8e4",
+        "request_id": "req_411957d97d6e4b7a",
+        "tool": "generate_script"
+      }
+    ],
+    "total_actual_units": 7,
+    "last_known_confirmed_units": 7,
+    "current_amount_confirmed": true,
+    "this_invocation_units": 7
+  },
+  "cumulative_sim_elapsed_s": 540,
+  "time_basis": "wall_plus_simulated_tools",
+  "model_turns": 6,
+  "tool_requests": 6,
+  "this_invocation_model_turns": 6,
+  "this_invocation_tool_requests": 6,
+  "replayed": false,
+  "pending_items": [],
+  "missing_fields": [],
+  "input_conflict": false,
+  "existing_task_status": null,
+  "termination_persisted": true,
+  "pending_liability": null,
+  "pending_liabilities": [],
+  "unconfirmed_operations": [],
+  "read_projection": null,
+  "notice": "真实模式记录需人工检查反馈与动作关联；当前不自动判定合格动态路径。"
+}

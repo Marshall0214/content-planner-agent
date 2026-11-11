@@ -363,6 +363,10 @@ class Toolbox:
                                             (key, self.request_id, tool, key, "STARTED"))
                 started = self._result(snapshot, tool, key, attempt_id, "SUCCESS")
                 self._record(snapshot, started, args, deps, started=True)
+                # Frozen admission facts remain available even if the result commit fails.
+                snapshot["attempts"][-1]["admitted_liability"] = {
+                    "operation_key": key, "tool": tool, "max_charge_units": fee,
+                    "max_sim_seconds": seconds}
                 self.store.put(snapshot)
             self.last_snapshot = deepcopy(snapshot)
             tool_attempt = sum(a["tool"] == tool and a["execution_started"] for a in snapshot["attempts"])
@@ -462,19 +466,38 @@ class Toolbox:
     def _perform(self, tool, args, snapshot, candidate, quote, artifact, key):
         step_id = f"step_{key[:16]}"
         if tool == "search_materials":
-            matches = []
             query_tokens = args["query"].casefold().split()
-            for material in self.catalog.materials.values():
-                text = canonical(material).casefold()
-                if not any(t in text for t in query_tokens):
+            keyword_matches = [m for m in self.catalog.materials.values()
+                               if any(t in canonical(m).casefold() for t in query_tokens)]
+            applied = {"tags": sorted(set(args["filters"]["tags"])),
+                       "allowed_usage": args["filters"]["allowed_usage"]}
+            matches = []
+            for material in keyword_matches:
+                if not set(applied["tags"]).issubset(material["tags"]):
                     continue
-                if args["filters"]["tags"] and not set(args["filters"]["tags"]).issubset(material["tags"]):
-                    continue
-                if args["filters"]["allowed_usage"] and args["filters"]["allowed_usage"] != material["usage_scope"]:
+                if applied["allowed_usage"] is not None and applied["allowed_usage"] != material["usage_scope"]:
                     continue
                 matches.append(deepcopy(material))
+            available_tags = sorted({tag for m in self.catalog.materials.values() for tag in m["tags"]})
+            available_usage = sorted({m["usage_scope"] for m in self.catalog.materials.values()})
+            empty_reason = None if matches else "FILTERS_EXCLUDED_ALL" if keyword_matches else "NO_KEYWORD_MATCH"
+            feedback = {
+                "applied_filters": applied,
+                "filter_semantics": {"tags": "ALL_EXACT", "empty_tags": "UNRESTRICTED",
+                                     "allowed_usage": "EXACT_OR_UNRESTRICTED_IF_NULL"},
+                "keyword_match_count": len(keyword_matches), "filtered_match_count": len(matches),
+                "returned_count": min(len(matches), args["limit"]),
+                "catalog_available_tags": available_tags, "unrecognized_tags": sorted(set(applied["tags"]) - set(available_tags)),
+                "catalog_available_usage_scopes": available_usage,
+                "unrecognized_allowed_usage": applied["allowed_usage"] if applied["allowed_usage"] is not None and applied["allowed_usage"] not in available_usage else None,
+                "empty_reason": empty_reason,
+                "next_action_hint": None if matches else (
+                    "关键词命中素材但被精确过滤全部排除。核对实际目录标签/usage；由模型选择改查询、减少可选过滤或停止。"
+                    if keyword_matches else "当前关键词没有目录命中；由模型选择改查询或说明资料缺口后停止，清空过滤不保证有结果。")
+                    + ("不得放宽用户硬过滤；无实际命中不能用空material_ids估价。" if not matches else ""),
+            }
             data = {"result_id": new_id("search"), "query": args["query"],
-                    "catalog_version": "materials-v1", "matches": matches[:args["limit"]]}
+                    "catalog_version": "materials-v1", "matches": matches[:args["limit"]], "feedback": feedback}
             snapshot["artifacts"][data["result_id"]] = {**deepcopy(data), "kind": "search",
                                                        "artifact_id": data["result_id"], "step_id": step_id}
             return data

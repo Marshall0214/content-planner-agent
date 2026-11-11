@@ -1,0 +1,2 @@
+# Keep archived executed scripts byte-identical to their recorded SHA256.
+docs/evidence/*.py.txt -text

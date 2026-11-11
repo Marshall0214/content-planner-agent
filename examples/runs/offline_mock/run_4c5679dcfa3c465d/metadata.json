@@ -1,0 +1,33 @@
+{
+  "run_id": "run_4c5679dcfa3c465d",
+  "case_id": "C10-success",
+  "request_id": "req_fa15fb02ae5d4b04",
+  "request_key": "batch_a36c450a983f-last_success",
+  "mode": "offline_mock",
+  "replayed": false,
+  "model_name": "scripted-offline-v1",
+  "fixture": "no_fault",
+  "catalog_digests": {
+    "costs": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+    "materials": "1ae52aca6bfcf66b32d6252ccfdef89b1424b16dea4dce0ed40e1691c30ad0d3"
+  },
+  "python": "3.12.7",
+  "dependencies": {
+    "content-planner-agent": "0.1.0",
+    "pydantic": "2.14.3",
+    "openai": "2.54.0",
+    "pytest": "9.2.0"
+  },
+  "recorded_at_utc": "2026-11-10T06:41:53.008701+00:00",
+  "limits": {
+    "max_model_turns": 12,
+    "max_tool_requests": 5,
+    "max_operation_attempts": 2,
+    "model_timeout_s": 20,
+    "tool_timeout_s": 3,
+    "run_timeout_s": 180
+  },
+  "online_validation": "not_run",
+  "read_projection": null,
+  "source_digest": "daba094e85b2de4ec7b57c05817cff0f18d0d9c6ca98ed4a235da041d4b1cd9f"
+}

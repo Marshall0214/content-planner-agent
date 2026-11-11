@@ -1,0 +1,110 @@
+{
+  "checked_at_utc": "2026-11-10T07:47:48.466854+00:00",
+  "endpoint": "http://127.0.0.1:11434",
+  "service": "ollama",
+  "inference_requests": 0,
+  "version": {
+    "version": "0.40.9"
+  },
+  "loaded_models": {
+    "models": []
+  },
+  "models": [
+    {
+      "name": "qwen3-embedding:0.6b",
+      "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+      "size": 639150858
+    },
+    {
+      "name": "qwen2.5-coder:latest",
+      "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+      "size": 4683087561
+    },
+    {
+      "name": "qwen3-coder:30b",
+      "digest": "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca",
+      "size": 18556700761
+    },
+    {
+      "name": "qwen3.5:27b",
+      "digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+      "size": 17420432728
+    },
+    {
+      "name": "qwen2.5:7b",
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "size": 4683087332
+    },
+    {
+      "name": "qwen2.5:3b",
+      "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "size": 1929912432
+    },
+    {
+      "name": "gemma4:e4b",
+      "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+      "size": 9608350718
+    }
+  ],
+  "selected_model": {
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ],
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "27.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "parameters": "presence_penalty               1.5\ntemperature                    1\ntop_k                          20\ntop_p                          0.95",
+    "remote_model": null,
+    "remote_host": null,
+    "model_id": "qwen3.5:27b",
+    "thinking_metadata": {
+      "qwen35.context_length": 262144
+    },
+    "thinking": {
+      "values": [
+        false,
+        true
+      ],
+      "default": true
+    },
+    "template": "{{ .Prompt }}",
+    "renderer": "qwen3.5",
+    "parser": "qwen3.5",
+    "template_source": "renderer_parser"
+  },
+  "after_smoke_at_utc": "2026-11-10T07:52:08.049298+00:00",
+  "after_smoke_loaded": {
+    "models": [
+      {
+        "name": "qwen3.5:27b",
+        "model": "qwen3.5:27b",
+        "size": 18254670067,
+        "digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "27.8B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-10T15:56:06.3571101+08:00",
+        "size_vram": 18254670067,
+        "context_length": 32768,
+        "runner": "llamacpp"
+      }
+    ]
+  }
+}

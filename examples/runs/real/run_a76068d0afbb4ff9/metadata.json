@@ -1,0 +1,52 @@
+{
+  "run_id": "run_a76068d0afbb4ff9",
+  "case_id": "normal_replay",
+  "request_id": "req_98f9ba0f4e9b46c2",
+  "request_key": "qwen_normal_5f38146a433d-normal",
+  "mode": "real",
+  "replayed": true,
+  "model_name": "qwen3.5:27b",
+  "fixture": "no_fault",
+  "model_configuration": {
+    "authentication": "local SDK placeholder; not a cloud key",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "inference_parameters": {
+      "max_output_tokens": 4000,
+      "parallel_tool_calls": false,
+      "store": false,
+      "temperature": 0.2,
+      "think": false
+    },
+    "outbound_tool_schema": {
+      "original_digest": "32381e290ab6daa91639121997c6a7d282382bb18a689e37610f57ca2cc1da76",
+      "outbound_digest": "49a3c9aaa7c9027a93b577db816a04a7b63f6fb311d6bcc10320a8e47ab56a7a",
+      "strategy": "inline_local_refs"
+    },
+    "protocol": "responses_stateless",
+    "sdk_max_retries": 0,
+    "service_type": "ollama"
+  },
+  "catalog_digests": {
+    "costs": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+    "materials": "1ae52aca6bfcf66b32d6252ccfdef89b1424b16dea4dce0ed40e1691c30ad0d3"
+  },
+  "python": "3.12.7",
+  "dependencies": {
+    "content-planner-agent": "0.1.0",
+    "pydantic": "2.14.3",
+    "openai": "2.54.0",
+    "pytest": "9.2.0"
+  },
+  "recorded_at_utc": "2026-11-10T10:30:07.155463+00:00",
+  "limits": {
+    "max_model_turns": 12,
+    "max_operation_attempts": 2,
+    "max_tool_requests": 10,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180,
+    "tool_timeout_s": 3
+  },
+  "online_validation": "requires_review",
+  "read_projection": null,
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5"
+}

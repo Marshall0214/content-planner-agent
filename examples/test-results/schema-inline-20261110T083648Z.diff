@@ -1,0 +1,251 @@
+--- baseline_actual_sdk_tools
++++ ollama_preflight_inlined_tools
+@@ -5,8 +5,15 @@
+     "description": "Search synthetic materials; new successful search costs 1 unit/60 simulated seconds.",
+     "strict": true,
+     "parameters": {
+-      "$defs": {
+-        "SearchFilters": {
++      "additionalProperties": false,
++      "properties": {
++        "query": {
++          "maxLength": 300,
++          "minLength": 1,
++          "title": "Query",
++          "type": "string"
++        },
++        "filters": {
+           "additionalProperties": false,
+           "properties": {
+             "tags": {
+@@ -34,18 +41,6 @@
+           ],
+           "title": "SearchFilters",
+           "type": "object"
+-        }
+-      },
+-      "additionalProperties": false,
+-      "properties": {
+-        "query": {
+-          "maxLength": 300,
+-          "minLength": 1,
+-          "title": "Query",
+-          "type": "string"
+-        },
+-        "filters": {
+-          "$ref": "#/$defs/SearchFilters"
+         },
+         "limit": {
+           "maximum": 5,
+@@ -76,49 +71,44 @@
+     "description": "Register a new immutable candidate OR quote an existing quote's candidate using fresh ledger/clock. Free. Over-budget is valid feedback.",
+     "strict": true,
+     "parameters": {
+-      "$defs": {
+-        "CandidateSpec": {
+-          "additionalProperties": false,
+-          "properties": {
+-            "material_ids": {
+-              "items": {
+-                "type": "string"
+-              },
+-              "maxItems": 5,
+-              "minItems": 1,
+-              "title": "Material Ids",
+-              "type": "array"
+-            },
+-            "mode": {
+-              "enum": [
+-                "basic",
+-                "premium"
+-              ],
+-              "title": "Mode",
+-              "type": "string"
+-            },
+-            "creative_brief": {
+-              "maxLength": 2000,
+-              "minLength": 1,
+-              "title": "Creative Brief",
+-              "type": "string"
+-            }
+-          },
+-          "required": [
+-            "material_ids",
+-            "mode",
+-            "creative_brief"
+-          ],
+-          "title": "CandidateSpec",
+-          "type": "object"
+-        }
+-      },
+       "additionalProperties": false,
+       "properties": {
+         "new_spec": {
+           "anyOf": [
+             {
+-              "$ref": "#/$defs/CandidateSpec"
++              "additionalProperties": false,
++              "properties": {
++                "material_ids": {
++                  "items": {
++                    "type": "string"
++                  },
++                  "maxItems": 5,
++                  "minItems": 1,
++                  "title": "Material Ids",
++                  "type": "array"
++                },
++                "mode": {
++                  "enum": [
++                    "basic",
++                    "premium"
++                  ],
++                  "title": "Mode",
++                  "type": "string"
++                },
++                "creative_brief": {
++                  "maxLength": 2000,
++                  "minLength": 1,
++                  "title": "Creative Brief",
++                  "type": "string"
++                }
++              },
++              "required": [
++                "material_ids",
++                "mode",
++                "creative_brief"
++              ],
++              "title": "CandidateSpec",
++              "type": "object"
+             },
+             {
+               "type": "null"
+@@ -206,8 +196,17 @@
+     "description": "Save full campaign and script using post-generation quote. 1 unit/60s. Confirmed success immediately terminates the agent.",
+     "strict": true,
+     "parameters": {
+-      "$defs": {
+-        "CampaignDraft": {
++      "additionalProperties": false,
++      "properties": {
++        "quote_id": {
++          "title": "Quote Id",
++          "type": "string"
++        },
++        "script_artifact_id": {
++          "title": "Script Artifact Id",
++          "type": "string"
++        },
++        "draft": {
+           "additionalProperties": false,
+           "properties": {
+             "title": {
+@@ -258,7 +257,45 @@
+             },
+             "campaign_tasks": {
+               "items": {
+-                "$ref": "#/$defs/CampaignTask"
++                "additionalProperties": false,
++                "properties": {
++                  "task_id": {
++                    "minLength": 1,
++                    "title": "Task Id",
++                    "type": "string"
++                  },
++                  "description": {
++                    "minLength": 1,
++                    "title": "Description",
++                    "type": "string"
++                  },
++                  "depends_on": {
++                    "items": {
++                      "type": "string"
++                    },
++                    "title": "Depends On",
++                    "type": "array"
++                  },
++                  "owner_role": {
++                    "minLength": 1,
++                    "title": "Owner Role",
++                    "type": "string"
++                  },
++                  "relative_schedule": {
++                    "minLength": 1,
++                    "title": "Relative Schedule",
++                    "type": "string"
++                  }
++                },
++                "required": [
++                  "task_id",
++                  "description",
++                  "depends_on",
++                  "owner_role",
++                  "relative_schedule"
++                ],
++                "title": "CampaignTask",
++                "type": "object"
+               },
+               "maxItems": 12,
+               "minItems": 1,
+@@ -296,61 +333,6 @@
+           ],
+           "title": "CampaignDraft",
+           "type": "object"
+-        },
+-        "CampaignTask": {
+-          "additionalProperties": false,
+-          "properties": {
+-            "task_id": {
+-              "minLength": 1,
+-              "title": "Task Id",
+-              "type": "string"
+-            },
+-            "description": {
+-              "minLength": 1,
+-              "title": "Description",
+-              "type": "string"
+-            },
+-            "depends_on": {
+-              "items": {
+-                "type": "string"
+-              },
+-              "title": "Depends On",
+-              "type": "array"
+-            },
+-            "owner_role": {
+-              "minLength": 1,
+-              "title": "Owner Role",
+-              "type": "string"
+-            },
+-            "relative_schedule": {
+-              "minLength": 1,
+-              "title": "Relative Schedule",
+-              "type": "string"
+-            }
+-          },
+-          "required": [
+-            "task_id",
+-            "description",
+-            "depends_on",
+-            "owner_role",
+-            "relative_schedule"
+-          ],
+-          "title": "CampaignTask",
+-          "type": "object"
+-        }
+-      },
+-      "additionalProperties": false,
+-      "properties": {
+-        "quote_id": {
+-          "title": "Quote Id",
+-          "type": "string"
+-        },
+-        "script_artifact_id": {
+-          "title": "Script Artifact Id",
+-          "type": "string"
+-        },
+-        "draft": {
+-          "$ref": "#/$defs/CampaignDraft"
+         },
+         "decision_summary": {
+           "maxLength": 500,

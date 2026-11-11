@@ -1,0 +1,34 @@
+{
+  "run_id": "run_2130c3f2fb3b4772",
+  "case_id": "C06-conflict",
+  "request_id": "req_020ce7c4ad8f4da1",
+  "request_key": "batch_2f102050cb72-normal",
+  "mode": "offline_mock",
+  "replayed": true,
+  "model_name": "scripted-offline-v1",
+  "fixture": "no_fault",
+  "model_configuration": null,
+  "catalog_digests": {
+    "costs": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+    "materials": "1ae52aca6bfcf66b32d6252ccfdef89b1424b16dea4dce0ed40e1691c30ad0d3"
+  },
+  "python": "3.12.7",
+  "dependencies": {
+    "content-planner-agent": "0.1.0",
+    "pydantic": "2.14.3",
+    "openai": "2.54.0",
+    "pytest": "9.2.0"
+  },
+  "recorded_at_utc": "2026-11-10T07:53:02.304628+00:00",
+  "limits": {
+    "max_model_turns": 12,
+    "max_tool_requests": 10,
+    "max_operation_attempts": 2,
+    "model_timeout_s": 20,
+    "tool_timeout_s": 3,
+    "run_timeout_s": 180
+  },
+  "online_validation": "not_run",
+  "read_projection": null,
+  "source_digest": "66193f9187da7a5e6007a412abb40d96848ebe71514f26815e612fd909ad18c8"
+}

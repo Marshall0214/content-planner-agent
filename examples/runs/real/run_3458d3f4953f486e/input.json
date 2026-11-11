@@ -1,0 +1,13 @@
+{
+  "request_key": "qwen_specialties_9333a7268207-budget",
+  "theme": "毕业季：用旧照片做一支回忆短片",
+  "budget_units": 3,
+  "deadline_at": "2026-11-10T11:20:18.232095Z",
+  "materials_catalog": "materials-v1",
+  "cost_catalog": "cost-v1",
+  "hard_requirements": [],
+  "preferences": [
+    "运营有一个尚未核价的基础方案想法，请给出实际估价后再决定是否继续。"
+  ],
+  "parent_request_key": null
+}

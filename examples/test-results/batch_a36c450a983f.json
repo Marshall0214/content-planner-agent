@@ -1,0 +1,216 @@
+{
+  "batch_id": "batch_a36c450a983f",
+  "mode": "offline_mock",
+  "real_model_validation": "not_run",
+  "recorded_at_utc": "2026-11-10T06:41:47.288165+00:00",
+  "runs": [
+    {
+      "case_id": "C01",
+      "evidence_dir": "examples/runs/offline_mock/run_219e2e8aa04a40ef",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 5,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C06",
+      "evidence_dir": "examples/runs/offline_mock/run_035145f8eb7c4450",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 0,
+      "replayed": true,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C06-conflict",
+      "evidence_dir": "examples/runs/offline_mock/run_306579e7a442478e",
+      "exit_code": 4,
+      "task_status": "FAILED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 0,
+      "replayed": true,
+      "termination_persisted": false,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C02",
+      "evidence_dir": "examples/runs/offline_mock/run_a040ec3fb9fc4a8f",
+      "exit_code": 2,
+      "task_status": "NEEDS_INPUT",
+      "save_state": "NOT_ATTEMPTED",
+      "actual_units": 0,
+      "last_known_units": 0,
+      "model_turns_this_invocation": 0,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C03",
+      "evidence_dir": "examples/runs/offline_mock/run_7c6d4cd2fa264171",
+      "exit_code": 2,
+      "task_status": "NEEDS_INPUT",
+      "save_state": "NOT_ATTEMPTED",
+      "actual_units": 0,
+      "last_known_units": 0,
+      "model_turns_this_invocation": 0,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C04",
+      "evidence_dir": "examples/runs/offline_mock/run_bab61705afcb439d",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "NOT_ATTEMPTED",
+      "actual_units": 1,
+      "last_known_units": 1,
+      "model_turns_this_invocation": 3,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C04-adjust",
+      "evidence_dir": "examples/runs/offline_mock/run_91b2660267c34cee",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 6,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C05",
+      "evidence_dir": "examples/runs/offline_mock/run_d25a3bdb5e5748ea",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 6,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C05-permanent",
+      "evidence_dir": "examples/runs/offline_mock/run_e7812049c23f4dea",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "FAILED",
+      "actual_units": 7,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 6,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C10-success",
+      "evidence_dir": "examples/runs/offline_mock/run_4c5679dcfa3c465d",
+      "exit_code": 0,
+      "task_status": "COMPLETED",
+      "save_state": "CONFIRMED",
+      "actual_units": 8,
+      "last_known_units": 8,
+      "model_turns_this_invocation": 5,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C10-failed",
+      "evidence_dir": "examples/runs/offline_mock/run_34ac91c7a8fc4663",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "FAILED",
+      "actual_units": 7,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 5,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": null
+    },
+    {
+      "case_id": "C10-unknown",
+      "evidence_dir": "examples/runs/offline_mock/run_8b4806c3ee264bc3",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "UNKNOWN",
+      "actual_units": null,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 5,
+      "replayed": false,
+      "termination_persisted": true,
+      "pending_liability": {
+        "tool": "save_plan",
+        "operation_key": "0dc34b892229f8fdc595c84df4fcdfd4d5000e16705bc2ea05d46081f3bf6eb2",
+        "max_charge_units": 1,
+        "max_sim_seconds": 60
+      }
+    },
+    {
+      "case_id": "C11-storage-first",
+      "evidence_dir": "examples/runs/offline_mock/run_7937068cf65d4d6e",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "UNKNOWN",
+      "actual_units": null,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 5,
+      "replayed": false,
+      "termination_persisted": false,
+      "pending_liability": {
+        "tool": "save_plan",
+        "operation_key": "28dfc2c99acd8838ed96bf297ad61e8b78de828cb309a5e559d9b1d597824ee8",
+        "max_charge_units": 1,
+        "max_sim_seconds": 60
+      }
+    },
+    {
+      "case_id": "C11-storage-replay",
+      "evidence_dir": "examples/runs/offline_mock/run_0f2cb500cd7a41df",
+      "exit_code": 3,
+      "task_status": "INCOMPLETE",
+      "save_state": "UNKNOWN",
+      "actual_units": null,
+      "last_known_units": 7,
+      "model_turns_this_invocation": 0,
+      "replayed": true,
+      "termination_persisted": false,
+      "pending_liability": {
+        "operation_key": "28dfc2c99acd8838ed96bf297ad61e8b78de828cb309a5e559d9b1d597824ee8",
+        "tool": "save_plan",
+        "max_charge_units": 1,
+        "max_sim_seconds": 60,
+        "source": "admitted_attempt"
+      }
+    }
+  ],
+  "unknown_replay_checks": {
+    "memory_unknown_preserved_on_replay": true,
+    "inspect_agrees": true,
+    "database_unchanged": true,
+    "inspect_output": "examples/test-results/batch_a36c450a983f_unknown_inspect.json"
+  },
+  "read_export_checks": {
+    "inspect_matches_receipt": true,
+    "export_contains_script": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "recorded_at_utc": "2026-11-10T07:28:24.582470+00:00",
+  "endpoint": "http://127.0.0.1:11434",
+  "service": "ollama",
+  "version": "0.40.9",
+  "authentication": "anonymous_metadata_and_invalid_request_accepted",
+  "loaded_before_inference": [],
+  "models_checked": [
+    {
+      "model": "qwen2.5:7b",
+      "capabilities": [
+        "completion",
+        "tools"
+      ],
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M"
+      },
+      "parameters": null,
+      "model_info": {
+        "general.architecture": "qwen2",
+        "qwen2.context_length": 32768
+      },
+      "remote_model": null,
+      "remote_host": null,
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e"
+    },
+    {
+      "model": "qwen3-coder:30b",
+      "capabilities": [
+        "completion",
+        "tools"
+      ],
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3moe",
+        "families": [
+          "qwen3moe"
+        ],
+        "parameter_size": "30.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "parameters": "repeat_penalty                 1.05\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\nstop                           \"<|endoftext|>\"\ntemperature                    0.7\ntop_k                          20\ntop_p                          0.8",
+      "model_info": {
+        "general.architecture": "qwen3moe",
+        "qwen3moe.context_length": 262144
+      },
+      "remote_model": null,
+      "remote_host": null,
+      "digest": "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca"
+    },
+    {
+      "model": "qwen3.5:27b",
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "27.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "parameters": "presence_penalty               1.5\ntemperature                    1\ntop_k                          20\ntop_p                          0.95",
+      "model_info": {
+        "general.architecture": "qwen35",
+        "qwen35.context_length": 262144
+      },
+      "remote_model": null,
+      "remote_host": null,
+      "digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e"
+    }
+  ],
+  "protocol_route_checks": [
+    {
+      "path": "/v1/responses",
+      "status": 400,
+      "body": "{\"error\":{\"message\":\"model is required\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+    },
+    {
+      "path": "/v1/chat/completions",
+      "status": 400,
+      "body": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    }
+  ],
+  "real_inference_requests": 0,
+  "gpu": "NVIDIA GeForce RTX 4090 D, 24564 MiB; free 23213 MiB at check",
+  "post_smoke_checked_at_utc": "2026-11-10T07:34:59.830914+00:00",
+  "post_smoke_loaded_models": {
+    "models": [
+      {
+        "name": "qwen2.5:7b",
+        "model": "qwen2.5:7b",
+        "size": 6608251780,
+        "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "7.6B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-10T15:39:09.2670968+08:00",
+        "size_vram": 6608251780,
+        "context_length": 32768,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "post_smoke_inference_requests": 3
+}

@@ -2,7 +2,7 @@
 
 调研日期：**2026-11-10（Asia/Shanghai）**。适用题目：小影校招 AI Agent 开发岗位第 2 题。
 
-**当前阶段状态（2026-11-10）：本文件保留设计基线，P0工程与当前离线验证已完成；真实模型端到端验收未运行，整体P0尚未达完整验收。**实际实现、65项测试、离线CLI记录与未完成项见README.md和docs/03-evaluation.md。本文件的输入、费用与路径样例仍是设计示例，不能冒充运行记录；拟议命令请以README中已验证入口为准。未安装或实测LangGraph/ADK，不宣称取得真实模型动态路径。
+**最终复核状态（2026-11-11）：本文件保留设计基线；按原题最低要求，现有工程、五类场景及两条真实反馈调整记录支持带局限提交。** 用户已接受C1–C4，编辑附录与原模型输出分开；历史生成盲测不合格及保存场景未触发故障/未通过仍保留，不宣称所有附加条件或生产能力通过。累计真实推理39次、既往测试150项，本轮不新增模型/业务/测试，不改Runtime。完整开发用时未知，三小时为建议。最终证据适用范围、质量缺陷、Git状态和必要提交动作见docs/07-final-delivery.md。原设计示例/拟议实验仍是设计，不冒充执行记录；官方调研保持原文。
 
 ## 1. 项目目标、范围、假设与成功标准
 
@@ -223,9 +223,9 @@ ToolResult {
 
 | 项目 | 契约 |
 | --- | --- |
-| 输入 | `query: string`；`filters: {tags: string[], allowed_usage: string\|null}`；`limit: int`，1–5。目录取请求绑定值。 |
-| 成功输出 | `result_id, query, catalog_version, matches[]`；每项含 `material_id, title, facts[], tags[], source_ref, usage_scope, content_digest`；空命中也是成功的检索结果。 |
-| 错误/重试 | `SEARCH_TEMPORARY` 可由模型选择重试；`CATALOG_NOT_FOUND / CATALOG_INVALID` 原样不可重试。空结果由模型决定换查询或停止，不编造命中。 |
+| 输入 | `query: string`按空白分词、任一词不区分大小写作子串匹配；`filters: {tags: string[], allowed_usage: string\|null}`：tags全部精确匹配（AND），[]不滤标签；usage精确匹配，只有null不限。`limit: int`，1–5。语义词放query，不假定为目录标签。目录取请求绑定值。 |
+| 成功输出 | `result_id, query, catalog_version, matches[], feedback`；素材项含 `material_id, title, facts[], tags[], source_ref, usage_scope, content_digest`。feedback报告实际过滤条件、关键词命中/过滤后（limit前）/返回计数、实际目录可用标签与usage及未识别值；空结果区分无关键词命中/过滤排空。空命中也是成功检索，不能伪造素材。 |
+| 错误/重试 | `SEARCH_TEMPORARY` 可由模型选择重试；`CATALOG_NOT_FOUND / CATALOG_INVALID` 原样不可重试。空结果由模型决定改查询、减少可选过滤或停止，后台不自动清空过滤/改OR；硬过滤不得放宽，不支持时保留原文并澄清。无实际命中不能用空material_ids估价。 |
 | 费用/耗时 | 成功包括空结果：1 unit / 60 模拟秒；已开始的明确故障：0 unit / 60 秒；守卫拒绝：0/0。每次新执行检查可用预算与截止。 |
 | 副作用 | 检索结果、尝试、模拟时间和成功费用写入三表事务；不修改素材目录。 |
 | 幂等/复用 | 同请求、同规范化 query/filters/limit、同目录版本，成功后复用原结果，增量 0/0。新查询是新操作，可能收费；失败不缓存成成功。 |
@@ -292,7 +292,7 @@ ToolResult {
 
 无工具时只接受 `StopDecision {action: stop|need_input, decision_summary, reason_code, missing_fields[], pending_items[]}`。不设置保存后的模型finish阶段；模型自然语言声称完成或非法finish不能改变状态，返回协议错误观察并计入额度。未有保存回执就不能输出成功。
 
-每轮上下文含原需求/硬约束、候选与报价引用、成功产物、最新账本与时钟摘要、实际工具观察、剩余额度。导出动作与简短依据，不索取内部思维过程；必须保留继续工具对话所需的提供方协议对象。
+每轮上下文含原需求/硬约束、候选与报价引用、成功产物、最新账本与时钟摘要、实际工具观察、剩余额度。导出动作与简短依据，不索取内部思维过程；必须保留继续工具对话所需的提供方协议对象。适配器出站只保留一份最新完整快照，以对象身份替换明确由自身生成的旧消息；不得按任意文本关键词删除历史。最新快照置输入首位，原生调用、call_id对应观察及提供方续接对象保持完整相对顺序；数据库和完整Trace不因出站缩减而改写。
 
 ### 6.3 循环伪代码（设计示例，待实现）
 

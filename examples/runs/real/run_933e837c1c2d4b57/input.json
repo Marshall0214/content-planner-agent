@@ -1,0 +1,13 @@
+{
+  "request_key": "qwen_specialties_9333a7268207-save_failure",
+  "theme": "毕业季：用旧照片做一支回忆短片",
+  "budget_units": 10,
+  "deadline_at": "2026-11-10T11:20:18.232095Z",
+  "materials_catalog": "materials-v1",
+  "cost_catalog": "cost-v1",
+  "hard_requirements": [],
+  "preferences": [
+    "预算允许时优先丰富叙事"
+  ],
+  "parent_request_key": null
+}

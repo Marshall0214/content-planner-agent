@@ -1,0 +1,817 @@
+{
+  "request_id": "req_b6d875853c3449fd",
+  "request_key": "batch_2f102050cb72-last_failed",
+  "mode": "offline_mock",
+  "real_model_decision_evidence": false,
+  "task_status": "INCOMPLETE",
+  "termination_reason": "TOOL_LIMIT",
+  "preparation_status": "INCOMPLETE",
+  "campaign_execution_status": "NOT_STARTED",
+  "save_state": "FAILED",
+  "receipt": null,
+  "saved_plan": null,
+  "partial_scripts": [
+    {
+      "artifact_id": "script_1936c4b766f54b0d",
+      "effective_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+      "kind": "script",
+      "material_refs": [
+        "mat-001",
+        "mat-003"
+      ],
+      "mode": "basic",
+      "operation_key": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+      "script": {
+        "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：用旧照片的细节串联毕业回忆。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+        "title": "毕业季：用旧照片做一支回忆短片"
+      },
+      "step_id": "step_33c5f917f2caac54",
+      "warnings": [
+        "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+      ]
+    }
+  ],
+  "material_results": [
+    {
+      "artifact_id": "search_28a4daa923e24584",
+      "catalog_version": "materials-v1",
+      "kind": "search",
+      "matches": [
+        {
+          "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+          "facts": [
+            "虚构演示工具影记可导入本地照片并添加文字"
+          ],
+          "material_id": "mat-001",
+          "source_ref": "synthetic://materials-v1/mat-001",
+          "tags": [
+            "毕业季",
+            "照片",
+            "回忆"
+          ],
+          "title": "影记照片演示",
+          "usage_scope": "demo_only"
+        },
+        {
+          "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+          "facts": [
+            "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+          ],
+          "material_id": "mat-003",
+          "source_ref": "synthetic://materials-v1/mat-003",
+          "tags": [
+            "创意",
+            "照片",
+            "回忆"
+          ],
+          "title": "今昔对照创意",
+          "usage_scope": "demo_only"
+        }
+      ],
+      "query": "照片",
+      "result_id": "search_28a4daa923e24584",
+      "step_id": "step_0008274f97ccb646"
+    }
+  ],
+  "execution_steps": [
+    {
+      "candidate_spec_hash": null,
+      "depends_on": [],
+      "kind": "search_materials",
+      "result_ref": "search_28a4daa923e24584",
+      "status": "SUCCEEDED",
+      "step_id": "step_0008274f97ccb646"
+    },
+    {
+      "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+      "depends_on": [
+        "step_f7e247ba30ad79ac"
+      ],
+      "kind": "generate_script",
+      "result_ref": "script_1936c4b766f54b0d",
+      "status": "SUCCEEDED",
+      "step_id": "step_33c5f917f2caac54"
+    },
+    {
+      "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+      "depends_on": [
+        "step_0008274f97ccb646",
+        "step_33c5f917f2caac54"
+      ],
+      "kind": "estimate_plan",
+      "result_ref": "quote_8c2ef1e9b7054029",
+      "status": "SUCCEEDED",
+      "step_id": "step_3fca9274fb037ab0"
+    },
+    {
+      "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+      "depends_on": [
+        "step_33c5f917f2caac54",
+        "step_3fca9274fb037ab0"
+      ],
+      "kind": "save_plan",
+      "result_ref": null,
+      "status": "FAILED",
+      "step_id": "step_c80bf07c85e43ecc"
+    },
+    {
+      "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+      "depends_on": [
+        "step_0008274f97ccb646"
+      ],
+      "kind": "estimate_plan",
+      "result_ref": "quote_a48df502e9fc44fd",
+      "status": "SUCCEEDED",
+      "step_id": "step_f7e247ba30ad79ac"
+    }
+  ],
+  "attempts": [
+    {
+      "admitted_liability": {
+        "max_charge_units": 1,
+        "max_sim_seconds": 60,
+        "operation_key": "0008274f97ccb6465806035e4969d338d992de9962fccba23c2564ca7d41b90e",
+        "tool": "search_materials"
+      },
+      "arguments": {
+        "decision_summary": "离线夹具先检索合成照片素材。",
+        "filters": {
+          "allowed_usage": null,
+          "tags": []
+        },
+        "limit": 3,
+        "query": "照片"
+      },
+      "attempt_id": "attempt_ab77818a20ca4a9b",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:53:06.489140+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_ab77818a20ca4a9b",
+        "charged_units": 1,
+        "data": {
+          "catalog_version": "materials-v1",
+          "matches": [
+            {
+              "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+              "facts": [
+                "虚构演示工具影记可导入本地照片并添加文字"
+              ],
+              "material_id": "mat-001",
+              "source_ref": "synthetic://materials-v1/mat-001",
+              "tags": [
+                "毕业季",
+                "照片",
+                "回忆"
+              ],
+              "title": "影记照片演示",
+              "usage_scope": "demo_only"
+            },
+            {
+              "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+              "facts": [
+                "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+              ],
+              "material_id": "mat-003",
+              "source_ref": "synthetic://materials-v1/mat-003",
+              "tags": [
+                "创意",
+                "照片",
+                "回忆"
+              ],
+              "title": "今昔对照创意",
+              "usage_scope": "demo_only"
+            }
+          ],
+          "query": "照片",
+          "result_id": "search_28a4daa923e24584"
+        },
+        "error": null,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T07:53:06.489140+00:00",
+        "operation_key": "0008274f97ccb6465806035e4969d338d992de9962fccba23c2564ca7d41b90e",
+        "outcome": "SUCCESS",
+        "request_id": "req_b6d875853c3449fd",
+        "result_ref": "search_28a4daa923e24584",
+        "reused": false,
+        "sim_elapsed_s": 60,
+        "step_id": "step_0008274f97ccb646",
+        "tool": "search_materials"
+      },
+      "operation_key": "0008274f97ccb6465806035e4969d338d992de9962fccba23c2564ca7d41b90e",
+      "provider_call_id": "offline_call_1",
+      "sim_elapsed_s": 60,
+      "started_at": "2026-11-10T07:53:06.481632+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_0008274f97ccb646",
+      "tool": "search_materials"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 0,
+        "max_sim_seconds": 0,
+        "operation_key": "f7e247ba30ad79aca9c7c72b7e89cdbb33c40d3cf1e8bd019efb708f62b31d8c",
+        "tool": "estimate_plan"
+      },
+      "arguments": {
+        "decision_summary": "离线夹具提交候选报价。",
+        "new_spec": {
+          "creative_brief": "用旧照片的细节串联毕业回忆",
+          "material_ids": [
+            "mat-001",
+            "mat-003"
+          ],
+          "mode": "basic"
+        },
+        "quote_id": null,
+        "script_artifact_id": null,
+        "stage": "pre_generation"
+      },
+      "attempt_id": "attempt_73b9afc7b3b54b9e",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:53:06.527751+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_73b9afc7b3b54b9e",
+        "charged_units": 0,
+        "data": {
+          "budget_gap_units": 0,
+          "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+          "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+          "deadline_gap_s": 0.0,
+          "effective_now": "2026-11-10T07:54:06.527751+00:00",
+          "feasibility": "FEASIBLE",
+          "incurred_units": 1,
+          "ledger_revision": 1,
+          "observed_at": "2026-11-10T07:53:06.527751+00:00",
+          "projected_finish_at": "2026-11-10T07:59:06.527751+00:00",
+          "projected_total_units": 8,
+          "quote_id": "quote_a48df502e9fc44fd",
+          "remaining_items": [
+            {
+              "disposition": "REMAINING",
+              "duration_s": 240,
+              "fee_units": 6,
+              "operation_fingerprint": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+              "tool": "generate_script"
+            },
+            {
+              "disposition": "REMAINING",
+              "duration_s": 60,
+              "fee_units": 1,
+              "operation_fingerprint": null,
+              "tool": "save_plan"
+            }
+          ],
+          "remaining_sim_s": 300,
+          "reused_script_artifact_id": null,
+          "sequence": 1,
+          "stage": "pre_generation",
+          "step_id": "step_f7e247ba30ad79ac"
+        },
+        "error": null,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T07:53:06.527751+00:00",
+        "operation_key": "f7e247ba30ad79aca9c7c72b7e89cdbb33c40d3cf1e8bd019efb708f62b31d8c",
+        "outcome": "SUCCESS",
+        "request_id": "req_b6d875853c3449fd",
+        "result_ref": "quote_a48df502e9fc44fd",
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_f7e247ba30ad79ac",
+        "tool": "estimate_plan"
+      },
+      "operation_key": "f7e247ba30ad79aca9c7c72b7e89cdbb33c40d3cf1e8bd019efb708f62b31d8c",
+      "provider_call_id": "offline_call_2",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T07:53:06.520751+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_f7e247ba30ad79ac",
+      "tool": "estimate_plan"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 6,
+        "max_sim_seconds": 240,
+        "operation_key": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+        "tool": "generate_script"
+      },
+      "arguments": {
+        "decision_summary": "离线夹具选择按可行报价生成正文。",
+        "quote_id": "quote_a48df502e9fc44fd"
+      },
+      "attempt_id": "attempt_13c05988f9784d8a",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:53:06.569875+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_13c05988f9784d8a",
+        "charged_units": 6,
+        "data": {
+          "artifact_id": "script_1936c4b766f54b0d",
+          "effective_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+          "material_refs": [
+            "mat-001",
+            "mat-003"
+          ],
+          "mode": "basic",
+          "script": {
+            "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：用旧照片的细节串联毕业回忆。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+            "title": "毕业季：用旧照片做一支回忆短片"
+          },
+          "warnings": [
+            "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+          ]
+        },
+        "error": null,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T07:53:06.569875+00:00",
+        "operation_key": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+        "outcome": "SUCCESS",
+        "request_id": "req_b6d875853c3449fd",
+        "result_ref": "script_1936c4b766f54b0d",
+        "reused": false,
+        "sim_elapsed_s": 240,
+        "step_id": "step_33c5f917f2caac54",
+        "tool": "generate_script"
+      },
+      "operation_key": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+      "provider_call_id": "offline_call_3",
+      "sim_elapsed_s": 240,
+      "started_at": "2026-11-10T07:53:06.561875+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_33c5f917f2caac54",
+      "tool": "generate_script"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 0,
+        "max_sim_seconds": 0,
+        "operation_key": "3fca9274fb037ab077731e9c90a68a82254e1c01353acb87d979ae2d5ddb1ce2",
+        "tool": "estimate_plan"
+      },
+      "arguments": {
+        "decision_summary": "离线夹具引用同候选，读取最新账本和时钟复估。",
+        "new_spec": null,
+        "quote_id": "quote_a48df502e9fc44fd",
+        "script_artifact_id": "script_1936c4b766f54b0d",
+        "stage": "post_generation"
+      },
+      "attempt_id": "attempt_aefc2827f06c4d5b",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:53:06.617388+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_aefc2827f06c4d5b",
+        "charged_units": 0,
+        "data": {
+          "budget_gap_units": 0,
+          "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+          "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+          "deadline_gap_s": 0.0,
+          "effective_now": "2026-11-10T07:58:06.616386+00:00",
+          "feasibility": "FEASIBLE",
+          "incurred_units": 7,
+          "ledger_revision": 2,
+          "observed_at": "2026-11-10T07:53:06.616386+00:00",
+          "projected_finish_at": "2026-11-10T07:59:06.616386+00:00",
+          "projected_total_units": 8,
+          "quote_id": "quote_8c2ef1e9b7054029",
+          "remaining_items": [
+            {
+              "disposition": "REMAINING",
+              "duration_s": 60,
+              "fee_units": 1,
+              "operation_fingerprint": null,
+              "tool": "save_plan"
+            }
+          ],
+          "remaining_sim_s": 60,
+          "reused_script_artifact_id": "script_1936c4b766f54b0d",
+          "sequence": 2,
+          "stage": "post_generation",
+          "step_id": "step_3fca9274fb037ab0"
+        },
+        "error": null,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T07:53:06.617388+00:00",
+        "operation_key": "3fca9274fb037ab077731e9c90a68a82254e1c01353acb87d979ae2d5ddb1ce2",
+        "outcome": "SUCCESS",
+        "request_id": "req_b6d875853c3449fd",
+        "result_ref": "quote_8c2ef1e9b7054029",
+        "reused": false,
+        "sim_elapsed_s": 0,
+        "step_id": "step_3fca9274fb037ab0",
+        "tool": "estimate_plan"
+      },
+      "operation_key": "3fca9274fb037ab077731e9c90a68a82254e1c01353acb87d979ae2d5ddb1ce2",
+      "provider_call_id": "offline_call_4",
+      "sim_elapsed_s": 0,
+      "started_at": "2026-11-10T07:53:06.608386+00:00",
+      "status": "SUCCEEDED",
+      "step_id": "step_3fca9274fb037ab0",
+      "tool": "estimate_plan"
+    },
+    {
+      "admitted_liability": {
+        "max_charge_units": 1,
+        "max_sim_seconds": 60,
+        "operation_key": "c80bf07c85e43ecc9d29f23ba289e5df428890579be7cb950091180e7c8987fe",
+        "tool": "save_plan"
+      },
+      "arguments": {
+        "decision_summary": "离线夹具选择保存完整方案。",
+        "draft": {
+          "assumptions": [
+            "活动执行尚未开始；指标和发布日期待审阅；本次预算只覆盖方案准备。"
+          ],
+          "audience": "对毕业回忆和照片叙事感兴趣的受众，具体人群由运营审阅确认。",
+          "campaign_tasks": [
+            {
+              "depends_on": [],
+              "description": "核对素材事实、使用范围与脚本",
+              "owner_role": "内容运营",
+              "relative_schedule": "审批前",
+              "task_id": "review"
+            },
+            {
+              "depends_on": [
+                "review"
+              ],
+              "description": "按获批脚本准备拍摄和剪辑",
+              "owner_role": "制作人员",
+              "relative_schedule": "审批后T日",
+              "task_id": "produce"
+            },
+            {
+              "depends_on": [
+                "produce"
+              ],
+              "description": "确认发布日期后发布并记录反馈",
+              "owner_role": "内容运营",
+              "relative_schedule": "待确认",
+              "task_id": "publish"
+            }
+          ],
+          "channels": [
+            "短视频账号（建议渠道，未发布）"
+          ],
+          "key_message": "毕业季：用旧照片做一支回忆短片",
+          "material_refs": [
+            "mat-001",
+            "mat-003"
+          ],
+          "objective": "形成可审阅的内容草案，围绕主题邀请观众分享个人记忆；效果目标待业务确认。",
+          "risks": [
+            "合成素材只限演示；真实制作、版权和投放费用未计入模拟预算。"
+          ],
+          "script_artifact_id": "script_1936c4b766f54b0d",
+          "title": "毕业季：用旧照片做一支回忆短片：内容活动方案"
+        },
+        "quote_id": "quote_8c2ef1e9b7054029",
+        "script_artifact_id": "script_1936c4b766f54b0d"
+      },
+      "attempt_id": "attempt_c1793522e1bf4403",
+      "attempt_no": 1,
+      "ended_at": "2026-11-10T07:53:06.664719+00:00",
+      "execution_started": true,
+      "observation": {
+        "attempt_id": "attempt_c1793522e1bf4403",
+        "charged_units": 0,
+        "data": null,
+        "error": {
+          "code": "SAVE_TEMPORARY",
+          "details": {},
+          "message": "注入的明确工具故障",
+          "retryable": true
+        },
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T07:53:06.664719+00:00",
+        "operation_key": "c80bf07c85e43ecc9d29f23ba289e5df428890579be7cb950091180e7c8987fe",
+        "outcome": "FAILED",
+        "request_id": "req_b6d875853c3449fd",
+        "result_ref": null,
+        "reused": false,
+        "sim_elapsed_s": 60,
+        "step_id": "step_c80bf07c85e43ecc",
+        "tool": "save_plan"
+      },
+      "operation_key": "c80bf07c85e43ecc9d29f23ba289e5df428890579be7cb950091180e7c8987fe",
+      "provider_call_id": "offline_call_5",
+      "sim_elapsed_s": 60,
+      "started_at": "2026-11-10T07:53:06.656829+00:00",
+      "status": "FAILED",
+      "step_id": "step_c80bf07c85e43ecc",
+      "tool": "save_plan"
+    }
+  ],
+  "task_plan": [
+    {
+      "step": "retrieve",
+      "depends_on": [],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "estimate_pre",
+      "depends_on": [
+        "retrieve"
+      ],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "generate",
+      "depends_on": [
+        "estimate_pre"
+      ],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "estimate_post",
+      "depends_on": [
+        "generate"
+      ],
+      "status": "SUCCEEDED"
+    },
+    {
+      "step": "save",
+      "depends_on": [
+        "estimate_post"
+      ],
+      "status": "FAILED"
+    }
+  ],
+  "tool_results": [
+    {
+      "attempt_id": "attempt_ab77818a20ca4a9b",
+      "charged_units": 1,
+      "data": {
+        "catalog_version": "materials-v1",
+        "matches": [
+          {
+            "content_digest": "03af29b4fbf8e135839e42618061dfa5877950e56889e6783cead37ae434daa9",
+            "facts": [
+              "虚构演示工具影记可导入本地照片并添加文字"
+            ],
+            "material_id": "mat-001",
+            "source_ref": "synthetic://materials-v1/mat-001",
+            "tags": [
+              "毕业季",
+              "照片",
+              "回忆"
+            ],
+            "title": "影记照片演示",
+            "usage_scope": "demo_only"
+          },
+          {
+            "content_digest": "26467d24ececa74dee2bc7f0774d96c15e2c193cb97652d1b701fce04dd7a8b7",
+            "facts": [
+              "建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论"
+            ],
+            "material_id": "mat-003",
+            "source_ref": "synthetic://materials-v1/mat-003",
+            "tags": [
+              "创意",
+              "照片",
+              "回忆"
+            ],
+            "title": "今昔对照创意",
+            "usage_scope": "demo_only"
+          }
+        ],
+        "query": "照片",
+        "result_id": "search_28a4daa923e24584"
+      },
+      "error": null,
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T07:53:06.489140+00:00",
+      "operation_key": "0008274f97ccb6465806035e4969d338d992de9962fccba23c2564ca7d41b90e",
+      "outcome": "SUCCESS",
+      "request_id": "req_b6d875853c3449fd",
+      "result_ref": "search_28a4daa923e24584",
+      "reused": false,
+      "sim_elapsed_s": 60,
+      "step_id": "step_0008274f97ccb646",
+      "tool": "search_materials"
+    },
+    {
+      "attempt_id": "attempt_73b9afc7b3b54b9e",
+      "charged_units": 0,
+      "data": {
+        "budget_gap_units": 0,
+        "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+        "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+        "deadline_gap_s": 0.0,
+        "effective_now": "2026-11-10T07:54:06.527751+00:00",
+        "feasibility": "FEASIBLE",
+        "incurred_units": 1,
+        "ledger_revision": 1,
+        "observed_at": "2026-11-10T07:53:06.527751+00:00",
+        "projected_finish_at": "2026-11-10T07:59:06.527751+00:00",
+        "projected_total_units": 8,
+        "quote_id": "quote_a48df502e9fc44fd",
+        "remaining_items": [
+          {
+            "disposition": "REMAINING",
+            "duration_s": 240,
+            "fee_units": 6,
+            "operation_fingerprint": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+            "tool": "generate_script"
+          },
+          {
+            "disposition": "REMAINING",
+            "duration_s": 60,
+            "fee_units": 1,
+            "operation_fingerprint": null,
+            "tool": "save_plan"
+          }
+        ],
+        "remaining_sim_s": 300,
+        "reused_script_artifact_id": null,
+        "sequence": 1,
+        "stage": "pre_generation",
+        "step_id": "step_f7e247ba30ad79ac"
+      },
+      "error": null,
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T07:53:06.527751+00:00",
+      "operation_key": "f7e247ba30ad79aca9c7c72b7e89cdbb33c40d3cf1e8bd019efb708f62b31d8c",
+      "outcome": "SUCCESS",
+      "request_id": "req_b6d875853c3449fd",
+      "result_ref": "quote_a48df502e9fc44fd",
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_f7e247ba30ad79ac",
+      "tool": "estimate_plan"
+    },
+    {
+      "attempt_id": "attempt_13c05988f9784d8a",
+      "charged_units": 6,
+      "data": {
+        "artifact_id": "script_1936c4b766f54b0d",
+        "effective_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+        "material_refs": [
+          "mat-001",
+          "mat-003"
+        ],
+        "mode": "basic",
+        "script": {
+          "body": "开场：围绕「毕业季：用旧照片做一支回忆短片」，邀请观众找出一张旧照片。\n核心表达：用旧照片的细节串联毕业回忆。\n素材事实（合成演示）：\n- 虚构演示工具影记可导入本地照片并添加文字（mat-001）\n- 建议以今昔对照开场，结尾邀请观众选择一张旧照片；这不是已验证增长结论（mat-003）\n叙事：以照片中的细节串起校园记忆，使用今昔对照，避免未经证实的效果承诺。\n结尾：邀请观众选择一张照片，写下一句想留给毕业时自己的话。",
+          "title": "毕业季：用旧照片做一支回忆短片"
+        },
+        "warnings": [
+          "素材为合成演示，需业务审阅；未执行真实拍摄或发布。"
+        ]
+      },
+      "error": null,
+      "ledger_revision": 2,
+      "observed_at": "2026-11-10T07:53:06.569875+00:00",
+      "operation_key": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+      "outcome": "SUCCESS",
+      "request_id": "req_b6d875853c3449fd",
+      "result_ref": "script_1936c4b766f54b0d",
+      "reused": false,
+      "sim_elapsed_s": 240,
+      "step_id": "step_33c5f917f2caac54",
+      "tool": "generate_script"
+    },
+    {
+      "attempt_id": "attempt_aefc2827f06c4d5b",
+      "charged_units": 0,
+      "data": {
+        "budget_gap_units": 0,
+        "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+        "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+        "deadline_gap_s": 0.0,
+        "effective_now": "2026-11-10T07:58:06.616386+00:00",
+        "feasibility": "FEASIBLE",
+        "incurred_units": 7,
+        "ledger_revision": 2,
+        "observed_at": "2026-11-10T07:53:06.616386+00:00",
+        "projected_finish_at": "2026-11-10T07:59:06.616386+00:00",
+        "projected_total_units": 8,
+        "quote_id": "quote_8c2ef1e9b7054029",
+        "remaining_items": [
+          {
+            "disposition": "REMAINING",
+            "duration_s": 60,
+            "fee_units": 1,
+            "operation_fingerprint": null,
+            "tool": "save_plan"
+          }
+        ],
+        "remaining_sim_s": 60,
+        "reused_script_artifact_id": "script_1936c4b766f54b0d",
+        "sequence": 2,
+        "stage": "post_generation",
+        "step_id": "step_3fca9274fb037ab0"
+      },
+      "error": null,
+      "ledger_revision": 2,
+      "observed_at": "2026-11-10T07:53:06.617388+00:00",
+      "operation_key": "3fca9274fb037ab077731e9c90a68a82254e1c01353acb87d979ae2d5ddb1ce2",
+      "outcome": "SUCCESS",
+      "request_id": "req_b6d875853c3449fd",
+      "result_ref": "quote_8c2ef1e9b7054029",
+      "reused": false,
+      "sim_elapsed_s": 0,
+      "step_id": "step_3fca9274fb037ab0",
+      "tool": "estimate_plan"
+    },
+    {
+      "attempt_id": "attempt_c1793522e1bf4403",
+      "charged_units": 0,
+      "data": null,
+      "error": {
+        "code": "SAVE_TEMPORARY",
+        "details": {},
+        "message": "注入的明确工具故障",
+        "retryable": true
+      },
+      "ledger_revision": 2,
+      "observed_at": "2026-11-10T07:53:06.664719+00:00",
+      "operation_key": "c80bf07c85e43ecc9d29f23ba289e5df428890579be7cb950091180e7c8987fe",
+      "outcome": "FAILED",
+      "request_id": "req_b6d875853c3449fd",
+      "result_ref": null,
+      "reused": false,
+      "sim_elapsed_s": 60,
+      "step_id": "step_c80bf07c85e43ecc",
+      "tool": "save_plan"
+    }
+  ],
+  "latest_projection": {
+    "budget_gap_units": 0,
+    "candidate_spec_hash": "d26c550ed07b6c13f9a81966e526b7b4db88e3ee99d409a93ad1619e8db79631",
+    "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+    "deadline_gap_s": 0.0,
+    "effective_now": "2026-11-10T07:58:06.616386+00:00",
+    "feasibility": "FEASIBLE",
+    "incurred_units": 7,
+    "ledger_revision": 2,
+    "observed_at": "2026-11-10T07:53:06.616386+00:00",
+    "projected_finish_at": "2026-11-10T07:59:06.616386+00:00",
+    "projected_total_units": 8,
+    "quote_id": "quote_8c2ef1e9b7054029",
+    "remaining_items": [
+      {
+        "disposition": "REMAINING",
+        "duration_s": 60,
+        "fee_units": 1,
+        "operation_fingerprint": null,
+        "tool": "save_plan"
+      }
+    ],
+    "remaining_sim_s": 60,
+    "reused_script_artifact_id": "script_1936c4b766f54b0d",
+    "sequence": 2,
+    "stage": "post_generation",
+    "step_id": "step_3fca9274fb037ab0"
+  },
+  "current_cost_projection": null,
+  "actual_costs": {
+    "currency": "SIM_UNIT",
+    "entries": [
+      {
+        "amount_units": 1,
+        "attempt_id": "attempt_ab77818a20ca4a9b",
+        "catalog_version": "cost-v1",
+        "committed_at": "2026-11-10T07:53:06.489140+00:00",
+        "entry_id": "fee_0482be0bc5fd4401",
+        "operation_key": "0008274f97ccb6465806035e4969d338d992de9962fccba23c2564ca7d41b90e",
+        "request_id": "req_b6d875853c3449fd",
+        "tool": "search_materials"
+      },
+      {
+        "amount_units": 6,
+        "attempt_id": "attempt_13c05988f9784d8a",
+        "catalog_version": "cost-v1",
+        "committed_at": "2026-11-10T07:53:06.569875+00:00",
+        "entry_id": "fee_d0d91eb8ac22488c",
+        "operation_key": "33c5f917f2caac54ba46f8bfd2b4ab4e217ab90abba558deb84da986bc718010",
+        "request_id": "req_b6d875853c3449fd",
+        "tool": "generate_script"
+      }
+    ],
+    "total_actual_units": 7,
+    "last_known_confirmed_units": 7,
+    "current_amount_confirmed": true,
+    "this_invocation_units": 7
+  },
+  "cumulative_sim_elapsed_s": 360,
+  "time_basis": "wall_plus_simulated_tools",
+  "model_turns": 5,
+  "tool_requests": 5,
+  "this_invocation_model_turns": 5,
+  "this_invocation_tool_requests": 5,
+  "replayed": false,
+  "pending_items": [],
+  "missing_fields": [],
+  "input_conflict": false,
+  "existing_task_status": null,
+  "termination_persisted": true,
+  "pending_liability": null,
+  "pending_liabilities": [],
+  "unconfirmed_operations": [],
+  "read_projection": null,
+  "notice": "offline_mock为脚本化流程验证，不是真实模型决策证据。"
+}

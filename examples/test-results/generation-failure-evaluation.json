@@ -1,0 +1,381 @@
+{
+  "kind": "actual_independent_generation_failure_validation_with_blinding_defect",
+  "recorded_at_utc": "2026-11-10T13:57:33.305033+00:00",
+  "index": "examples/test-results/qwen_generate_failure_40024f7694f5.json",
+  "preflight": "examples/test-results/generation-failure-preflight.json",
+  "evidence_dir": "examples/runs/real/run_fc04a04a8ca54959",
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+  "service_version": "0.40.9",
+  "model_id": "qwen3.5:27b",
+  "model_digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+  "limits": {
+    "max_model_turns": 12,
+    "max_operation_attempts": 2,
+    "max_tool_requests": 10,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180,
+    "tool_timeout_s": 3
+  },
+  "authorized_new_cap": 6,
+  "starting_project_requests": 33,
+  "new_requests": 6,
+  "cumulative_requests": 39,
+  "unused_allowance": 0,
+  "usage": {
+    "input_tokens": 49585,
+    "output_tokens": 805,
+    "total_tokens": 50390
+  },
+  "usage_unknown_this_batch": [],
+  "cumulative_complete_usage": null,
+  "cumulative_usage_unknown_reason": "historical normal request 6 in qwen_normal_0f1745fd4b32 timed out without usage",
+  "sum_http_latency_ms": 37703.0,
+  "simulated_units": 7,
+  "simulated_seconds": 540,
+  "actual_model_cash_or_power_cost": null,
+  "mechanical_checks": {
+    "actual_retrieval_success_and_cost": true,
+    "first_actual_generation_failed": true,
+    "original_call_id_error_in_next_real_request": true,
+    "model_selected_same_quote_retry": true,
+    "search_artifact_preserved": true,
+    "no_duplicate_search_charge": true,
+    "failure_attempt_not_rewritten": true,
+    "same_operation_two_actual_generation_attempts": true,
+    "generation_charged_once_on_success": true,
+    "failed_simulated_duration_preserved": true,
+    "latest_estimate_feasible_and_current": true,
+    "truthful_bounded_terminal": true
+  },
+  "failure_feedback": {
+    "call_id": "call_z84r6x63",
+    "originating_request": 4,
+    "next_request": 5,
+    "exact_result_equal": true
+  },
+  "ai_decision_review": "Same-quote retry explicitly responds to actual retryable GENERATION_TEMPORARY; failure billed 0, one success billed 6, latest total 8 <= budget 10 and deadline feasible. This is a reasonable retry, not a stop-text inference.",
+  "blinding": {
+    "passed": false,
+    "surface": "first model request: state.input.request_key",
+    "actual_value": "qwen_generate_failure_40024f7694f5-generation_failure",
+    "defect": "Request key includes generation_failure/generate_failure, giving a possible pre-fault category hint. Model attention/causal effect unknown; cannot claim blind compliance.",
+    "repair": "Future generate_failure input uses an opaque request_UUID. Only offline-tested after this completed run; no second request or live retest."
+  },
+  "qualified": false,
+  "verdict": "not_qualified_blinding_requirement_failed_despite_valid_mechanical_retry",
+  "executed_script_sha256": "f1f30f019db77344f31e59413189314f6d91531767625649cb9caba1e6e824e2",
+  "executed_script_snapshot": "var/qwen_generate_failure_40024f7694f5/validate_qwen.executed.py",
+  "current_repaired_script_sha256": "693e879f202378024c0547f301cd77aa4f38407ad77815b119d160cd84fafd82",
+  "current_guard_tests_sha256": "984045f6deb86ce31231f8d6299c85f701933af8604dfd85c8a33757fb5d59c0",
+  "repaired_script_online_validation": "not_run_no_more_allowance",
+  "requests": [
+    {
+      "number": 1,
+      "action": "search_materials",
+      "decision_summary": "首次检索，寻找与“毕业季”、“旧照片”、“回忆短片”相关的合成素材。使用宽泛查询和空标签过滤以获取尽可能多的候选素材。",
+      "call_id": "call_jx9l3y2q",
+      "latency_ms": 8140.0,
+      "usage": {
+        "input_tokens": 2034,
+        "output_tokens": 114,
+        "total_tokens": 2148,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload_characters": 7265,
+      "payload_utf8_bytes": 8469
+    },
+    {
+      "number": 2,
+      "action": "search_materials",
+      "decision_summary": "修正limit参数为5（不超过上限），重新检索与“毕业季”、“旧照片”、“回忆短片”相关的合成素材。",
+      "call_id": "call_npp76we7",
+      "latency_ms": 2922.0,
+      "usage": {
+        "input_tokens": 3360,
+        "output_tokens": 106,
+        "total_tokens": 3466,
+        "input_tokens_details": {
+          "cached_tokens": 1522
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload_characters": 10730,
+      "payload_utf8_bytes": 12202
+    },
+    {
+      "number": 3,
+      "action": "estimate_plan",
+      "decision_summary": "基于检索到的3个合成素材（mat-001影记照片演示、mat-002合成校园空镜、mat-003今昔对照创意），构建毕业季回忆短片方案。采用basic模式以控制成本，明确所有素材仅用于演示目的。",
+      "call_id": "call_7x68a16n",
+      "latency_ms": 7453.0,
+      "usage": {
+        "input_tokens": 6779,
+        "output_tokens": 259,
+        "total_tokens": 7038,
+        "input_tokens_details": {
+          "cached_tokens": 1522
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload_characters": 19733,
+      "payload_utf8_bytes": 22541
+    },
+    {
+      "number": 4,
+      "action": "generate_script",
+      "decision_summary": "基于已确认的候选方案（quote_fe9b3b7009e740a0）生成脚本正文。该方案包含3个demo_only合成素材，采用basic模式，预算和时间均可行。",
+      "call_id": "call_z84r6x63",
+      "latency_ms": 5532.0,
+      "usage": {
+        "input_tokens": 10659,
+        "output_tokens": 102,
+        "total_tokens": 10761,
+        "input_tokens_details": {
+          "cached_tokens": 1522
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload_characters": 28007,
+      "payload_utf8_bytes": 31899
+    },
+    {
+      "number": 5,
+      "action": "generate_script",
+      "decision_summary": "重试生成脚本，因上次遇到临时工具故障（GENERATION_TEMPORARY），使用相同quote_id重新尝试。",
+      "call_id": "call_xg9gcy50",
+      "latency_ms": 5594.0,
+      "usage": {
+        "input_tokens": 11984,
+        "output_tokens": 79,
+        "total_tokens": 12063,
+        "input_tokens_details": {
+          "cached_tokens": 1522
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload_characters": 31051,
+      "payload_utf8_bytes": 35173
+    },
+    {
+      "number": 6,
+      "action": "estimate_plan",
+      "decision_summary": "脚本生成成功（script_5eea7a0f59ba4479），进行post_generation复估以确认最终预算和时间可行性，准备保存方案。",
+      "call_id": "call_2amzik68",
+      "latency_ms": 8062.0,
+      "usage": {
+        "input_tokens": 14769,
+        "output_tokens": 145,
+        "total_tokens": 14914,
+        "input_tokens_details": {
+          "cached_tokens": 1522
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload_characters": 36617,
+      "payload_utf8_bytes": 43907
+    }
+  ],
+  "database": {
+    "requests": 1,
+    "units": 7,
+    "generation_operation": [
+      "SUCCEEDED",
+      2
+    ],
+    "pending": 0
+  },
+  "historical_files_unchanged": {
+    "examples\\test-results\\qwen_normal_0f1745fd4b32.json": true,
+    "examples\\test-results\\qwen_normal_5f38146a433d.json": true,
+    "examples\\test-results\\qwen_smoke_36af94f620be.json": true,
+    "examples\\test-results\\qwen_smoke_6c1a2138f50b.json": true,
+    "examples\\test-results\\qwen_smoke_7a495877ab1f.json": true,
+    "examples\\test-results\\qwen_smoke_ba6a52fb9947.json": true,
+    "examples\\test-results\\qwen_specialties_9333a7268207.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\artifacts.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\assertions.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\input.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\ledger.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\metadata.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\output.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\receipt.json": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\report.md": true,
+    "examples\\runs\\real\\run_3458d3f4953f486e\\trace.jsonl": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\artifacts.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\assertions.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\input.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\ledger.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\metadata.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\output.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\receipt.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\report.md": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\trace.jsonl": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\artifacts.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\assertions.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\input.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\ledger.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\metadata.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\output.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\receipt.json": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\report.md": true,
+    "examples\\runs\\real\\run_933e837c1c2d4b57\\trace.jsonl": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\artifacts.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\assertions.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\input.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\ledger.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\metadata.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\output.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\receipt.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\report.md": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\trace.jsonl": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\artifacts.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\assertions.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\input.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\ledger.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\metadata.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\output.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\receipt.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\report.md": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\trace.jsonl": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\artifacts.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\assertions.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\input.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\ledger.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\metadata.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\output.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\receipt.json": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\report.md": true,
+    "examples\\runs\\real\\run_ab6832e25f7a4a89\\trace.jsonl": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\artifacts.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\assertions.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\input.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\ledger.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\metadata.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\output.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\receipt.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\report.md": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\trace.jsonl": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\artifacts.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\assertions.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\input.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\ledger.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\metadata.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\output.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\receipt.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\report.md": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\trace.jsonl": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\artifacts.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\assertions.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\input.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\ledger.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\metadata.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\output.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\receipt.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\report.md": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\trace.jsonl": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\artifacts.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\assertions.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\input.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\ledger.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\metadata.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\output.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\receipt.json": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\report.md": true,
+    "examples\\runs\\real\\run_facdd4af0d134366\\trace.jsonl": true,
+    "var\\qwen_normal_0f1745fd4b32\\planner.sqlite3": true,
+    "var\\qwen_normal_5f38146a433d\\planner.sqlite3": true,
+    "var\\qwen_smoke_36af94f620be\\planner.sqlite3": true,
+    "var\\qwen_smoke_6c1a2138f50b\\planner.sqlite3": true,
+    "var\\qwen_smoke_7a495877ab1f\\planner.sqlite3": true,
+    "var\\qwen_smoke_ba6a52fb9947\\planner.sqlite3": true,
+    "var\\qwen_specialties_9333a7268207\\planner.sqlite3": true,
+    "examples\\test-results\\specialties-evaluation.json": true
+  },
+  "frozen_runtime_data_dependencies": {
+    "src\\content_planner\\__init__.py": true,
+    "src\\content_planner\\accounting.py": true,
+    "src\\content_planner\\agent.py": true,
+    "src\\content_planner\\cli.py": true,
+    "src\\content_planner\\model.py": true,
+    "src\\content_planner\\reporting.py": true,
+    "src\\content_planner\\schema_compat.py": true,
+    "src\\content_planner\\schemas.py": true,
+    "src\\content_planner\\store.py": true,
+    "src\\content_planner\\tools.py": true,
+    "data\\cost-v1.json": true,
+    "data\\fixtures.json": true,
+    "data\\materials-v1.json": true,
+    "pyproject.toml": true,
+    "uv.lock": true
+  },
+  "original_save_failure": "draft校验拒绝后停止，SAVE_TEMPORARY未触发，该场景未通过。",
+  "overall_p0": "not_achieved",
+  "user_human_review": "pending",
+  "no_other_scenarios_or_second_request": true,
+  "tests_before_live": {
+    "targeted_passed": 60,
+    "full_passed": 148
+  },
+  "tests_after_blind_key_repair": {
+    "targeted_passed": 62,
+    "full_passed": 150,
+    "targeted_junit": "examples/test-results/generation-failure-blind-sdk-targeted.xml",
+    "full_junit": "examples/test-results/generation-failure-blind-sdk-full.xml",
+    "prior_repair_stage_targeted": 61,
+    "prior_repair_stage_full": 149,
+    "actual_sdk_serialization_checked": true,
+    "offline_only": true
+  },
+  "documentation_check": "examples/test-results/generation-failure-documentation-check.json"
+}

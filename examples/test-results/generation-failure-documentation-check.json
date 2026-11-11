@@ -1,0 +1,41 @@
+{
+  "kind": "actual_final_generation_audit_no_inference",
+  "recorded_at_utc": "2026-11-10T14:04:33.529170+00:00",
+  "checks": {
+    "links_and_materials_resolve": true,
+    "frozen_runtime_data_dependencies": true,
+    "historical_artifacts_and_databases_preserved": true,
+    "old_material_rows_unchanged": true,
+    "old_index_version_preserved": true,
+    "save_failure_original_status_unchanged": true,
+    "one_real_request_six_calls_only": true,
+    "executed_script_snapshot_matches_actual_digest": true,
+    "current_repaired_script_digest_distinct_and_recorded": true,
+    "current_tests_digest_recorded": true,
+    "blinding_defect_explicitly_not_qualified": true,
+    "user_review_not_signed": true,
+    "full_suite_150_passed": true,
+    "targeted_62_passed": true,
+    "official_research_unchanged": true,
+    "diff_format": true
+  },
+  "local_links_checked": 218,
+  "broken": [],
+  "cumulative_real_requests": 39,
+  "history_files_preserved": 105,
+  "full_junit": {
+    "tests": 150,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "targeted_junit": {
+    "tests": 62,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "diff_output": "",
+  "qualified_generation_path": false,
+  "reason": "Model-visible request key leaked fault category; mechanical retry path valid but blind-compliance not proven; repaired entry offline-only."
+}

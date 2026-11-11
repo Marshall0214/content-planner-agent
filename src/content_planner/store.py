@@ -68,6 +68,10 @@ class Store:
         return {"input_hash": row["input_hash"], "snapshot": json.loads(row["snapshot_json"])}
 
     def bind(self, key, input_hash, snapshot):
+        # Existing requests are a read path: do not acquire a write transaction.
+        existing = self.by_key(key)
+        if existing:
+            return existing, False
         with self.transaction():
             existing = self.by_key(key)
             if existing:
@@ -75,6 +79,28 @@ class Store:
             self.conn.execute("INSERT INTO requests VALUES (?,?,?,?)",
                               (snapshot["request_id"], key, input_hash, canonical(snapshot)))
         return {"input_hash": input_hash, "snapshot": deepcopy(snapshot)}, True
+
+    def read_record(self, request_id):
+        """Read request + pending-operation identities in one consistent SELECT.
+
+        This does not look up receipts or decide whether an operation committed.
+        Keeping STARTED/UNKNOWN unresolved is the purpose of this ordinary read.
+        """
+        rows = self.conn.execute("""
+            SELECT r.snapshot_json, o.operation_key, o.tool, o.status AS operation_status
+            FROM requests AS r
+            LEFT JOIN operations AS o
+              ON o.request_id=r.request_id AND o.status IN ('STARTED','UNKNOWN')
+            WHERE r.request_id=?
+            ORDER BY o.rowid
+        """, (request_id,)).fetchall()
+        if not rows:
+            return None
+        return {"snapshot": json.loads(rows[0]["snapshot_json"]),
+                "unconfirmed_operations": [
+                    {"operation_key": row["operation_key"], "tool": row["tool"],
+                     "status": row["operation_status"]}
+                    for row in rows if row["operation_key"] is not None]}
 
     def put(self, snapshot):
         if not self.conn.in_transaction:

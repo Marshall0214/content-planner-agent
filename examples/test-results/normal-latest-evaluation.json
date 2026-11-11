@@ -1,0 +1,534 @@
+{
+  "kind": "actual_local_real_normal_validation_and_readonly_audit",
+  "recorded_at_utc": "2026-11-10T10:35:03.352299+00:00",
+  "index": "examples/test-results/qwen_normal_5f38146a433d.json",
+  "baseline": "examples/test-results/qwen_normal_0f1745fd4b32.json",
+  "preflight": "examples/test-results/normal-latest-20261110T102828Z-preflight.json",
+  "evidence_dir": "examples/runs/real/run_b307abb73de84313",
+  "replay_evidence_dir": "examples/runs/real/run_a76068d0afbb4ff9",
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+  "model_id": "qwen3.5:27b",
+  "service_type": "ollama",
+  "protocol": "responses_stateless_native_tools",
+  "service_version": "0.40.9",
+  "model_digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+  "limits": {
+    "max_model_turns": 12,
+    "max_operation_attempts": 2,
+    "max_tool_requests": 10,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180,
+    "tool_timeout_s": 3
+  },
+  "sdk_max_retries": 0,
+  "authorized_new_requests": 10,
+  "starting_project_requests": 15,
+  "new_real_requests": 7,
+  "unused_authorization": 3,
+  "cumulative_real_requests": 22,
+  "normal_passed": true,
+  "task_status": "COMPLETED",
+  "save_state": "CONFIRMED",
+  "receipt": {
+    "plan_id": "plan_a9e605003b944a3d",
+    "request_id": "req_98f9ba0f4e9b46c2",
+    "content_hash": "eb08052462ca37084a0ad45960138e8e8177f90d430e9e7ce5e5653586582b44",
+    "save_operation_key": "8977fd6fb5b81b1f34605f008be81cc11e2f91cb89f417a831ee6e6c060e5686",
+    "saved_at_utc": "2026-11-10T10:30:07.102025+00:00",
+    "effective_completed_at": "2026-11-10T10:36:07.102025+00:00",
+    "ledger_revision_after": 3,
+    "total_actual_units": 8
+  },
+  "replay_checks": {
+    "no_new_inference": true,
+    "no_new_tool_requests": true,
+    "no_new_execution_attempts": true,
+    "no_new_units": true,
+    "same_receipt": true,
+    "same_plan": true,
+    "database_unchanged": true,
+    "original_completed": true
+  },
+  "audit_checks": {
+    "normal_confirmed_nonnull_receipt": true,
+    "same_nonempty_saved_plan_and_receipt": true,
+    "runner_replay_checks": true,
+    "zero_replay_model_tools_execution_fees": true,
+    "within_new_authorization": true,
+    "project_total_consistent": true,
+    "future_deadline_at_start": true,
+    "new_key": true,
+    "old_files_byte_identical": true,
+    "old_incomplete_seven_units": true,
+    "no_old_script_import": true,
+    "implementation_unchanged": true,
+    "fixed_configuration_unchanged": true,
+    "three_tables_and_no_unknown": true,
+    "ledger_matches_saved_total": true,
+    "simulation_360_seconds": true,
+    "save_no_wrapup_inference": true,
+    "draft_from_native_model_call": true
+  },
+  "new_usage": {
+    "input_tokens": 70501,
+    "output_tokens": 1742,
+    "total_tokens": 72243
+  },
+  "usage_source": "Ollama Responses reported usage; not independently tokenized",
+  "missing_usage_this_batch": [],
+  "cumulative_known_usage": {
+    "input_tokens": 156242,
+    "output_tokens": 3314,
+    "total_tokens": 159556
+  },
+  "cumulative_usage_unknown_requests": [
+    {
+      "index": "qwen_normal_0f1745fd4b32.json",
+      "number": 6
+    }
+  ],
+  "cumulative_complete_usage": null,
+  "sum_http_request_latency_ms": 65501.0,
+  "batch_record_to_save_timestamp_delta_s": 66.731741,
+  "timing_scope": "HTTP timings measured by experiment; timestamp delta is not an independent full-process wall timer. Simulated tool duration is separate.",
+  "simulated_units": 8,
+  "simulated_tool_seconds": 360,
+  "real_model_cash_or_power_cost": null,
+  "requests": [
+    {
+      "number": 1,
+      "action": "search_materials",
+      "call_id": "call_5pgpknmm",
+      "outcome": "REJECTED",
+      "error_code": "INVALID_ARGUMENT",
+      "error_message": "1 validation error for SearchArgs\nlimit\n  Input should be less than or equal to 5 [type=less_than_equal, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal",
+      "charged_units": 0,
+      "execution_started": false,
+      "latency_ms": 8000.0,
+      "usage": {
+        "input_tokens": 2032,
+        "output_tokens": 107,
+        "total_tokens": 2139,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 7243,
+        "utf8_bytes": 8447,
+        "messages": 1,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    {
+      "number": 2,
+      "action": "search_materials",
+      "call_id": "call_x8e4jg4v",
+      "outcome": "SUCCESS",
+      "error_code": null,
+      "error_message": null,
+      "charged_units": 1,
+      "execution_started": true,
+      "latency_ms": 2938.0,
+      "usage": {
+        "input_tokens": 3339,
+        "output_tokens": 108,
+        "total_tokens": 3447,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 10682,
+        "utf8_bytes": 12102,
+        "messages": 3,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    {
+      "number": 3,
+      "action": "estimate_plan",
+      "call_id": "call_ow9478s8",
+      "outcome": "SUCCESS",
+      "error_code": null,
+      "error_message": null,
+      "charged_units": 0,
+      "execution_started": true,
+      "latency_ms": 7172.0,
+      "usage": {
+        "input_tokens": 6705,
+        "output_tokens": 253,
+        "total_tokens": 6958,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 19691,
+        "utf8_bytes": 22459,
+        "messages": 5,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    {
+      "number": 4,
+      "action": "generate_script",
+      "call_id": "call_a6gq2tw5",
+      "outcome": "SUCCESS",
+      "error_code": null,
+      "error_message": null,
+      "charged_units": 6,
+      "execution_started": true,
+      "latency_ms": 5141.0,
+      "usage": {
+        "input_tokens": 10493,
+        "output_tokens": 87,
+        "total_tokens": 10580,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 27957,
+        "utf8_bytes": 31757,
+        "messages": 7,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    {
+      "number": 5,
+      "action": "estimate_plan",
+      "call_id": "call_5ctw14xe",
+      "outcome": "SUCCESS",
+      "error_code": null,
+      "error_message": null,
+      "charged_units": 0,
+      "execution_started": true,
+      "latency_ms": 7156.0,
+      "usage": {
+        "input_tokens": 13366,
+        "output_tokens": 129,
+        "total_tokens": 13495,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 33759,
+        "utf8_bytes": 40655,
+        "messages": 9,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    {
+      "number": 6,
+      "action": "save_plan",
+      "call_id": "call_el6p72yu",
+      "outcome": "REJECTED",
+      "error_code": "INVALID_ARGUMENT",
+      "error_message": "1 validation error for SaveArgs\ndraft.script_artifact_id\n  Field required [type=missing, input_value={'assumptions': ['目标...做一支回忆短片'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+      "charged_units": 0,
+      "execution_started": false,
+      "latency_ms": 17516.0,
+      "usage": {
+        "input_tokens": 16220,
+        "output_tokens": 552,
+        "total_tokens": 16772,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 40148,
+        "utf8_bytes": 47152,
+        "messages": 11,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    {
+      "number": 7,
+      "action": "save_plan",
+      "call_id": "call_x2naj65f",
+      "outcome": "SUCCESS",
+      "error_code": null,
+      "error_message": null,
+      "charged_units": 1,
+      "execution_started": true,
+      "latency_ms": 17578.0,
+      "usage": {
+        "input_tokens": 18346,
+        "output_tokens": 506,
+        "total_tokens": 18852,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 45815,
+        "utf8_bytes": 54285,
+        "messages": 13,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": null,
+      "last_observation_note": "Confirmed save terminates immediately; no further model request."
+    }
+  ],
+  "database": {
+    "request_key": "qwen_normal_5f38146a433d-normal",
+    "task_status": "COMPLETED",
+    "save_state": "CONFIRMED",
+    "script_ids": [
+      "script_11081981296d4284"
+    ],
+    "ledger_units": 8,
+    "pending_operations": 0,
+    "tables": [
+      "ledger_entries",
+      "operations",
+      "requests"
+    ],
+    "operation_statuses": [
+      [
+        "estimate_plan",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "estimate_plan",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "generate_script",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "save_plan",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "search_materials",
+        "SUCCEEDED",
+        1
+      ]
+    ]
+  },
+  "old_database": {
+    "request_key": "qwen_normal_0f1745fd4b32-normal",
+    "task_status": "INCOMPLETE",
+    "save_state": "NOT_ATTEMPTED",
+    "script_ids": [
+      "script_94914cc549b14202"
+    ],
+    "ledger_units": 7,
+    "pending_operations": 0,
+    "tables": [
+      "ledger_entries",
+      "operations",
+      "requests"
+    ],
+    "operation_statuses": [
+      [
+        "estimate_plan",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "estimate_plan",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "generate_script",
+        "SUCCEEDED",
+        1
+      ],
+      [
+        "search_materials",
+        "SUCCEEDED",
+        1
+      ]
+    ]
+  },
+  "old_file_hashes_after": {
+    "examples/test-results/qwen_normal_0f1745fd4b32.json": "230fd655d34363921912dd7d378665dde2b421fe2d7b6e28726d10f2ec73958a",
+    "examples/runs/real/run_ed510c6504484805/artifacts.json": "e96058e44208ea83914b58f37fd722ef09c4fafd5f3d6167407f6c9dc0a32825",
+    "examples/runs/real/run_ed510c6504484805/assertions.json": "3674dd05efadb8561c8430480b392f068ad8633b4e3e09beb86c6917d285f006",
+    "examples/runs/real/run_ed510c6504484805/input.json": "2a2dd1fa51bb6093bc290c50048811dd108dc08367b8fa050e1d9c407c228a03",
+    "examples/runs/real/run_ed510c6504484805/ledger.json": "e64b15658bf438b08b37658123ce641d1a92038b80ef5a247aa40c94488e6fa2",
+    "examples/runs/real/run_ed510c6504484805/metadata.json": "09f9fa63c1e8bbc246d06e719eb132f32fe6de551b69f6657e00ef40cda24052",
+    "examples/runs/real/run_ed510c6504484805/output.json": "55b443eef02dc15707deca25c664391ef60632efbf76a89bb590037cc3fbc76e",
+    "examples/runs/real/run_ed510c6504484805/receipt.json": "0477a74674d54c805ebd0010a52d4bafce0f6318d6a7d7007569f589b73c9f22",
+    "examples/runs/real/run_ed510c6504484805/report.md": "ca85f2b96f9105c1a18c6e52f0cadefb395f98bc9a177a61a2643a64d37ba2da",
+    "examples/runs/real/run_ed510c6504484805/trace.jsonl": "7e69d9b81a24929c6c0b04149e8d6f6c00786e75ab6447d4c92eb155954ff4c0",
+    "var/qwen_normal_0f1745fd4b32/planner.sqlite3": "fe0056321ddab8d64820baea627dc28402322968a49b5a21a10f9bcca3a57f7c"
+  },
+  "executed_source_hashes_after": {
+    "scripts/validate_qwen.py": "6076550e3c6cc52a6fd36a78ab949073a7d9bc9653046fb080894ca574657aae",
+    "src/content_planner/model.py": "4f8de1aa71229c43fe3a374092f59e536eff0d455c9965f85bad9cab33fdd991",
+    "src/content_planner/schemas.py": "925dbc6f7d9bd10d74f9e5f4d22b3a2d25e60883f041413744383ed66a4c0590",
+    "src/content_planner/tools.py": "bb2d5c3582f310fe858defc78b6e4dd613198945d4751eaf7556a7c123b5aa0f",
+    "src/content_planner/agent.py": "ed1465b09bdd4f3c4afdaa5ef5513fe7d9dedd2d800d21cc02b165f4b0de5cc4"
+  },
+  "comparison": {
+    "fixed_outbound_fields_equal": {
+      "instructions": true,
+      "tools": true,
+      "model": true,
+      "temperature": true,
+      "max_output_tokens": true,
+      "parallel_tool_calls": true,
+      "store": true,
+      "think": true
+    },
+    "input_changes": {
+      "deadline_at": {
+        "before": "2026-11-10T09:34:20.054025Z",
+        "after": "2026-11-10T10:59:00.371285Z"
+      },
+      "request_key": {
+        "before": "qwen_normal_0f1745fd4b32-normal",
+        "after": "qwen_normal_5f38146a433d-normal"
+      }
+    },
+    "baseline_round_6": {
+      "payload": {
+        "characters": 90927,
+        "utf8_bytes": 104487,
+        "messages": 16,
+        "adapter_state_messages": 6
+      },
+      "latency_ms": 20000.0,
+      "usage": null,
+      "error": {
+        "type": "ReadTimeout",
+        "detail": "timed out"
+      }
+    },
+    "new_round_6": {
+      "number": 6,
+      "action": "save_plan",
+      "call_id": "call_el6p72yu",
+      "outcome": "REJECTED",
+      "error_code": "INVALID_ARGUMENT",
+      "error_message": "1 validation error for SaveArgs\ndraft.script_artifact_id\n  Field required [type=missing, input_value={'assumptions': ['目标...做一支回忆短片'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing",
+      "charged_units": 0,
+      "execution_started": false,
+      "latency_ms": 17516.0,
+      "usage": {
+        "input_tokens": 16220,
+        "output_tokens": 552,
+        "total_tokens": 16772,
+        "input_tokens_details": {
+          "cached_tokens": 1520
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "payload": {
+        "characters": 40148,
+        "utf8_bytes": 47152,
+        "messages": 11,
+        "adapter_state_messages": 1
+      },
+      "exact_observation_forwarded_next": true,
+      "last_observation_note": null
+    },
+    "limitations": "New request/deadline, generated candidate/text, clock, IDs, sampling and cache differ. Body sizes are common compact JSON/UTF-8 reserialization, not tokens or original HTTP wire bytes. One successful run does not establish causation, exclusive root cause, latency stability or P0 acceptance."
+  },
+  "content_review": {
+    "ai_technical_review": "Nonempty script, real synthetic references, acyclic task list and no activity execution; T+0..T+3 lacks units and should be clarified during human review. Script has repeated punctuation. Saved snapshot not edited.",
+    "operator_human_review": "not_run"
+  },
+  "formal_budget_dynamic_validation": "not_run",
+  "formal_failure_partial_success_dynamic_validation": "not_run",
+  "overall_p0": "not_achieved",
+  "tests_this_round": "not_rerun_no_source_change; prior 122 passing tests retained",
+  "no_more_inference_this_round": true,
+  "documentation_check": "examples/test-results/normal-latest-documentation-check.json",
+  "recording_scope": "Actual parsed SDK request bodies/timeouts; response id/model/status/usage/error/native calls; full tool observations in Trace and subsequent requests. Raw HTTP response bytes and all headers not retained by existing recorder; no missing data synthesized."
+}

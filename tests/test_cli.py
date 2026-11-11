@@ -8,6 +8,7 @@ import sys
 def cli(*args):
     result = subprocess.run([sys.executable, "-m", "content_planner.cli", *map(str, args)],
                             capture_output=True, text=True, encoding="utf-8", timeout=30)
+    assert result.stdout.strip(), f"CLI produced no JSON: exit={result.returncode}; stderr={result.stderr!r}; args={args!r}"
     return result, json.loads(result.stdout)
 
 

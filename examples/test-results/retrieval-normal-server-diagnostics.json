@@ -1,0 +1,19 @@
+{
+  "kind": "actual_readonly_server_log_diagnostics_no_inference",
+  "checked_files": [
+    "server.log",
+    "server-1.log"
+  ],
+  "time_window_start": "2026-11-10T09:04:20.053025+00:00",
+  "time_window_end": "2026-11-10T09:08:20.053025+00:00",
+  "matching_lines": [
+    {
+      "file": "server.log",
+      "line": "time=2026-11-10T17:04:21.610+08:00 level=INFO source=llama_server.go:457 msg=\"starting llama-server\" cmd=\"C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Programs\\\\Ollama\\\\lib\\\\ollama\\\\llama-server.exe --model D:\\\\OllamaModels\\\\blobs\\\\sha256-d4b8b4f4c350f5d322dc8235175eeae02d32c6f3fd70bdb9ea481e3abb7d7fc4 --port 6175 --host 127.0.0.1 --no-webui --offline -c 32768 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --mmproj D:\\\\OllamaModels\\\\blobs\\\\sha256-d4b8b4f4c350f5d322dc8235175eeae02d32c6f3fd70bdb9ea481e3abb7d7fc4 --load-mode none --flash-attn auto -b 512 -ub 512 --context-shift --keep 4\""
+    },
+    {
+      "file": "server.log",
+      "line": "time=2026-11-10T17:04:21.615+08:00 level=INFO source=llama_server.go:1396 msg=\"waiting for llama-server to become available\" status=\"llm server error\""
+    }
+  ]
+}

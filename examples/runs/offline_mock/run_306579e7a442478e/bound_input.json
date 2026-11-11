@@ -1,0 +1,13 @@
+{
+  "budget_units": 10,
+  "cost_catalog": "cost-v1",
+  "deadline_at": "2026-11-10T07:11:47.258274Z",
+  "hard_requirements": [],
+  "materials_catalog": "materials-v1",
+  "parent_request_key": null,
+  "preferences": [
+    "预算允许时优先丰富叙事"
+  ],
+  "request_key": "batch_a36c450a983f-normal",
+  "theme": "毕业季：用旧照片做一支回忆短片"
+}

@@ -1,0 +1,30 @@
+{
+  "batch_id": "qwen_smoke_36af94f620be",
+  "phase": "smoke",
+  "mode": "real",
+  "service_type": "ollama",
+  "protocol": "responses_stateless_native_tools",
+  "model": "qwen2.5:7b",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "call_cap": 3,
+  "inference_requests": [],
+  "runs": [],
+  "smoke_index": null,
+  "temperature": 0.2,
+  "max_output_tokens": 4000,
+  "limits": {
+    "max_model_turns": 12,
+    "max_tool_requests": 10,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180
+  },
+  "recorded_at_utc": "2026-11-10T07:33:28.471453+00:00",
+  "runner_error": {
+    "type": "TypeError",
+    "detail": "'Store' object does not support the context manager protocol",
+    "phase": "startup_before_any_inference",
+    "resolution": "use contextlib.closing(Store(...))"
+  },
+  "actual_requests": 0,
+  "smoke_passed": false
+}

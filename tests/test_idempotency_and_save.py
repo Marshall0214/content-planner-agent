@@ -124,6 +124,18 @@ def test_unknown_commit_ack_does_not_overwrite_committed_snapshot(env):
     persisted = store.get(s["request_id"])  # explicit test inspection
     assert persisted["status"] == "COMPLETED" and persisted["save_receipt"]
     assert store.incurred(s["request_id"]) == 8
+    # A later ordinary request can display confirmed persisted facts. It must not
+    # mistake the previous invocation's memory-only UNKNOWN for a pending operation.
+    planner = Planner(store, env[1], env[2])
+    replay = planner.run(request(env[2]), "offline_mock",
+                         lambda: (_ for _ in ()).throw(AssertionError("no new model")))
+    report = build_report(replay, planner.replayed)
+    assert report["task_status"] == "COMPLETED" and report["save_state"] == "CONFIRMED"
+    assert report["receipt"] == persisted["save_receipt"]
+    assert report["actual_costs"]["total_actual_units"] == 8
+    assert report["actual_costs"]["this_invocation_units"] == 0
+    assert report["this_invocation_model_turns"] == report["this_invocation_tool_requests"] == 0
+    assert report["termination_persisted"] is True
 
 
 def test_C12_draft_mismatch_cycle_and_empty_script_rejected(env):

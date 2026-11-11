@@ -1,0 +1,707 @@
+{
+  "kind": "actual_specialties_validation_and_readonly_audit",
+  "recorded_at_utc": "2026-11-10T10:58:36.909516+00:00",
+  "index": "examples/test-results/qwen_specialties_9333a7268207.json",
+  "preflight": "examples/test-results/specialties-preflight.json",
+  "materials_index": "examples/test-results/p0-acceptance-materials-index.json",
+  "source_digest": "1157ad49e78e8b80330e9c918fd20eaa9c7b3ab88a42359986be1ab6e384bee5",
+  "script_sha256": "c80b823ee967cedab8e601f09ada89cd82313d130c0fe3f1ea943d48628ffe47",
+  "tests_sha256": "d8bbbdb6c76c9335d3f47c764f17ae4daf282227f101da11a9062688ffefd82a",
+  "service_version": "0.40.9",
+  "model_id": "qwen3.5:27b",
+  "model_digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+  "starting_project_requests": 22,
+  "authorized_batch_cap": 20,
+  "case_cap": 10,
+  "new_requests": 11,
+  "cumulative_requests": 33,
+  "unused_not_executed": 9,
+  "limits": {
+    "max_model_turns": 12,
+    "max_tool_requests": 10,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180
+  },
+  "temperature": 0.2,
+  "think": false,
+  "max_output_tokens": 4000,
+  "new_usage": {
+    "input_tokens": 97702,
+    "output_tokens": 2047,
+    "total_tokens": 99749
+  },
+  "new_usage_unknown_requests": [],
+  "cumulative_usage_unknown_requests": [
+    {
+      "index": "qwen_normal_0f1745fd4b32.json",
+      "number": 6
+    }
+  ],
+  "complete_cumulative_usage": null,
+  "actual_model_cash_or_power_cost": null,
+  "sum_http_latency_ms": 80719.0,
+  "new_simulated_units": 8,
+  "per_case": {
+    "missing_budget_units": {
+      "requests": 0,
+      "status": "NEEDS_INPUT",
+      "reason": "MISSING_FIELDS",
+      "save_state": "NOT_ATTEMPTED",
+      "units": 0,
+      "simulated_seconds": 0,
+      "usage": null,
+      "usage_note": "not applicable: no inference sent; not an unavailable response filled with zeros",
+      "sum_http_latency_ms": 0,
+      "automatic_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true,
+        "zero_inference_and_model_turns": true,
+        "zero_business_calls": true,
+        "zero_units": true,
+        "needs_input": true
+      },
+      "evidence_dir": "examples/runs/real/run_ab6832e25f7a4a89"
+    },
+    "missing_deadline_at": {
+      "requests": 0,
+      "status": "NEEDS_INPUT",
+      "reason": "MISSING_FIELDS",
+      "save_state": "NOT_ATTEMPTED",
+      "units": 0,
+      "simulated_seconds": 0,
+      "usage": null,
+      "usage_note": "not applicable: no inference sent; not an unavailable response filled with zeros",
+      "sum_http_latency_ms": 0,
+      "automatic_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true,
+        "zero_inference_and_model_turns": true,
+        "zero_business_calls": true,
+        "zero_units": true,
+        "needs_input": true
+      },
+      "evidence_dir": "examples/runs/real/run_facdd4af0d134366"
+    },
+    "budget": {
+      "requests": 4,
+      "status": "INCOMPLETE",
+      "reason": "BUDGET_EXCEEDED_BLOCKING_GENERATION",
+      "save_state": "NOT_ATTEMPTED",
+      "units": 1,
+      "simulated_seconds": 60,
+      "usage": {
+        "input_tokens": 27183,
+        "output_tokens": 635,
+        "total_tokens": 27818
+      },
+      "usage_note": null,
+      "sum_http_latency_ms": 27235.0,
+      "automatic_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true
+      },
+      "evidence_dir": "examples/runs/real/run_3458d3f4953f486e"
+    },
+    "save_failure": {
+      "requests": 7,
+      "status": "INCOMPLETE",
+      "reason": "SAVE_PLAN_VALIDATION_ERROR",
+      "save_state": "NOT_ATTEMPTED",
+      "units": 7,
+      "simulated_seconds": 300,
+      "usage": {
+        "input_tokens": 70519,
+        "output_tokens": 1412,
+        "total_tokens": 71931
+      },
+      "usage_note": null,
+      "sum_http_latency_ms": 53484.0,
+      "automatic_checks": {
+        "ledger_operation_unique": true,
+        "known_fee_sum": true,
+        "no_false_saved_success": true,
+        "offline_mode_visible": true,
+        "activity_not_executed": true,
+        "unknown_amount_stays_unknown": true,
+        "source_unchanged": true,
+        "within_case_cap": true,
+        "ledger_sum_correct": true
+      },
+      "evidence_dir": "examples/runs/real/run_933e837c1c2d4b57"
+    }
+  },
+  "requests": [
+    {
+      "number": 1,
+      "case_id": "budget",
+      "latency_ms": 8437.0,
+      "usage": {
+        "input_tokens": 2043,
+        "output_tokens": 114,
+        "total_tokens": 2157,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "search_materials",
+          "call_id": "call_d79wprdt"
+        }
+      ],
+      "payload_characters": 7269,
+      "payload_utf8_bytes": 8517,
+      "messages": 1,
+      "latest_state_count": 1
+    },
+    {
+      "number": 2,
+      "case_id": "budget",
+      "latency_ms": 6485.0,
+      "usage": {
+        "input_tokens": 5405,
+        "output_tokens": 240,
+        "total_tokens": 5645,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "estimate_plan",
+          "call_id": "call_09s4kili"
+        }
+      ],
+      "payload_characters": 16283,
+      "payload_utf8_bytes": 18923,
+      "messages": 3,
+      "latest_state_count": 1
+    },
+    {
+      "number": 3,
+      "case_id": "budget",
+      "latency_ms": 5250.0,
+      "usage": {
+        "input_tokens": 9254,
+        "output_tokens": 111,
+        "total_tokens": 9365,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "generate_script",
+          "call_id": "call_5t8t4oml"
+        }
+      ],
+      "payload_characters": 24451,
+      "payload_utf8_bytes": 27955,
+      "messages": 5,
+      "latest_state_count": 1
+    },
+    {
+      "number": 4,
+      "case_id": "budget",
+      "latency_ms": 7063.0,
+      "usage": {
+        "input_tokens": 10481,
+        "output_tokens": 170,
+        "total_tokens": 10651,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [],
+      "payload_characters": 27317,
+      "payload_utf8_bytes": 31245,
+      "messages": 7,
+      "latest_state_count": 1
+    },
+    {
+      "number": 5,
+      "case_id": "save_failure",
+      "latency_ms": 2859.0,
+      "usage": {
+        "input_tokens": 2034,
+        "output_tokens": 113,
+        "total_tokens": 2147,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "search_materials",
+          "call_id": "call_d30eb8j5"
+        }
+      ],
+      "payload_characters": 7254,
+      "payload_utf8_bytes": 8458,
+      "messages": 1,
+      "latest_state_count": 1
+    },
+    {
+      "number": 6,
+      "case_id": "save_failure",
+      "latency_ms": 2750.0,
+      "usage": {
+        "input_tokens": 3355,
+        "output_tokens": 98,
+        "total_tokens": 3453,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "search_materials",
+          "call_id": "call_9z2fluu5"
+        }
+      ],
+      "payload_characters": 10721,
+      "payload_utf8_bytes": 12185,
+      "messages": 3,
+      "latest_state_count": 1
+    },
+    {
+      "number": 7,
+      "case_id": "save_failure",
+      "latency_ms": 6969.0,
+      "usage": {
+        "input_tokens": 6755,
+        "output_tokens": 240,
+        "total_tokens": 6995,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "estimate_plan",
+          "call_id": "call_06g0cp2x"
+        }
+      ],
+      "payload_characters": 19696,
+      "payload_utf8_bytes": 22436,
+      "messages": 5,
+      "latest_state_count": 1
+    },
+    {
+      "number": 8,
+      "case_id": "save_failure",
+      "latency_ms": 5593.0,
+      "usage": {
+        "input_tokens": 10522,
+        "output_tokens": 105,
+        "total_tokens": 10627,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "generate_script",
+          "call_id": "call_cozegmlo"
+        }
+      ],
+      "payload_characters": 27854,
+      "payload_utf8_bytes": 31500,
+      "messages": 7,
+      "latest_state_count": 1
+    },
+    {
+      "number": 9,
+      "case_id": "save_failure",
+      "latency_ms": 7250.0,
+      "usage": {
+        "input_tokens": 13338,
+        "output_tokens": 127,
+        "total_tokens": 13465,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "estimate_plan",
+          "call_id": "call_z0j2vxqf"
+        }
+      ],
+      "payload_characters": 33572,
+      "payload_utf8_bytes": 40186,
+      "messages": 9,
+      "latest_state_count": 1
+    },
+    {
+      "number": 10,
+      "case_id": "save_failure",
+      "latency_ms": 18641.0,
+      "usage": {
+        "input_tokens": 16171,
+        "output_tokens": 595,
+        "total_tokens": 16766,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [
+        {
+          "name": "save_plan",
+          "call_id": "call_8scuj7c4"
+        }
+      ],
+      "payload_characters": 39961,
+      "payload_utf8_bytes": 46683,
+      "messages": 11,
+      "latest_state_count": 1
+    },
+    {
+      "number": 11,
+      "case_id": "save_failure",
+      "latency_ms": 9422.0,
+      "usage": {
+        "input_tokens": 18344,
+        "output_tokens": 134,
+        "total_tokens": 18478,
+        "input_tokens_details": {
+          "cached_tokens": 1531
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "wire_timeout": {
+        "connect": 20,
+        "read": 20,
+        "write": 20,
+        "pool": 20
+      },
+      "status_code": 200,
+      "error": null,
+      "actions": [],
+      "payload_characters": 45910,
+      "payload_utf8_bytes": 54074,
+      "messages": 13,
+      "latest_state_count": 1
+    }
+  ],
+  "database": {
+    "task_rows": 4,
+    "ledger_units": 8,
+    "pending_operations": 0,
+    "save_operations": 0
+  },
+  "frozen_sources_unchanged": {
+    "src\\content_planner\\__init__.py": true,
+    "src\\content_planner\\accounting.py": true,
+    "src\\content_planner\\agent.py": true,
+    "src\\content_planner\\cli.py": true,
+    "src\\content_planner\\model.py": true,
+    "src\\content_planner\\reporting.py": true,
+    "src\\content_planner\\schema_compat.py": true,
+    "src\\content_planner\\schemas.py": true,
+    "src\\content_planner\\store.py": true,
+    "src\\content_planner\\tools.py": true,
+    "data\\cost-v1.json": true,
+    "data\\fixtures.json": true,
+    "data\\materials-v1.json": true,
+    "pyproject.toml": true,
+    "uv.lock": true
+  },
+  "historical_files_unchanged": {
+    "examples\\test-results\\qwen_normal_0f1745fd4b32.json": true,
+    "examples\\test-results\\qwen_normal_5f38146a433d.json": true,
+    "examples\\test-results\\qwen_smoke_36af94f620be.json": true,
+    "examples\\test-results\\qwen_smoke_6c1a2138f50b.json": true,
+    "examples\\test-results\\qwen_smoke_7a495877ab1f.json": true,
+    "examples\\test-results\\qwen_smoke_ba6a52fb9947.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\artifacts.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\assertions.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\input.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\ledger.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\metadata.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\output.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\receipt.json": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\report.md": true,
+    "examples\\runs\\real\\run_82577c0b86c84fae\\trace.jsonl": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\artifacts.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\assertions.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\input.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\ledger.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\metadata.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\output.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\receipt.json": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\report.md": true,
+    "examples\\runs\\real\\run_a76068d0afbb4ff9\\trace.jsonl": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\artifacts.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\assertions.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\input.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\ledger.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\metadata.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\output.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\receipt.json": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\report.md": true,
+    "examples\\runs\\real\\run_aa39d02ee392400f\\trace.jsonl": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\artifacts.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\assertions.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\input.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\ledger.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\metadata.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\output.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\receipt.json": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\report.md": true,
+    "examples\\runs\\real\\run_b307abb73de84313\\trace.jsonl": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\artifacts.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\assertions.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\input.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\ledger.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\metadata.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\output.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\receipt.json": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\report.md": true,
+    "examples\\runs\\real\\run_cb8b87f85a2c4600\\trace.jsonl": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\artifacts.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\assertions.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\input.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\ledger.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\metadata.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\output.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\receipt.json": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\report.md": true,
+    "examples\\runs\\real\\run_ed510c6504484805\\trace.jsonl": true,
+    "var\\qwen_normal_0f1745fd4b32\\planner.sqlite3": true,
+    "var\\qwen_normal_5f38146a433d\\planner.sqlite3": true,
+    "var\\qwen_smoke_36af94f620be\\planner.sqlite3": true,
+    "var\\qwen_smoke_6c1a2138f50b\\planner.sqlite3": true,
+    "var\\qwen_smoke_7a495877ab1f\\planner.sqlite3": true,
+    "var\\qwen_smoke_ba6a52fb9947\\planner.sqlite3": true
+  },
+  "budget_path": {
+    "over_budget_quote": {
+      "budget_gap_units": 5,
+      "candidate_spec_hash": "fa65b8258af8fb9237274aac4a3b57d93738f3be27066262b1e17a8e367eba63",
+      "cost_catalog_hash": "c20598c66a3cbb51ee2905f6384a07a3ffab4e99d29eae6ea983bafdb2de9741",
+      "deadline_gap_s": 0.0,
+      "effective_now": "2026-11-10T10:51:34.218799+00:00",
+      "feasibility": "OVER_BUDGET",
+      "incurred_units": 1,
+      "ledger_revision": 1,
+      "observed_at": "2026-11-10T10:50:34.218799+00:00",
+      "projected_finish_at": "2026-11-10T10:56:34.218799+00:00",
+      "projected_total_units": 8,
+      "quote_id": "quote_7ab0874a02a449e2",
+      "remaining_items": [
+        {
+          "disposition": "REMAINING",
+          "duration_s": 240,
+          "fee_units": 6,
+          "operation_fingerprint": "d9c1075df2b77e33ee2512627cb9a44169858168faf9789025475dddf7f40f8b",
+          "tool": "generate_script"
+        },
+        {
+          "disposition": "REMAINING",
+          "duration_s": 60,
+          "fee_units": 1,
+          "operation_fingerprint": null,
+          "tool": "save_plan"
+        }
+      ],
+      "remaining_sim_s": 300,
+      "reused_script_artifact_id": null,
+      "sequence": 1,
+      "stage": "pre_generation",
+      "step_id": "step_e5028c42996d10e2"
+    },
+    "exact_feedback_next_request": {
+      "event_id": "e0006",
+      "tool": "estimate_plan",
+      "outcome": "SUCCESS",
+      "error_code": null,
+      "call_id": "call_09s4kili",
+      "originating_request": 2,
+      "next_request": 3,
+      "exact_observation_forwarded": true
+    },
+    "grounded_stop_recorded": {
+      "action": "stop",
+      "decision_summary": "已完成素材搜索与方案估价。基础方案（basic模式）总成本8单位，超出用户预算3单位（缺口5单位）。由于报价状态为OVER_BUDGET，系统拒绝执行脚本生成（DEPENDENCY_UNSATISFIED）。根据用户偏好“先核价再决定是否继续”，当前已提供完整估价信息供决策，无法在现有预算内继续推进。",
+      "missing_fields": [],
+      "pending_items": [
+        "用户需确认是否追加预算以继续生成脚本与保存方案",
+        "或调整方案（如减少素材、改用更简模式）后重新估价"
+      ],
+      "reason_code": "BUDGET_EXCEEDED_BLOCKING_GENERATION"
+    },
+    "immediate_post_quote_action_appropriate": false,
+    "ai_technical_verdict": "Minimum feedback-to-eventual-grounded-stop evidence obtained, with a rejected inappropriate generation attempt and unsupported suggestions. Not a successful adjustment; user review pending."
+  },
+  "save_failure_path": {
+    "save_temporary_observed": false,
+    "save_temporary_feedback_next_request": false,
+    "generation_count": 1,
+    "preserved_script_id": "script_a8b32eef4bad489b",
+    "generation_fee": 6,
+    "actual_save_execution_count": 0,
+    "save_receipt": null,
+    "ai_technical_verdict": "not_qualified_fixture_not_reached",
+    "note": "One save argument rejection was preserved; the next stop text inaccurately suggests a prior correction attempt. No actual SAVE_TEMPORARY occurred."
+  },
+  "tests": {
+    "guards": {
+      "passed": 22,
+      "junit": "examples/test-results/specialties-guards.xml"
+    },
+    "full": {
+      "passed": 140,
+      "junit": "examples/test-results/specialties-full.xml"
+    }
+  },
+  "user_human_review": "pending_docs/06-content-review.md",
+  "overall_p0": "not_achieved",
+  "no_rerun_or_more_inference": true,
+  "measurement_scope": "HTTP request timings only; compact JSON sizes are neither original wire byte sizes nor tokens/performance. Current usage is actual provider report; old timeout usage remains unknown.",
+  "all_outbound_fields_except_input_equal_normal": true,
+  "missing_specialty_conditions": {
+    "save_failure_fixture_selected": true,
+    "script_generated_successfully": true,
+    "save_temporary_actually_observed": false,
+    "save_temporary_in_next_real_request": false,
+    "model_responded_to_save_temporary": false,
+    "reuse_or_grounded_stop_after_save_temporary": false,
+    "specialty_verdict": "not_qualified"
+  },
+  "content_review": "docs/06-content-review.md",
+  "documentation_check": "examples/test-results/specialties-documentation-check.json"
+}
