@@ -1,6 +1,6 @@
 # 内容任务规划 Agent
 
-Python 原生单 Agent + SQLite 三表 + CLI。四个本地工具负责素材检索、脚本生成、成本估算和方案保存。
+题号：**第二题「内容任务规划 Agent」**。Python 原生单 Agent + SQLite 三表 + CLI。四个本地工具负责素材检索、脚本生成、成本估算和方案保存。
 
 代码仓库：[Marshall0214/content-planner-agent](https://github.com/Marshall0214/content-planner-agent)。
 
@@ -16,7 +16,7 @@ Get-Content examples/test-results/final-delivery-assessment.json -Encoding UTF8
 Get-Content examples/runs/real/run_b307abb73de84313/report.md -Encoding UTF8
 ```
 
-完整开发用时没有独立计量，不声称三小时完成。39次历史真实请求HTTP合计277.502秒、最近150项测试JUnit用时18.391秒，均不是开发工时。AI贡献、Git状态、必要提交动作和未验证能力见最终交付说明。以下运行命令供后续评审选择，最终复核未新增运行；后续提交推送由用户另行授权，提交前状态快照不是发布版本号。
+实际用时：**不到6小时（用户于2026-11-11确认）**。这是用户对实际投入的陈述，未提供精确分钟或分项计时，不声称三小时完成。39次历史真实请求HTTP合计277.502秒、最近150项测试JUnit用时18.391秒，均不是开发工时。AI贡献、Git状态、必要提交动作和未验证能力见最终交付说明。以下运行命令供后续评审选择，最终复核未新增运行；后续提交推送由用户另行授权，提交前状态快照不是发布版本号。
 
 ## 安装
 
@@ -160,7 +160,7 @@ $env:MODEL_THINK = 'false'
 
 ## 配置与文档
 
-.env.example只列变量，不自动加载；使用当前终端环境或CLI参数。单模型请求20秒、工具3秒与运行180秒均可配置。SDK/SQLite超时和提交前时钟检查限制后续执行；P0不引入强杀线程或通用外部工具，不能把同步阻塞调用宣传成实时系统硬保证。
+.env.example默认统一为本地qwen3.5:27b、MODEL_THINK=false、temperature=0.2；只列变量，不自动加载，使用当前终端环境或CLI参数。单模型请求20秒、工具3秒与运行180秒均可配置。SDK/SQLite超时和提交前时钟检查限制后续执行；P0不引入强杀线程或通用外部工具，不能把同步阻塞调用宣传成实时系统硬保证。
 
 - [需求](docs/01-requirements.md)
 - [实际实现与局部取舍](docs/02-solution.md)

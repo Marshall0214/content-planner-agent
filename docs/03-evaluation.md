@@ -10,7 +10,7 @@
 
 正常及同输入零增量重放、缺预算/期限入口、超预算和生成故障材料已覆盖，至少三组材料齐备；用户接受C1–C4。最低要求核对支持提交，技术结论不代替外部考官打分，也不声称模型每一步都正确。预算后错误生成、无效降本建议、参数遗漏、保存恢复未验证和随机键修正版未在线验证均保留，详见07-final-delivery.md。
 
-本轮只读材料复核与文档收尾，未新增模型、业务运行或测试。历史累计39次，最新150项JUnit记录18.391秒；完整开发工时未知，不能把HTTP计时277.502秒或日志跨度当开发用时。旧实验章节的日期、待审状态、未达标结论按当时条件保留；当前内容确认以06-content-review.md为准，当前提交适用性以本节/07为准。原始输出和实验JSON不覆盖，聚合材料索引的本轮判断另列，并保存修改前版本。
+本轮只读材料复核与文档收尾，未新增模型、业务运行或测试。历史累计39次，最新150项JUnit记录18.391秒；实际用时已由用户于2026-11-11确认：不到6小时；未提供精确分钟/分项计时，不能把HTTP计时277.502秒或日志跨度当开发用时。旧实验章节的日期、待审状态、未达标结论按当时条件保留；当前内容确认以06-content-review.md为准，当前提交适用性以本节/07为准。原始输出和实验JSON不覆盖，聚合材料索引的本轮判断另列，并保存修改前版本。
 
 此前上下文修复相关回归 **64通过**：[JUnit](../examples/test-results/context-latest-targeted-final.xml)、[控制台](../examples/test-results/context-latest-targeted-final.txt)；全套 **122通过、0失败、0错误、0跳过**：[JUnit](../examples/test-results/context-latest-full.xml)、[控制台](../examples/test-results/context-latest-full.txt)。新增3项SDK协议测试，覆盖两种provider配置及非适配器消息保护，均无模型推理。此前检索契约轮相关46项记录：[JUnit](../examples/test-results/retrieval-contract-targeted.xml)、[控制台](../examples/test-results/retrieval-contract-targeted.txt)；此前完整套件 **119通过、0失败、0错误、0跳过**：[JUnit](../examples/test-results/retrieval-contract-full.xml)、[控制台](../examples/test-results/retrieval-contract-full.txt)。该轮新增13项检索/硬要求测试及1项10次请求上限测试，无真实推理。实际Python/锁定依赖沿用：[环境](../examples/test-results/environment.json)。
 

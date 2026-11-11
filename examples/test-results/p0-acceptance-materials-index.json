@@ -298,5 +298,13 @@
   "remaining_delivery_actions": [
     "Include final source, docs, locks and selected evidence in a final local commit or complete delivery package",
     "Only if required and later authorized, push final commit so the repository URL exposes the final version"
-  ]
+  ],
+  "submission_documentation": {
+    "actual_work_time": "<6h",
+    "actual_work_time_source": "User confirmation 2026-11-11; no exact minute or stage breakdown claimed",
+    "model": "qwen3.5:27b",
+    "think": false,
+    "historical_7b_records_preserved": true,
+    "new_model_calls_for_this_update": 0
+  }
 }

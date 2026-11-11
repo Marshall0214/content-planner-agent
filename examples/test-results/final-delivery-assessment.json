@@ -77,7 +77,7 @@
   },
   "timing": {
     "total_development_or_human_work_hours": null,
-    "reason": "No independent cumulative labor timer; timestamps and model HTTP waits are not development effort.",
+    "reason": "Exact hours/minutes and per-stage breakdown were not supplied; user confirms actual total work time was less than 6 hours. Model HTTP timings are separate.",
     "historical_inference_requests": 39,
     "recorded_http_sum_seconds": 277.502,
     "missing_http_timings": 0,
@@ -87,7 +87,17 @@
         "index": "qwen_normal_0f1745fd4b32.json",
         "number": 6
       }
-    ]
+    ],
+    "user_reported_actual_work_time": {
+      "text": "不到6小时",
+      "hours_upper_bound": 6,
+      "bound_exclusive": true,
+      "source": "User confirmation in this conversation",
+      "confirmation_date": "2026-11-11",
+      "exact_minutes": null,
+      "per_stage_breakdown": null,
+      "independently_timed_by_Codex": false
+    }
   },
   "git": {
     "repository": "D:/硕/work/JobHuntBot/content-planner-agent",
@@ -96,5 +106,14 @@
     "HEAD": "3129570031d01ea41892f00b82a10c6c7409df63",
     "remote_head_live_checked": false,
     "status_note": "Final tracked/untracked snapshot is recorded by final-delivery-check.json after documentation edits."
+  },
+  "current_documented_model_configuration": {
+    "provider": "ollama",
+    "model": "qwen3.5:27b",
+    "think": false,
+    "temperature": 0.2,
+    "model_timeout_s": 20,
+    "run_timeout_s": 180,
+    "source": ".env.example; matches the recorded 27B configuration; no new inference"
   }
 }
